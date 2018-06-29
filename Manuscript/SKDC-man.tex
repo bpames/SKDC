@@ -1453,7 +1453,7 @@ $\epsilon$ satisfying   \eqref{eq: xi eps}, \eqref{eq: lam eps} and
 \end{align*}
 This concludes the proof of Theorem~\ref{thm: rec}.  %\qed
 
-\section{Alternating Direction Method of Multiplers for the Densest $k$-Disjoint Clique Problem}
+\section{Numerical Methods and Simulations}
 \label{sec: num}
 % Intro.
 We conclude with a discussion of an algorithm for solution of~\eqref{eq: kdc sdp} based on the alternating direction method of multipliers (ADMM),  and provide the results of a series of experiments that empirically verify the phase transitions predicted in Section~\ref{sec: rec}.
@@ -1461,7 +1461,8 @@ In particular, we randomly sample graphs \(G = (V,\W)\) from the planted cluster
 optimal solution of \eqref{eq: kdc sdp} with the planted partition.
 
 % Brief description of ADMM methods.
-In each experiment, we solve \eqref{eq: kdc sdp} iteratively using the ADMM algorithm proposed by \cite{ames2014guaranteed}.
+\subsection{Alternating Direction Method of Multipliers for the Densest $k$-Disjoint Clique Problem}
+We solve \eqref{eq: kdc sdp} iteratively using the ADMM algorithm proposed by \cite{ames2014guaranteed}.
 Specifically, we split the decision variable \eq{\X} to obtain the equivalent formulation
 \begin{equation} \label{eq: kdc admm}
 \max \bra{ \tr(\W\Y) : \X - \Y = \0, \X\e \le \e, \X \ge \0, \; \tr(\Y) = k, \Y \in \Sigma^V_+ }.
@@ -1489,6 +1490,8 @@ See~\citet{2010}[Proposition~2.6]{} \cite{lu}
 
 
 Please see the work of \citet[Section 6]{ames2014guaranteed} for further implementation details.
+
+\subsection{Empirical Verification of Exact Recovery}
 
 % Dense expts.
 We perform two sets of experiments, one to illustrate the recovery guarantee for dense graphs sampled from the heterogeneous planted cluster model and another to illustrate the guarantee
