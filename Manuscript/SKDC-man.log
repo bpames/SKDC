@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.5.18)  29 JUN 2018 11:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.5.18)  29 JUN 2018 11:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1093,73 +1093,73 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1464.
 
 [20]
-<het_plot.png, id=545, 562.2606pt x 421.575pt>
+<het_plot.png, id=542, 562.2606pt x 421.575pt>
 File: het_plot.png Graphic file (type png)
 <use het_plot.png>
-Package pdftex.def Info: het_plot.png  used on input line 1533.
+Package pdftex.def Info: het_plot.png  used on input line 1538.
 (pdftex.def)             Requested size: 216.81pt x 162.56096pt.
-<sparse_plot.png, id=546, 562.2606pt x 421.575pt>
+<sparse_plot.png, id=543, 562.2606pt x 421.575pt>
 File: sparse_plot.png Graphic file (type png)
 <use sparse_plot.png>
-Package pdftex.def Info: sparse_plot.png  used on input line 1534.
+Package pdftex.def Info: sparse_plot.png  used on input line 1539.
 (pdftex.def)             Requested size: 216.81pt x 162.56096pt.
 
-Overfull \hbox (3.65pt too wide) in paragraph at lines 1533--1538
+Overfull \hbox (3.65pt too wide) in paragraph at lines 1538--1543
  [][][][] 
  []
 
 [21] [22 <./het_plot.png (PNG copy)> <./sparse_plot.png (PNG copy)>] [23]pdfTeX warning (ext4): destination with the same identifier (name{section.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1593 ...tion{Proof of Lemma~\ref{lem: yz bound}}
+l.1598 ...tion{Proof of Lemma~\ref{lem: yz bound}}
                                                    [24]
-Overfull \hbox (18.77629pt too wide) detected at line 1694
+Overfull \hbox (18.77629pt too wide) detected at line 1699
 []
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 1730--1733
+Underfull \hbox (badness 10000) in paragraph at lines 1735--1738
 
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{section.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1737 ...on{Proof of Proposition~\ref{prop: lam}}
+l.1742 ...on{Proof of Proposition~\ref{prop: lam}}
                                                   
-Underfull \hbox (badness 10000) in paragraph at lines 1790--1791
+Underfull \hbox (badness 10000) in paragraph at lines 1795--1796
 
  []
 
 [26]pdfTeX warning (ext4): destination with the same identifier (name{section.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1792 ...{Proof of Proposition~\ref{prop:unique}}
+l.1797 ...{Proof of Proposition~\ref{prop:unique}}
                                                   
-Underfull \hbox (badness 10000) in paragraph at lines 1815--1816
+Underfull \hbox (badness 10000) in paragraph at lines 1820--1821
 
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{section.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1821 \section{Proof of  Lemma~\ref{lem: S1}}
+l.1826 \section{Proof of  Lemma~\ref{lem: S1}}
                                                %\appendix{} [27]
-Underfull \hbox (badness 10000) in paragraph at lines 1854--1857
+Underfull \hbox (badness 10000) in paragraph at lines 1859--1862
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1859--1913
+Underfull \hbox (badness 10000) in paragraph at lines 1864--1918
 
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{section.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1914 \section{Proof of  Lemma~\ref{lem: S2}}
+l.1919 \section{Proof of  Lemma~\ref{lem: S2}}
                                                %\appendix{} [28]
-Underfull \hbox (badness 10000) in paragraph at lines 1956--1959
+Underfull \hbox (badness 10000) in paragraph at lines 1961--1964
 
  []
 
@@ -1169,34 +1169,34 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [30])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1977.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1982.
  [31]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1977.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1982.
  (./SKDC-man.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1977.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1977.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1982.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1982.
 Package rerunfilecheck Info: File `SKDC-man.out' has not changed.
 (rerunfilecheck)             Checksum: A9AB2A8E3E35FB97DC1C3D7EDC8EDC6B;1601.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1977.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1982.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 537 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 9806 strings out of 492649
- 147995 string characters out of 6133399
- 284356 words of memory out of 5000000
- 13271 multiletter control sequences out of 15000+600000
+ 9808 strings out of 492649
+ 148022 string characters out of 6133399
+ 284472 words of memory out of 5000000
+ 13272 multiletter control sequences out of 15000+600000
  21165 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,20n,49p,662b,562s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on SKDC-man.pdf (31 pages, 443130 bytes).
+<c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on SKDC-man.pdf (31 pages, 457823 bytes).
 PDF statistics:
- 751 PDF objects out of 1000 (max. 8388607)
- 691 compressed objects within 7 object streams
- 150 named destinations out of 1000 (max. 500000)
+ 761 PDF objects out of 1000 (max. 8388607)
+ 699 compressed objects within 7 object streams
+ 151 named destinations out of 1000 (max. 500000)
  22699 words of extra memory for PDF output out of 24883 (max. 10000000)
 

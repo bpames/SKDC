@@ -1477,13 +1477,18 @@ In particular, we minimize \(L_\rho\) with respect to \(\Y\) and \(\X\) successi
 
 We update $\Y$ as the minimizer of the subproblem
 \begin{equation}\label{eq: Y subprob}
-	\Y^{k+1} = \argmin_{\Y \in \Sigma^n_+} \bra{ \frac{1}{2} \left\| \Y - \rbra{ \X^k - \frac{\W + \Z^k}{\rho}}\right\|^2_F : \tr(\Y) = k},
+	\Y^{k+1} = \argmin_{\Y \in \Sigma^n_+} \bra{  \left\| \Y - \rbra{ \X^k - \frac{\W + \Z^k}{\rho}}\right\|^2_F : \tr(\Y) = k},
 \end{equation}
 where $(\X^k, \Y^k, \Z^k)$ is the current iterate after $k$ iterations.
-That is $Y^{k+1}$ is the projection of the matrix $\bs{U}^k := \X^k - (\W + \Z^k)/\rho$ onto the intersection of the positive semidefinite cone and the set of matrices with trace equal to zero.
+That is $\Y^{k+1}$ is the projection of the matrix $\bs{U}^k := \X^k - (\W + \Z^k)/\rho$ onto the intersection of the positive semidefinite cone and the set of matrices with trace equal to zero.
 Such a projection can be computed explicitly by projecting the vector of eigenvalues $\bs{\lambda}^k$ of $\bs{U}^k$ onto the nonnegative simplex $\{\y \in \R^n: \e^T \y = k, \; \y \ge \bs 0\}$.
-See~\citet[Proposition~2.6] {zhang2011penalty} and \citet{van2008probing} for further details.
+Please see~\citet[Proposition~2.6] {zhang2011penalty} and \citet{van2008probing} for further details.
 
+% X-update.
+We update $\X^{k+1}$ as the optimal solution of
+\begin{equation}\label{eq:X-subprob}
+	\X^{k+1} = \argmin_{\X \in \R^{n\times n}} \bra{ \left\|\X - \rbra{\Y^k + \Z^k/\rho} \right\|^2_F: \X \ge \0, \; \X \e \le \e }.
+\end{equation}
 
 
 

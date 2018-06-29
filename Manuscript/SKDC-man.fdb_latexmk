@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex SKDC-man"] 1530290921 "SKDC-man.aux" "SKDC-man.bbl" "SKDC-man" 1530290970
-  "SKDC-man.aux" 1530290968 16071 8c5c0fa7949aaea036470698d0681ff5 ""
+["bibtex SKDC-man"] 1530291336 "SKDC-man.aux" "SKDC-man.bbl" "SKDC-man" 1530291378
+  "SKDC-man.aux" 1530291376 16211 6e6ff810eb809fe05cd8c4d8717a4c5d ""
   "SWKDC.bib" 1530290889 17126 e39bfeea4b6fc4a51e520de2c8b454b7 ""
   "c:/texlive/2018/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1526670213 26816 ffe5423d2019860bad9f54bc402fac15 ""
   (generated)
   "SKDC-man.bbl"
   "SKDC-man.blg"
-["pdflatex"] 1530290965 "SKDC-man.tex" "SKDC-man.pdf" "SKDC-man" 1530290970
-  "SKDC-man.aux" 1530290968 16071 8c5c0fa7949aaea036470698d0681ff5 ""
-  "SKDC-man.bbl" 1530290922 9309 a18faa46cd1ecfe3f30ac167d899a925 "bibtex SKDC-man"
-  "SKDC-man.out" 1530290968 1601 a9ab2a8e3e35fb97dc1c3d7edc8edc6b ""
-  "SKDC-man.tex" 1530290962 101022 9245915844f085a788b556d13e3a4aa8 ""
+["pdflatex"] 1530291374 "SKDC-man.tex" "SKDC-man.pdf" "SKDC-man" 1530291378
+  "SKDC-man.aux" 1530291376 16211 6e6ff810eb809fe05cd8c4d8717a4c5d ""
+  "SKDC-man.bbl" 1530291337 9309 a18faa46cd1ecfe3f30ac167d899a925 "bibtex SKDC-man"
+  "SKDC-man.out" 1530291376 1601 a9ab2a8e3e35fb97dc1c3d7edc8edc6b ""
+  "SKDC-man.tex" 1530291372 101261 e90e0c4fe63408f1418425b495db30f4 ""
   "c:/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1526669050 3332 103109f5612ad95229751940c61aada0 ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1526667820 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1526667820 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -47,6 +47,7 @@
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1526668345 768 1321e9409b4137d6fb428ac9dc956269 ""
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1526667820 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1526667820 32080 340ef9bf63678554ee606688e7b5339d ""
+  "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb" 1526667820 32166 b0c356b15f19587482a9217ce1d8fa67 ""
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1526667820 32001 6aeea3afe875097b1eb0da29acd61e28 ""
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1526667820 30251 6afa5cb1d0204815a708a080681d4674 ""
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1526667820 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
@@ -58,6 +59,7 @@
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1526667821 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb" 1526667821 33993 9b89b85fd2d9df0482bd47194d1d3bf3 ""
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1526667821 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1526667821 32587 65067f817f408bc71a7312f3d9828a9b ""
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1526667821 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1526667821 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1526667821 31099 342ef5a582aacbd3346f3cf4579679fa ""
@@ -117,7 +119,7 @@
   "jmlr2e.sty" 1457817200 13509 e382d45f8c4e905cde62de0de4873318 ""
   "sparse_plot.png" 1527799556 37564 7f0211879d4feaf08565f6312ecbe110 ""
   (generated)
-  "SKDC-man.pdf"
   "SKDC-man.out"
-  "SKDC-man.aux"
   "SKDC-man.log"
+  "SKDC-man.pdf"
+  "SKDC-man.aux"
