@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex SKDC-man"] 1530290449 "SKDC-man.aux" "SKDC-man.bbl" "SKDC-man" 1530290456
-  "SKDC-man.aux" 1530290454 15915 f3fe56723e799999928ea0f820ea0f19 ""
-  "SWKDC.bib" 1498514802 16606 f3924d6acb04698ec2e480cc91cb255b ""
+["bibtex SKDC-man"] 1530290921 "SKDC-man.aux" "SKDC-man.bbl" "SKDC-man" 1530290970
+  "SKDC-man.aux" 1530290968 16071 8c5c0fa7949aaea036470698d0681ff5 ""
+  "SWKDC.bib" 1530290889 17126 e39bfeea4b6fc4a51e520de2c8b454b7 ""
   "c:/texlive/2018/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1526670213 26816 ffe5423d2019860bad9f54bc402fac15 ""
   (generated)
   "SKDC-man.bbl"
   "SKDC-man.blg"
-["pdflatex"] 1530290450 "SKDC-man.tex" "SKDC-man.pdf" "SKDC-man" 1530290456
-  "SKDC-man.aux" 1530290454 15915 f3fe56723e799999928ea0f820ea0f19 ""
-  "SKDC-man.bbl" 1530290450 8803 db27b68462d9e630f4adb27b443ae19f "bibtex SKDC-man"
-  "SKDC-man.out" 1530290454 1601 a9ab2a8e3e35fb97dc1c3d7edc8edc6b ""
-  "SKDC-man.tex" 1530290419 100974 964dc86b5bf4066746adbf869f89afb7 ""
+["pdflatex"] 1530290965 "SKDC-man.tex" "SKDC-man.pdf" "SKDC-man" 1530290970
+  "SKDC-man.aux" 1530290968 16071 8c5c0fa7949aaea036470698d0681ff5 ""
+  "SKDC-man.bbl" 1530290922 9309 a18faa46cd1ecfe3f30ac167d899a925 "bibtex SKDC-man"
+  "SKDC-man.out" 1530290968 1601 a9ab2a8e3e35fb97dc1c3d7edc8edc6b ""
+  "SKDC-man.tex" 1530290962 101022 9245915844f085a788b556d13e3a4aa8 ""
   "c:/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1526669050 3332 103109f5612ad95229751940c61aada0 ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1526667820 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1526667820 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -117,7 +117,7 @@
   "jmlr2e.sty" 1457817200 13509 e382d45f8c4e905cde62de0de4873318 ""
   "sparse_plot.png" 1527799556 37564 7f0211879d4feaf08565f6312ecbe110 ""
   (generated)
-  "SKDC-man.aux"
   "SKDC-man.pdf"
-  "SKDC-man.log"
   "SKDC-man.out"
+  "SKDC-man.aux"
+  "SKDC-man.log"

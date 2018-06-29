@@ -1482,8 +1482,7 @@ We update $\Y$ as the minimizer of the subproblem
 where $(\X^k, \Y^k, \Z^k)$ is the current iterate after $k$ iterations.
 That is $Y^{k+1}$ is the projection of the matrix $\bs{U}^k := \X^k - (\W + \Z^k)/\rho$ onto the intersection of the positive semidefinite cone and the set of matrices with trace equal to zero.
 Such a projection can be computed explicitly by projecting the vector of eigenvalues $\bs{\lambda}^k$ of $\bs{U}^k$ onto the nonnegative simplex $\{\y \in \R^n: \e^T \y = k, \; \y \ge \bs 0\}$.
-See~\citet{2010}[Proposition~2.6]{} \cite{lu}
-
+See~\citet[Proposition~2.6] {zhang2011penalty} and \citet{van2008probing} for further details.
 
 
 
