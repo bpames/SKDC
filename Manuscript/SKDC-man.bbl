@@ -1,4 +1,4 @@
-\begin{thebibliography}{34}
+\begin{thebibliography}{35}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -53,6 +53,13 @@ Afonso~S Bandeira and Ramon van Handel.
   independent entries.
 \newblock \emph{The Annals of Probability}, 44\penalty0 (4):\penalty0
   2479--2506, 2016.
+
+\bibitem[Birgin et~al.(2000)Birgin, Mart{\'\i}nez, and
+  Raydan]{birgin2000nonmonotone}
+Ernesto~G Birgin, Jos{\'e}~Mario Mart{\'\i}nez, and Marcos Raydan.
+\newblock Nonmonotone spectral projected gradient methods on convex sets.
+\newblock \emph{SIAM Journal on Optimization}, 10\penalty0 (4):\penalty0
+  1196--1211, 2000.
 
 \bibitem[Boyd and Vandenberghe(2009)]{boyd2009convex}
 Stephen Boyd and Lieven Vandenberghe.

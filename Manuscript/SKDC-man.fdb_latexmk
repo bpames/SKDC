@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex SKDC-man"] 1530291336 "SKDC-man.aux" "SKDC-man.bbl" "SKDC-man" 1530291378
-  "SKDC-man.aux" 1530291376 16211 6e6ff810eb809fe05cd8c4d8717a4c5d ""
-  "SWKDC.bib" 1530290889 17126 e39bfeea4b6fc4a51e520de2c8b454b7 ""
+["bibtex SKDC-man"] 1530382178 "SKDC-man.aux" "SKDC-man.bbl" "SKDC-man" 1530382231
+  "SKDC-man.aux" 1530382229 16620 ce1d71971ceaaad07202085b92346f26 ""
+  "SWKDC.bib" 1530381969 17446 cb1efebbb751ae891b96c442cc89c4a9 ""
   "c:/texlive/2018/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1526670213 26816 ffe5423d2019860bad9f54bc402fac15 ""
   (generated)
-  "SKDC-man.bbl"
   "SKDC-man.blg"
-["pdflatex"] 1530291374 "SKDC-man.tex" "SKDC-man.pdf" "SKDC-man" 1530291378
-  "SKDC-man.aux" 1530291376 16211 6e6ff810eb809fe05cd8c4d8717a4c5d ""
-  "SKDC-man.bbl" 1530291337 9309 a18faa46cd1ecfe3f30ac167d899a925 "bibtex SKDC-man"
-  "SKDC-man.out" 1530291376 1601 a9ab2a8e3e35fb97dc1c3d7edc8edc6b ""
-  "SKDC-man.tex" 1530291372 101261 e90e0c4fe63408f1418425b495db30f4 ""
+  "SKDC-man.bbl"
+["pdflatex"] 1530382227 "SKDC-man.tex" "SKDC-man.pdf" "SKDC-man" 1530382231
+  "SKDC-man.aux" 1530382229 16620 ce1d71971ceaaad07202085b92346f26 ""
+  "SKDC-man.bbl" 1530382179 9632 62fef7e122f2d54b70f5cdfa5f1e0fa4 "bibtex SKDC-man"
+  "SKDC-man.out" 1530382229 1601 a9ab2a8e3e35fb97dc1c3d7edc8edc6b ""
+  "SKDC-man.tex" 1530382225 102521 fc651413d2e995f3bcbb13c81ea170ec ""
   "c:/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1526669050 3332 103109f5612ad95229751940c61aada0 ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1526667820 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1526667820 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -119,7 +119,7 @@
   "jmlr2e.sty" 1457817200 13509 e382d45f8c4e905cde62de0de4873318 ""
   "sparse_plot.png" 1527799556 37564 7f0211879d4feaf08565f6312ecbe110 ""
   (generated)
-  "SKDC-man.out"
+  "SKDC-man.aux"
   "SKDC-man.log"
   "SKDC-man.pdf"
-  "SKDC-man.aux"
+  "SKDC-man.out"

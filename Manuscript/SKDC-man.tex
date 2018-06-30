@@ -1489,10 +1489,16 @@ We update $\X^{k+1}$ as the optimal solution of
 \begin{equation}\label{eq:X-subprob}
 	\X^{k+1} = \argmin_{\X \in \R^{n\times n}} \bra{ \left\|\X - \rbra{\Y^k + \Z^k/\rho} \right\|^2_F: \X \ge \0, \; \X \e \le \e }.
 \end{equation}
-
-
-
-
+Applying strong duality, we know that the optimal solution of~\eqref{eq:X-subprob} is given by
+\begin{equation}\label{eq:X-formula}
+	\X^{k+1} = \sbra{ \rbra{\Y^{k+1} + \Z^k/\rho} - \frac{\z^* \e + \e (\z^*)^T}{2}}_+,
+\end{equation}
+where the operator $[\cdot]_+$ is the projection onto symmetric nonnegative cone $\Sigma^V \cap \R^{\V\times V}_+$ given by $[[\Z]_+]_{ij} = \max \{0, Z_{ij}\}$ for all $\Z \in \Sigma^V$, and $\z^*$ is the optimal solution of the dual problem of~\eqref{eq:X-subprob} given by
+\begin{equation}\label{eq:X-dual}
+	\min_{\z \ge \0} \frac{1}{2} \left\|\sbra{ \rbra{\Y^{k+1} + \Z^k/\rho} - \frac{\z \e + \e \z^T}{2}}_+ \right\|_F^2 + \z^T \e - \frac{1}{2} \|\Y^{k+1} + \Z^k/\rho \|^2_F.
+\end{equation}
+The objective function of the dual problem~\eqref{eq:X-dual} is differentiable and coercive in $\z$, so it can be solved efficiently by applying the spectral projected gradient method of~\cite{birgin2000nonmonotone}. We stop the projected gradient method when the relative duality gap, given by $|v_p^{(k)} - v_d^{(k)}|/\max\{v_p^{(k)}, 1\}$ and primal constraint violation are both smaller than a desired error tolerance.
+We complete each iteration by performing an approximate dual ascent step to update the dual variable $\Z^{k+1}$.
 Please see the work of \citet[Section 6]{ames2014guaranteed} for further implementation details.
 
 \subsection{Empirical Verification of Exact Recovery}
