@@ -1,4 +1,6 @@
 PWD C:/Users/bpames/Box Sync/Research/Undergraduate Research/(2014) Sparse and efficient WKDC/Github/SKDC/Manuscript
+INPUT c:/texlive/2018/texmf.cnf
+INPUT c:/texlive/2018/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt
 INPUT SKDC-man.tex
 OUTPUT SKDC-man.log
@@ -53,8 +55,6 @@ INPUT c:/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT c:/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT c:/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 INPUT c:/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-INPUT c:/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
-INPUT c:/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
 INPUT c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT c:/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -88,6 +88,17 @@ INPUT c:/texlive/2018/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 INPUT c:/texlive/2018/texmf-dist/tex/latex/microtype/microtype.cfg
 INPUT c:/texlive/2018/texmf-dist/tex/latex/microtype/microtype.cfg
 INPUT c:/texlive/2018/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT c:/texlive/2018/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/float/float.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/float/float.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT SKDC-man.aux
 INPUT SKDC-man.aux
 OUTPUT SKDC-man.aux
@@ -109,7 +120,6 @@ INPUT c:/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 INPUT c:/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
