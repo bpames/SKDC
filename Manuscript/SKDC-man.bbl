@@ -1,4 +1,4 @@
-\begin{thebibliography}{32}
+\begin{thebibliography}{35}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -53,6 +53,13 @@ Afonso~S Bandeira and Ramon van Handel.
   independent entries.
 \newblock \emph{The Annals of Probability}, 44\penalty0 (4):\penalty0
   2479--2506, 2016.
+
+\bibitem[Birgin et~al.(2000)Birgin, Mart{\'\i}nez, and
+  Raydan]{birgin2000nonmonotone}
+Ernesto~G Birgin, Jos{\'e}~Mario Mart{\'\i}nez, and Marcos Raydan.
+\newblock Nonmonotone spectral projected gradient methods on convex sets.
+\newblock \emph{SIAM Journal on Optimization}, 10\penalty0 (4):\penalty0
+  1196--1211, 2000.
 
 \bibitem[Boyd and Vandenberghe(2009)]{boyd2009convex}
 Stephen Boyd and Lieven Vandenberghe.
@@ -196,11 +203,23 @@ Karl Rohe, Tai Qin, and Haoyang Fan.
   estimator.
 \newblock \emph{arXiv preprint arXiv:1206.2380}, 2012.
 
+\bibitem[Van Den~Berg and Friedlander(2008)]{van2008probing}
+Ewout Van Den~Berg and Michael~P Friedlander.
+\newblock Probing the pareto frontier for basis pursuit solutions.
+\newblock \emph{SIAM Journal on Scientific Computing}, 31\penalty0
+  (2):\penalty0 890--912, 2008.
+
 \bibitem[Vinayak et~al.(2014)Vinayak, Oymak, and Hassibi]{vinayak2014sharp}
 Ramya~Korlakai Vinayak, Samet Oymak, and Babak Hassibi.
 \newblock Sharp performance bounds for graph clustering via convex
   optimization.
 \newblock In \emph{Acoustics, Speech and Signal Processing (ICASSP), 2014 IEEE
   International Conference on}, pages 8297--8301. IEEE, 2014.
+
+\bibitem[Zhang and Lu(2011)]{zhang2011penalty}
+Yong Zhang and Zhaosong Lu.
+\newblock Penalty decomposition methods for rank minimization.
+\newblock In \emph{Advances in Neural Information Processing Systems}, pages
+  46--54, 2011.
 
 \end{thebibliography}

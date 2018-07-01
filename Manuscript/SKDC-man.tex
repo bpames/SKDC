@@ -32,16 +32,7 @@
 %\newcommand{\href}[1]{#1} % does nothing, but defines the command so the
 % print-optimized version will ignore \href tags (redefined by hyperref pkg).
 
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-% Enable electronic version.
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-% This package allows if-then-else control structures.
-\usepackage{ifthen}
-\newboolean{ElectronicVersion}
-\setboolean{ElectronicVersion}{true} % CHANGE THIS VALUE AS REQUIRED
-%\setboolean{ElectronicVersion}{false}
-
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%++++++++++++++++++++++++++++++++++++
 % Packages to include.
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \usepackage{amsmath,amstext} % Lots of math symbols and environments
@@ -54,6 +45,25 @@
 % Margins. OBSOBSOBS
 %\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry} % preprint.
 
+% Algorithms.
+%\usepackage{algorithm2e}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\makeatletter
+\newcommand{\algmargin}{\the\ALG@thistlm}
+\makeatother
+\newlength{\whilewidth}
+\settowidth{\whilewidth}{\algorithmicwhile\ }
+\algdef{SE}[parWHILE]{parWhile}{EndparWhile}[1]
+  {\parbox[t]{\dimexpr\linewidth-\algmargin}{%
+     \hangindent\whilewidth\strut\algorithmicwhile\ #1\ \algorithmicdo\strut}}{\algorithmicend\ \algorithmicwhile}%
+\algnewcommand{\parState}[1]{\State%
+  \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut #1\strut}}
+% \SetKwIF{If}{ElseIf}{Else}{if}{}{else if}{else}{end if}%
+% \SetKwFor{While}{while}{}{end while}%
+% \SetKwFor{For}{for}{}{end for}%
+% \RestyleAlgo{ruled}
 
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -581,7 +591,7 @@ Unfortunately, the {densest \(k\)-partition problem is NP-hard \citep[see][]{pen
 	denotes the standard Euclidean norm, then
 	it is easy to see that
 	\[
-	\sum_{i=1}^k d_{G(C_i)} = \tr(\P^T \W \P).
+	\sum_{i=1}^t d_{G(C_i)} = \tr(\P^T \W \P).
 	\]
 	We call such a matrix \(\P\) a \emph{normalized \(k\)-cluster matrix} and denote the set of normalized \(k\)-cluster
 	matrices of the vertex set \(V\) by \(ncm(V,k)\).
@@ -611,7 +621,7 @@ Unfortunately, the {densest \(k\)-partition problem is NP-hard \citep[see][]{pen
 	product, due to the orthogonality of the characteristic vectors of the corresponding disjoint clusters.
 	Thus, the matrix
 	\begin{equation} \label{eq: cluster X}
-	\X = \sum_{i=1}^k \X^{(i)} = \sum_{i=1}^k \frac{ \v_i \v_i^T}{ \v_i^T \v_i}
+	\X = \sum_{i=1}^t \X^{(i)} = \sum_{i=1}^t \frac{ \v_i \v_i^T}{ \v_i^T \v_i}
 	\end{equation}
 	has rank equal to \(k\).
 	This suggests that we may relax \eqref{eq: kdc prob} as the rank-constrained semidefinite program
@@ -690,7 +700,7 @@ success \(p\) and \(q\), respectively.
 \begin{theorem}
 	\label{thm: old rec}
 	Suppose that the vertex sets \(C_1, \dots, C_k\) define a \kdc subgraph \(H^*\) of the
-	\(n\)-node weighted complete graph \(K_n(V, \W)\) and let \(C_{k+1} := V \setminus \rbra{ \cup^k_{i=1} C_i } \).
+	\(n\)-node weighted complete graph \(K_n(V, \W)\) and let \(C_{k+1} := V \setminus \rbra{ \cup^t_{i=1} C_i } \).
 	Let \(r_i := |C_i|\) for all \(i=1,\dots, k+1\)
 	and let \( \hat r = \min_{i=1,\dots,k} r_i.\)
 	Let \( \W \in \Sigma^n\) be a random symmetric matrix sampled from the planted cluster model
@@ -739,7 +749,7 @@ clusterable by \eqref{eq: kdc sdp}. We have the following theorem.
 \begin{theorem} \label{thm: rec}
 	Suppose that the vertex sets \(C_1,\dots,C_k\) define a \(k\)-disjoint-clique subgraph \(K^*\) of the weighted
 	complete graph
-	\(K_n = (V,\bs W)\) on \(n\) vertices and let \(C_{k+1} = V \setminus \left(\cup_{i=1}^k C_i \right)\). Let \(r_i = |C_i|\) for all
+	\(K_n = (V,\bs W)\) on \(n\) vertices and let \(C_{k+1} = V \setminus \left(\cup_{i=1}^t C_i \right)\). Let \(r_i = |C_i|\) for all
 	\(i=1,\dots,k+1\) and let \(\hat{r} = \min_{i=1,\dots,k} r_i\).
 	Let \(\bs{W} \in \Sigma^n\)
 	be a random symmetric matrix sampled from the heterogeneous planted cluster model according to distributions \(\{\Omega_{ij} \}\) with expected values \(\mu_{ij} = \mu_{ij}(n)\) and variances
@@ -864,7 +874,7 @@ of $\hat r = \Omega(\sqrt{\log n})$ established in \cite{jalali2015relative}
 by a factor of $\sqrt{\log n}$.
 However, the convex relaxation proposed by
 \cite{jalali2015relative} for recovery requires knowledge
-of $\sum_{i=1}^k r_i^2$, which is often an unrealistic
+of $\sum_{i=1}^t r_i^2$, which is often an unrealistic
 expectation in practice;
 in contrast, our approach only requires knowledge
 of the number of clusters $k$ present in the data.
@@ -1025,7 +1035,7 @@ of the notation of Theorem~\ref{thm: rec}.
 %Brendan: rephrased to note that this is not new notation}.
 Let $K^*$ be a $k$-disjoint-clique subgraph of $K_n$ with vertex set composed of the disjoint cliques $C_1, \dots, C_k$ of sizes $r_1, \dots, r_k$  and let
 $\X^*$ be the corresponding feasible solution of \eqref{eq: kdc sdp} defined by \eqref{eq: cluster X}.
-Let $C_{k+1} := V \setminus  (\cup^k_{i=1} C_i)$ and $r_{k+1} := n - \sum_{i=1}^k r_i$ be the size of the set
+Let $C_{k+1} := V \setminus  (\cup^t_{i=1} C_i)$ and $r_{k+1} := n - \sum_{i=1}^t r_i$ be the size of the set
 of outliers \(C_{k+1}\).
 Moreover, let $\hat r := \min_{i=1, \dots, k} r_i$ and
 \( \tilde r := \max_{i=1,\dots, k} r_i\)  be the size of the smallest and largest clusters,
@@ -1453,7 +1463,7 @@ $\epsilon$ satisfying   \eqref{eq: xi eps}, \eqref{eq: lam eps} and
 \end{align*}
 This concludes the proof of Theorem~\ref{thm: rec}.  %\qed
 
-\section{Alternating Direction Method of Multiplers for the Densest $k$-Disjoint Clique Problem}
+\section{Numerical Methods and Simulations}
 \label{sec: num}
 % Intro.
 We conclude with a discussion of an algorithm for solution of~\eqref{eq: kdc sdp} based on the alternating direction method of multipliers (ADMM),  and provide the results of a series of experiments that empirically verify the phase transitions predicted in Section~\ref{sec: rec}.
@@ -1461,10 +1471,11 @@ In particular, we randomly sample graphs \(G = (V,\W)\) from the planted cluster
 optimal solution of \eqref{eq: kdc sdp} with the planted partition.
 
 % Brief description of ADMM methods.
-In each experiment, we solve \eqref{eq: kdc sdp} iteratively using the ADMM algorithm proposed by \cite{ames2014guaranteed}.
+\subsection{Alternating Direction Method of Multipliers for the Densest $k$-Disjoint Clique Problem}
+We solve \eqref{eq: kdc sdp} iteratively using the ADMM algorithm proposed by \cite{ames2014guaranteed}.
 Specifically, we split the decision variable \eq{\X} to obtain the equivalent formulation
 \begin{equation} \label{eq: kdc admm}
-\max \bra{ \tr(\W\Y) : \X - \Y = \0, \X\e \le \e, \X \ge \0, \; \tr(\Y) = k, \Y \in \Sigma^V_+ }.
+\max \bra{ \tr(\W\Y) : \X - \Y = \0, \X\e \le \e, \X \ge \0, \; \tr \Y = k, \Y \in \Sigma^V_+ }.
 \end{equation}
 We then apply an approximate dual ascent scheme to maximize the augmented Lagrangian
 \[
@@ -1476,19 +1487,87 @@ In particular, we minimize \(L_\rho\) with respect to \(\Y\) and \(\X\) successi
 
 We update $\Y$ as the minimizer of the subproblem
 \begin{equation}\label{eq: Y subprob}
-	\Y^{k+1} = \argmin_{\Y \in \Sigma^n_+} \bra{ \frac{1}{2} \left\| \Y - \rbra{ \X^k - \frac{\W + \Z^k}{\rho}}\right\|^2_F : \tr(\Y) = k},
+	\Y^{t+1} = \argmin_{\Y \in \Sigma^n_+} \bra{  \left\| \Y - \rbra{ \X^t - \frac{\W + \Z^t}{\rho}}\right\|^2_F : \tr \Y = k},
 \end{equation}
-where $(\X^k, \Y^k, \Z^k)$ is the current iterate after $k$ iterations.
-That is $Y^{k+1}$ is the projection of the matrix $\bs{U}^k := \X^k - (\W + \Z^k)/\rho$ onto the intersection of the positive semidefinite cone and the set of matrices with trace equal to zero.
-Such a projection can be computed explicitly by projecting the vector of eigenvalues $\bs{\lambda}^k$ of $\bs{U}^k$ onto the nonnegative simplex $\{\y \in \R^n: \e^T \y = k, \; \y \ge \bs 0\}$.
-See~\citet{2010}[Proposition~2.6]{} \cite{lu}
+where $(\X^t, \Y^t, \Z^t)$ is the current iterate after $k$ iterations.
+That is $\Y^{t+1}$ is the projection of the matrix $\bs{U}^t := \X^t - (\W + \Z^t)/\rho$ onto the intersection of the positive semidefinite cone and the set of matrices with trace equal to zero.
+Such a projection can be computed explicitly by projecting the vector of eigenvalues $\bs{\lambda}^t$ of $\bs{U}^t$ onto the nonnegative simplex $\{\y \in \R^n: \e^T \y = k, \; \y \ge \bs 0\}$.
+Please see~\citet[Proposition~2.6] {zhang2011penalty} and \citet{van2008probing} for further details.
 
-
-
-
-
-
+% X-update.
+We update $\X^{t+1}$ as the optimal solution of
+\begin{equation}\label{eq:X-subprob}
+	\X^{t+1} = \argmin_{\X \in \R^{n\times n}} \bra{ \left\|\X - \rbra{\Y^t + \Z^t/\rho} \right\|^2_F: \X \ge \0, \; \X \e \le \e }.
+\end{equation}
+Applying strong duality, we know that the optimal solution of~\eqref{eq:X-subprob} is given by
+\begin{equation}\label{eq:X-formula}
+	\X^{t+1} = \sbra{ \rbra{\Y^{t+1} + \Z^t/\rho} - \frac{\z^* \e + \e (\z^*)^T}{2}}_+,
+\end{equation}
+where the operator $[\cdot]_+$ is the projection onto the symmetric nonnegative cone $\Sigma^V \cap \R^{V\times V}_+$ given by $[[\Z]_+]_{ij} = \max \{0, Z_{ij}\}$ for all $\Z \in \Sigma^V$, and $\z^*$ is the optimal solution of the dual problem of~\eqref{eq:X-subprob} given by
+\begin{equation}\label{eq:X-dual}
+	\min_{\z \ge \0} \frac{1}{2} \left\|\sbra{ \rbra{\Y^{t+1} + \Z^t/\rho} - \frac{\z \e + \e \z^T}{2}}_+ \right\|_F^2 + \z^T \e - \frac{1}{2} \|\Y^{t+1} + \Z^t/\rho \|^2_F.
+\end{equation}
+The objective function of the dual problem~\eqref{eq:X-dual} is differentiable and coercive in $\z$, so it can be solved efficiently by applying the spectral projected gradient method of~\cite{birgin2000nonmonotone}.
+We complete each iteration by performing an approximate dual ascent step to update the dual variable $\Z^{t+1}$.
+We stop the projected gradient method when the relative duality gap, given by $|v_p^{(t)} - v_d^{(t)}|/\max\{v_p^{(t)}, 1\}$ and primal constraint violation are both smaller than a desired error tolerance.
+We summarize the algorithm as Algorithm~\ref{alg:ADMM}.
 Please see the work of \citet[Section 6]{ames2014guaranteed} for further implementation details.
+
+\newcommand{\V}{\bs{V}}
+\begin{algorithm}[t]
+	\caption{ADMM for~\eqref{eq: cluster SDP}}
+	\label{alg:ADMM}
+	\begin{algorithmic}
+
+	\algrenewcommand\algorithmicfor{For}
+	\algrenewcommand\algorithmicdo{}
+	\algrenewcommand\algorithmicend{End}
+	% \algnewcommand{\parState}[1]{\State%
+  % \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut #1\strut}}
+
+	\State{\textbf{Data:} Initial iterates $\X^0 = \Y^0 = \Z^0 = \0$, augmented Lagrangian parameter $\rho > 0$, and stopping tolerance $\epsilon > 0$.}
+
+	\State{\textbf{Result:} Approximate solution $(\X^*, \Y^*, \Z^*)$ of \eqref{eq: cluster SDP}.}
+
+	\For{$t = 0, 1,2 \dots $ until converged}
+	\State
+		Compute spectral decomposition $\V^t \Diag \bs{\lambda}^t (\V^t)^T = \bs U^t = \X^t - (\W + \Z^t)/\rho$.
+	\State
+		Project  $\bs \lambda^t$ onto the nonnegative simplex $\{\y \in \R^n: \e^T \y = k,\; \y \ge \0\}$ to obtain $\bs{\bar\lambda}^t$.
+	\State
+		Update $\Y^{t+1} = \V^t \Diag \bs{\bar\lambda}^t (\V^t)^T$.
+	\parState{Compute approximate optimal solution $\z^*$ of the dual subproblem~\eqref{eq:X-dual} using spectral projected gradient method of~\cite{birgin2000nonmonotone}.}
+	\State
+		Update $\X^{t+1}= \sbra{ \rbra{\Y^{ts+1} + \Z^t/\rho} - \frac{\z^* \e + \e (\z^*)^T}{2}}_+.$
+	\State
+		Update $\Z^{t+1}$ using approximate dual ascent
+		\[
+			\Z^{t+1} = \Z^t - \rho(\X^{t+1} - \Y^{t+1}).
+		\]
+	\State
+		Compute primal feasibilty gap
+		\[
+			pfeas = \min\bra{\min_{ij} Y^t_{ij}, \min \rbra{\e - \Y^{t}\e} }
+		\]
+	\parState{
+		Compute estimates of primal and dual objective values
+		\[
+			v_p^{(t+1)} = \tr(\W\Y^{t}) \hspace{0.25in}
+			v_d^{(t+1)} = k \lambda_{min}(\W + \Z^{t+1}) - \tr(\X^{t+1}\Z^{t+1}).
+		\]
+		(Note that $v_d^{(t+1)}$ is not necessarily a lower bound on the optimal dual value, but is asymptotically converging to the optimal dual value).}
+	\State
+		Calculate relative duality gap
+		\[
+			relgap = \frac{|v_p^{(t+1)} = v_d^{(t+1)} |}{\max(|v_p^{(t+1)}|, 1}.
+		\]
+	\State
+		Declare sequence of iterates to have converged if $relgap < \epsilon$ and $pfeas >- \epsilon$.
+	\EndFor
+	\end{algorithmic}
+\end{algorithm}
+
+\subsection{Empirical Verification of Exact Recovery}
 
 % Dense expts.
 We perform two sets of experiments, one to illustrate the recovery guarantee for dense graphs sampled from the heterogeneous planted cluster model and another to illustrate the guarantee
@@ -1944,7 +2023,7 @@ Combining these two inequalities using the triangle inequality establishes that
 w.h.p.
 Finally, applying the union bound over all choices of $q$ shows that
 \[
-	\| \bl - \E [ \bl ] \|^2 = \sum_{q=1}^k \| \bl_{C_q} - \E[\bl_{C_q}] \|^2
+	\| \bl - \E [ \bl ] \|^2 = \sum_{q=1}^t \| \bl_{C_q} - \E[\bl_{C_q}] \|^2
 		= O \rbra{  k \max \bra{ \sigma_{qq}^2, \frac{\log n}{\hat r} } }
 \]
 w.h.p.
