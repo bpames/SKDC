@@ -398,7 +398,7 @@ tending polynomially to $1$ as $n \ra \infty$.
 	where $\tilde \sigma^2 = \max\{{p(1-p)}, q(1-q) \}$, and
 	\begin{equation*}
 		(p-q) \hat r \ge c_1 \max \bra{ \sqrt{ q(1-q) n },\sqrt{ \log n}  }
-		+ c_2 \max \bra{ \sqrt{p(1-p) \tilde r }, \sqrt{\log n} }
+		+ c_2 \max \bra{ \sqrt{p(1-p) \tilde r }, \sqrt{\log n} }.
 	%\footnote{Should be $\hat r^{3/4}$, as in Theorem 2.2? Brendan: Fixed.} .
 	\end{equation*}
 	Moreover, in this case, every characteristic vector of a cluster in the block model is a
@@ -477,7 +477,7 @@ edge weight \(w_{uv} \ge 0\), and \(w_{vu}\) by symmetry,
 from some probability distribution \(\Omega_\ell\)
 with mean \(\alpha_\ell \ge \alpha > 0\). If \(u \in C_i\),
 \(v \in C_j\), where $i \neq j$, i.e., $u,v$ do not belong to the same
-cluster, we sample \(w_{uv} = w_{vu} \ge 0\) from a second probability distribution
+cluster, we sample \(w_{uv} = w_{vu} \ge 0\) from a different probability distribution
 \(\Omega_{ij}\) with mean \( \beta_{ij} \le \beta \in [0,\alpha) \).
 Note that this model contains the generalized stochastic block model discussed
 earlier as a special case when \(\Omega_\ell \) and \(\Omega_{ij}\)
@@ -591,7 +591,7 @@ Unfortunately, the {densest \(k\)-partition problem is NP-hard \citep[see][]{pen
 	denotes the standard Euclidean norm, then
 	it is easy to see that
 	\[
-	\sum_{i=1}^t d_{G(C_i)} = \tr(\P^T \W \P).
+	\sum_{i=1}^k d_{G(C_i)} = \tr(\P^T \W \P).
 	\]
 	We call such a matrix \(\P\) a \emph{normalized \(k\)-cluster matrix} and denote the set of normalized \(k\)-cluster
 	matrices of the vertex set \(V\) by \(ncm(V,k)\).
@@ -621,7 +621,7 @@ Unfortunately, the {densest \(k\)-partition problem is NP-hard \citep[see][]{pen
 	product, due to the orthogonality of the characteristic vectors of the corresponding disjoint clusters.
 	Thus, the matrix
 	\begin{equation} \label{eq: cluster X}
-	\X = \sum_{i=1}^t \X^{(i)} = \sum_{i=1}^t \frac{ \v_i \v_i^T}{ \v_i^T \v_i}
+	\X = \sum_{i=1}^k \X^{(i)} = \sum_{i=1}^k \frac{ \v_i \v_i^T}{ \v_i^T \v_i}
 	\end{equation}
 	has rank equal to \(k\).
 	This suggests that we may relax \eqref{eq: kdc prob} as the rank-constrained semidefinite program
@@ -684,7 +684,7 @@ are bounded and nonnegative with high probability.
 We say that such random matrices \(\W\) are sampled from the \emph{planted cluster model}.
 Note that if \(\W\) is sampled from the planted cluster model, then weight is concentrated
 on within-cluster edges (in expectation).
-This provides a natural generalization of the stochastic block model .
+This provides a natural generalization of the stochastic block model.
 %considered by,
 %for example,
 %\cite{chen2014clustering, oymak2011finding,rohe2011spectral,qin2013regularized},
@@ -737,19 +737,18 @@ First, the hypothesis of Theorem~\ref{thm: old rec} assumes that between-cluster
 \end{itemize}
 This forces weights within the same block to be i.i.d., but weight may not be identically distributed in different blocks.
 
-Second, the analysis leading to Theorem~\ref{thm: old rec} assumes that the expectations of \(\Omega_{1}, \Omega_2\) are
+Second, the analysis leading to Theorem~\ref{thm: old rec} assumes that the expectations of \(\Omega_{1}, \Omega_2\)
 in the planted cluster model are fixed and that the variances are bounded by \(1\).
 We improve upon the recovery guarantee of Theorem~\ref{thm: old rec} by considering the case
 where the parameters \(\alpha\) and \(\beta\) depend on the number of nodes \(n\) in the graph.
-Second,
 In particular, our recovery guarantees explicitly depend on the
-variances of \(\Omega_{ij}\), and their scaling with $n$, which will expand the notion of a graph
-clusterable by \eqref{eq: kdc sdp}. We have the following theorem.
+variances of the distributions \(\Omega_{ij}\), and their scaling with $n$, which will expand the set of graphs
+known to be clusterable by \eqref{eq: kdc sdp}. We have the following theorem.
 
 \begin{theorem} \label{thm: rec}
 	Suppose that the vertex sets \(C_1,\dots,C_k\) define a \(k\)-disjoint-clique subgraph \(K^*\) of the weighted
 	complete graph
-	\(K_n = (V,\bs W)\) on \(n\) vertices and let \(C_{k+1} = V \setminus \left(\cup_{i=1}^t C_i \right)\). Let \(r_i = |C_i|\) for all
+	\(K_n = (V,\bs W)\) on \(n\) vertices and let \(C_{k+1} = V \setminus \left(\cup_{i=1}^k C_i \right)\). Let \(r_i = |C_i|\) for all
 	\(i=1,\dots,k+1\) and let \(\hat{r} = \min_{i=1,\dots,k} r_i\).
 	Let \(\bs{W} \in \Sigma^n\)
 	be a random symmetric matrix sampled from the heterogeneous planted cluster model according to distributions \(\{\Omega_{ij} \}\) with expected values \(\mu_{ij} = \mu_{ij}(n)\) and variances
@@ -801,8 +800,7 @@ For example, \citet{amini2014semidefinite} present an analysis of three
 semidefinite relaxations that obtain nearly identical conditions
 on $\{\Omega_{ij}\}$ guaranteeing recovery but restrict their
 analysis to case where the clusters are identical in size
-or otherwise known and when $\Omega_1$
-and $\Omega_2$ are Bernoulli distributions; we should note that
+or otherwise known and when $\{\Omega_{ij}\}$ are Bernoulli distributions; we should note that
 \citet{amini2014semidefinite} consider heterogeneous Bernoulli
 distributions where the within-cluster and between-cluster probabilities
 of adding an edge vary across clusters.
@@ -832,8 +830,7 @@ $\Omega_2$ with mean $\beta < \alpha$ and variance $\sigma_2^2$.
 \subsubsection{The Dense Case}
 
 When \( \alpha, \beta \) are fixed, we obtain the same recovery guarantee as before, up to constants and logarithmic
-terms:  we have exact recovery w.h.p.
-if \(\hat r \ge \tilde c_1 \sqrt{n} \) and \(\hat r \ge \tilde c_2 r_{k+1} \)
+terms:  we have exact recovery w.h.p.~if \(\hat r \ge \tilde c_1 \sqrt{n} \) and \(\hat r \ge \tilde c_2 r_{k+1} \)
 for some constants \(\tilde c_1\) and \(\tilde c_2\) depending on \(\Omega_1\) and \(\Omega_2\).
 Indeed, each of the pointwise maximums in the first  three terms
 of \eqref{eq:smallest_largest} is bounded above by $O(\sqrt{n})$
@@ -847,10 +844,10 @@ since $\tilde r \le n$, and $k r_{k+1} = O(n)$ if $r_{k+1} = O(\hat r)$.
 
 % Sparse case.
 On the other hand, if noise in the form of between-cluster
-edges is  approximately sparse, then we
+edge-weight is small, then we
 should expect to be able recover
 much smaller clusters.
-For example, suppose that \(\Omega_2\) is the Bernoulli distribution, with probability of adding an edge \(q\) and that \(\Omega_1\) is the Bernoulli distribution with probability of adding an edge \(p=1\); the assumption that \(p=1\) is for the sake of simplicity in this example and we can expect analogous recovery guarantees for
+For example, suppose that \(\Omega_2\) is the Bernoulli distribution with probability of adding an edge \(q\) and that \(\Omega_1\) is the Bernoulli distribution with probability of adding an edge \(p=1\); the assumption that \(p=1\) is for the sake of simplicity in this example and we can expect analogous recovery guarantees for
 any \(p\) tending slowly enough to \(0\).
 Assume further that
 \(
@@ -873,8 +870,8 @@ state of the art recovery bound
 of $\hat r = \Omega(\sqrt{\log n})$ established in \cite{jalali2015relative}
 by a factor of $\sqrt{\log n}$.
 However, the convex relaxation proposed by
-\cite{jalali2015relative} for recovery requires knowledge
-of $\sum_{i=1}^t r_i^2$, which is often an unrealistic
+\cite{jalali2015relative} requires knowledge
+of $\sum_{i=1}^k r_i^2$, which is often an unrealistic
 expectation in practice;
 in contrast, our approach only requires knowledge
 of the number of clusters $k$ present in the data.
@@ -883,7 +880,7 @@ is only enforced by the gap inequality \eqref{eq:brendan_27_mod},
 which itself is a consequence of the use of the Bernstein inequality
 to establish certain dual variables are nonnegative
 in the proof of Theorem~\ref{thm: rec} (see Section~\ref{sec: nonneg}
-for more details); it is possible that this bound could be improved
+for more details); it may be possible to improve this bound
 to $\hat r = \Omega(\sqrt{\log n})$ with improved concentration
 inequalities
 %or a relaxation of the desired success probability
@@ -1035,7 +1032,7 @@ of the notation of Theorem~\ref{thm: rec}.
 %Brendan: rephrased to note that this is not new notation}.
 Let $K^*$ be a $k$-disjoint-clique subgraph of $K_n$ with vertex set composed of the disjoint cliques $C_1, \dots, C_k$ of sizes $r_1, \dots, r_k$  and let
 $\X^*$ be the corresponding feasible solution of \eqref{eq: kdc sdp} defined by \eqref{eq: cluster X}.
-Let $C_{k+1} := V \setminus  (\cup^t_{i=1} C_i)$ and $r_{k+1} := n - \sum_{i=1}^t r_i$ be the size of the set
+Let $C_{k+1} := V \setminus  (\cup^k_{i=1} C_i)$ and $r_{k+1} := n - \sum_{i=1}^k r_i$ be the size of the set
 of outliers \(C_{k+1}\).
 Moreover, let $\hat r := \min_{i=1, \dots, k} r_i$ and
 \( \tilde r := \max_{i=1,\dots, k} r_i\)  be the size of the smallest and largest clusters,
@@ -1044,7 +1041,7 @@ Let $\W \in \Sigma^n$ be a random symmetric matrix
 sampled from the planted cluster model with planted clusters \(C_1, \dots, C_k\) and
 outliers \(C_{k+1}\)
 according to the distributions \(\{\Omega_{ij}\}\) with means \( \bra{\mu_{ij}} \)
-and variances $\bra{\sigma^2_{ij}}$.
+and variances $\{\sigma^2_{ij}\}$.
 
 % Choice of lambda.
 We now propose a choice of dual variables satisfying the complementary slackness condition \(\X\S = \bs 0\).
@@ -1137,7 +1134,7 @@ is also a solution of the (singular) system of equations
 \]
 imposed by the complementary slackness conditions
 ${\S_{C_q, C_s} \e = \0}$ and ${\S_{C_s, C_q} = \0 }$.
-Solving \eqref{eq: yz system} for ${\y}$ and $\z$
+Solving~\eqref{eq: yz system} for ${\y}$ and $\z$
 using the Sherman-Morrison-Woodbury
 Formula
 %~\cite[Equation (2.1.4)]{golub2013matrix}
@@ -1174,8 +1171,8 @@ of Theorem~\ref{T:  w KKT conditions}.
 	Suppose that the vertex sets $C_1, \dots, C_k$ define a $k$-disjoint-clique subgraph $K^*$ of
 	the weighted complete graph $K_n = (V, \W)$, where
 	$\W \in \Sigma^n$ is a random symmetric matrix sampled from the planted cluster model
-	according to distributions  $\Omega_1, \Omega_2$ with means $\alpha$ and $\beta$ respectively,
-	where $\alpha > \beta$.
+  according to the distributions \(\{\Omega_{ij}\}\) with means \( \bra{\mu_{ij}} \)
+  and variances $\{\sigma^2_{ij}\}$.
 	Let $r_1, \dots, r_{k+1}$, and  $\hat r$ be defined as in Theorem~\ref{thm: rec}.
 	Let $\X^*$ be the feasible solution for \eqref{eq: kdc sdp} corresponding to $C_1, \dots, C_k$ defined
 	by \eqref{eq: cluster X}. Let $\tau \in \R,$ $\bs\lambda \in \R^n,$  and $\bs\Xi \in \R^{n\times n}$
@@ -1188,7 +1185,7 @@ of Theorem~\ref{T:  w KKT conditions}.
 	$k$-disjoint-clique
 	subgraph of $K_n$ corresponding to $\W$ if
 	\begin{equation} \label{eq: St bound}
-	\| \St\| \le \epsilon (\alpha-\beta) \hat r = \epsilon \gamma \hat r .
+	\| \St\| \le  \epsilon \gamma \hat r.
 	\end{equation}
 	Moreover, if \eqref{eq: St bound} is satisfied and
 	\begin{equation} \label{a: block weights}
@@ -1489,8 +1486,8 @@ We update $\Y$ as the minimizer of the subproblem
 \begin{equation}\label{eq: Y subprob}
 	\Y^{t+1} = \argmin_{\Y \in \Sigma^n_+} \bra{  \left\| \Y - \rbra{ \X^t - \frac{\W + \Z^t}{\rho}}\right\|^2_F : \tr \Y = k},
 \end{equation}
-where $(\X^t, \Y^t, \Z^t)$ is the current iterate after $k$ iterations.
-That is $\Y^{t+1}$ is the projection of the matrix $\bs{U}^t := \X^t - (\W + \Z^t)/\rho$ onto the intersection of the positive semidefinite cone and the set of matrices with trace equal to zero.
+where $(\X^t, \Y^t, \Z^t)$ is the current iterate after $t$ iterations.
+That is, $\Y^{t+1}$ is the projection of the matrix $\bs{U}^t := \X^t - (\W + \Z^t)/\rho$ onto the intersection of the positive semidefinite cone and the set of matrices with trace equal to zero.
 Such a projection can be computed explicitly by projecting the vector of eigenvalues $\bs{\lambda}^t$ of $\bs{U}^t$ onto the nonnegative simplex $\{\y \in \R^n: \e^T \y = k, \; \y \ge \bs 0\}$.
 Please see~\citet[Proposition~2.6] {zhang2011penalty} and \citet{van2008probing} for further details.
 
@@ -1583,7 +1580,7 @@ distributions \(\Omega_{ij} = Bern(p_{ij})\)  with probabilities of success $p_{
 for $q = 0.25$ and each $p=\{0.25, 0.275, 0.3, \dots, 0.975, 1\}$ and
 \(\hat r \in \{20, 40, \dots, 500\}\).
 % # of clusters.
-We choose number of clusters $k=\lfloor N/\hat r \rfloor$
+We choose the number of clusters $k=\lfloor N/\hat r \rfloor$
 and distribute the remaining $N - k\hat r$ nodes
 evenly among $k-1$ clusters to ensure that at least one cluster
 has minimum size.
@@ -1603,7 +1600,7 @@ Note that Theorem~\ref{thm: rec} implies that we should expect exact recovery (w
 $
 	\gamma \hat r = \Omega\rbra{\sqrt{\tilde \sigma^2n}}.
 $
-Figure~\ref{fig: rec} illustrates the empirical success rate for each choice of \(\hat r\) and \(p\), as well as the curve \( p =(k+1)/(0.65k + 1)(q + \half\rbra{\sqrt{n}}),\) where we use the upper bound $\tilde \sigma^2 \le 1/4$ to estimate the constant term in~\eqref{eq:smallest_largest}.
+Figure~\ref{fig: rec}(a) illustrates the empirical success rate for each choice of \(\hat r\) and \(p\), as well as the curve \( p =(k+1)/(0.65k + 1)(q + \half\rbra{\sqrt{n}}),\) where we use the upper bound $\tilde \sigma^2 \le 1/4$ to estimate the constant term in~\eqref{eq:smallest_largest}.
 
 \begin{figure}[t]
 	\centering
@@ -1617,7 +1614,7 @@ Figure~\ref{fig: rec} illustrates the empirical success rate for each choice of 
 \end{figure}
 
 % Sparse expts.
-We perform identical experiments for graphs sampled from the planted cluster model with sparse noise.
+We perform identical experiments for graphs sampled from the homogeneous planted cluster model with sparse noise.
 In particular, we fix \( n =1000\) and set $q = 1/\sqrt{n}$. We then sample \(10\) graphs
 from the planted cluster model corresponding to the Bernoulli
 distributions \(\Omega_{ij} = Bern(p)\) if $i =j$ and \(\Omega_{ij} = Bern(q)\) if $i\neq j$ for each
@@ -1627,11 +1624,11 @@ For each graph \(G\), we call the ADMM algorithm to solve \eqref{eq: kdc sdp} (w
 and declare the block structure of \(G\) recovered if \(\|\X^* - \X_0\|^2_F / \|\X_0\|^2_F < 10^{-3} \).
 Theorem~\ref{thm: rec} suggests that we should expect recovery of the cluster structure in the case that
 \[
-	p > \frac{1}{sqrt{n}} + \Omega\rbra{\frac{n^{1/4}}{\hat r}}
+	p >  \Omega\rbra{\frac{1}{\sqrt{n}} + \frac{n^{1/4}}{\hat r}}
 \]
 for this particular choice of $p$ and $q$.
-Note that this implies that we have perfect recovery (w.h.p) for $\hat r = \Omega(n^{1/4})$, rather than $\Omega(\sqrt{n})$ (as observed in the dense case).
-Figure~\ref{fig: rec} provides the empirical success rate for each choice of \(\hat r\) and \(p\), as well as the curve \(p = 1/sqrt{n} + n^{1/4}/\hat{r}\).
+Note that this implies that we have perfect recovery (w.h.p.) for $\hat r = \Omega(n^{1/4})$, rather than $\Omega(\sqrt{n})$ (as observed in the dense case).
+Figure~\ref{fig: rec}(b) provides the empirical success rate for each choice of \(\hat r\) and \(p\), as well as the curve \(p = 1/\sqrt{n} + n^{1/4}/\hat{r}\).
 It is clear that we are able to recover significantly smaller clusters under sparse noise than under dense noise, in accordance with \eqref{eq:smallest_largest}.
 
 \section{Conclusions}
@@ -1655,7 +1652,8 @@ returning to the social networking realm,
 users may belong to several overlapping communities.
 It would be worthwhile to see how our model and recovery guarantees can be modified to address overlapping clusters.
 Finally, our algorithm for graph clustering requires the solution of a semidefinite program, which may be impractical for
-even moderately large graphs; efficient, scalable methods for solving this semidefinite relaxation, and semidefinite programs in general, are needed.
+even moderately large graphs.
+For example, the proposed algorithm, based on the ADMM, has per-iteration cost of $O(n^3)$ flops per iteration, primarily to compute the spectral decomposition needed to update $\Y$. Classical methods based on interior-point methods will scale even more poorly. Efficient, scalable methods for solving this semidefinite relaxation, and semidefinite programs in general, are needed.
 
 \acks{We are grateful to John Bruer and Joel Tropp for their insights and helpful suggestions.
 Aleksis Pirinen was supported by a California Institute of Technology Summer Undergraduate Research Fellowship (SURF) using funds provided by Office of Naval Research (ONR) award N000014-11-1002. Brendan Ames was supported by University of Alabama Research Grant RG14678.}
@@ -1663,7 +1661,7 @@ Aleksis Pirinen was supported by a California Institute of Technology Summer Und
 %%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %% END MATERIAL
 %%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-\newpage
+%\newpage
 \appendix
 %\cleardoublepage
 
@@ -1851,7 +1849,6 @@ then
 $\lambda_i \geq 0$ w.h.p.
 Applying the union bound over all \(q =1,2,\dots, k\) and
 \(i\in C_q\) shows that each entry of $\bs{\lambda}_{C_q}$ is nonnegative w.h.p.~if \(\epsilon\) is chosen to satisfy \eqref{eq: lam eps tmp} for all $q$.
-
 %Now fix \(i\in C_{k+1}\). From \eqref{eq: lam k+1} and \eqref{eq: mu}, we see that
 %\[
 %\lambda_i = \frac{1}{2}\left(\alpha - \frac{\tau}{r_q}\right) \geq \frac{1}{2}\left(\alpha - \gamma \epsilon\right).
@@ -1888,7 +1885,6 @@ Our proof of Proposition~\ref{prop:unique} follows a similar structure to that o
 	\end{align*}
 	w.h.p.
 	This implies that $r_s \e^T \W_{C_q, C_q} \e \ge r_q \e^T \W_{C_q, C_s} \e$ w.h.p.~if \eqref{eq: unique bound} is satisfied.
-
 \end{proof}
 
 
@@ -1907,7 +1903,7 @@ of a random symmetric matrix with i.i.d.~mean zero entries given by \citet[Corol
 
 \begin{lemma} \label{lem: tropp tech}
 	Let $\bs{A} = [a_{ij}] \in \Sigma^n$ be a random symmetric matrix with i.i.d.~mean zero entries $a_{ij}$ having variance at most
-	$\sigma^2$ and satisfying $|a_{ij}| \leq 1$. Then there exists constants $C> 0$ such that
+	$\sigma^2$ and satisfying $|a_{ij}| \leq 1$. Then there exists constant $C> 0$ such that
 	\begin{equation} \label{eq:sparse_lemma}
 	\pr \left\lbrace \|\bs{A}\| > C \max\left\lbrace \sqrt{ \sigma^2 n}, \sqrt{T} \right\rbrace \right\rbrace \leq nT^{-7}
 	\end{equation}
@@ -1920,7 +1916,7 @@ of a random symmetric matrix with i.i.d.~mean zero entries given by \citet[Corol
 	Corollary 3.12 of~\cite{bandeira2016sharp} establishes that for each $t>0$
 	there exists $\tilde c = \tilde c(t) > 0$ such that
 	\begin{equation} \label{eq:BVHtemp}
-		\pr \bra{ \|\bs{A}\| \ge 3 \tilde \sigma + t } \le n e^{-\ct t^2}.
+		\pr \bra{ \|\bs{A}\| \ge 3 \sqrt{\sigma^2 n} + t } \le n e^{-\ct t^2}.
 	\end{equation}
 	Here, we have substituted the upper bound $\sigma^2 n \ge \tilde \sigma^2$, in place of $\tilde \sigma:= \max_i \sum_{j} \E[X_{ij}^2]$ in the original statement of Corollary~3.12.
 	Let $t = (C-3) \max\{ \sqrt{\sigma^2 n}, \sqrt{\log T} \}$ where $C$ is chosen large enough that $\ct 	(C-3)^2 > 7$.
@@ -1938,7 +1934,7 @@ the entries $[\St_1]_{ij}$ of $\St_1$ all satisfy $|[\St_1]_{ij}| \leq 1$ if we 
 for all \(i,j\); note that an identical argument establishes the result if we make the weaker assumption that
 the entries of \(\W\) are bounded with high probability.
 On the other hand, note that the
-entries of $\St_1$ are not i.i.d.~since $w_{ij}$ is distributed according to $\Omega_{qs}$, where $i \in C_q$, $j\in C_s$. However, we know that $\sigma^2_{qs} \le \tilde\sigma^2$ by our definition of $\tilde\sigma^2$. Moreover, $\E[{(\St_1)}_{ij}] = \E[\mu_{qs} - w_{ij}] = 0$.
+entries of $\St_1$ are not identically distributed (but are independent) since each $w_{ij}$ is sampled according to $\Omega_{qs}$, where $i \in C_q$, $j\in C_s$. However, we know that $\sigma^2_{qs} \le \tilde\sigma^2$ by our definition of $\tilde\sigma^2$. Moreover, $\E[{(\St_1)}_{ij}] = \E[\mu_{qs} - w_{ij}] = 0$.
 Thus, we can apply Lemma~\ref{lem: tropp tech} to place a bound on $\|\St_1\|$.
 Doing so establishes that~\eqref{eq: S1 bound} holds w.h.p.
 % in this case we see that there exists constant $C \ge 0$ such that
