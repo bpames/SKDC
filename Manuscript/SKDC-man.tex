@@ -17,11 +17,11 @@
 
 % Heading arguments are {volume}{year}{pages}{submitted}{published}{author-full-names}
 
-\jmlrheading{}{2017}{}{June 29}{}{Aleksis Pirinen~and Brendan P.W.~Ames}
+\jmlrheading{}{2018}{}{8/18}{}{Aleksis Pirinen~and Brendan P.W.~Ames}
 
 % Short headings should be running head and authors last names
 
-\ShortHeadings{Clustering Sparse Graphs using Semidefinite Programming}{Pirinen and Ames}
+\ShortHeadings{Exact Clustering of Weighted Graphs via SDP}{Pirinen and Ames}
 \firstpageno{1}
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -233,7 +233,7 @@
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %% Title and contact info.
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
-\title{Clustering of Sparse and Approximately Sparse Graphs by Semidefinite Programming}
+\title{Exact Clustering of Weighted Graphs via Semidefinite Programming}
 \author{\name Aleksis Pirinen \email aleksis@maths.lth.se \\
 	\addr Centre for Mathematical Sciences \\
 	Lund University\\
@@ -356,6 +356,7 @@ case, it has been shown that clusters significantly smaller than
 \(\sqrt{n}\) can be recovered efficiently;
 specifically, several methods have been shown to recover clusters with size polylogarithmic in \(n\)
 under certain assumptions on the probability functions \(p\) and \(q\)  \citep[see][]{chen2014clustering,chen2014statistical, guedon2015community,rohe2012highest}.
+We should note that these results provide evidence of a computational limit for cluster recovery; that is, these results establish that clusters can be recovered in a computationally efficient if the underlying data satisfies certain sufficient conditions. We should note further that the lower bounds on cluster size given by these sufficient conditions typically do not match information-theoretic limits; it is well-known that it is possible to identify clusters of size on the order of $\log n$ in certain settings, however, no polynomial-time algorithms are known to do so (see~\cite{chen2014statistical, hajek2015achieving} for further details).
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %  Our contribution.
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -472,7 +473,7 @@ represents the items in some data set containing \(k\) clusters and (potentially
 some outlier nodes.
 For each pair of nodes \(u,v \) in the same cluster $C_\ell$,
 $\ell \in \{1,2,\dots, k\},$
-we random sample
+we randomly sample
 edge weight \(w_{uv} \ge 0\), and \(w_{vu}\) by symmetry,
 from some probability distribution \(\Omega_\ell\)
 with mean \(\alpha_\ell \ge \alpha > 0\). If \(u \in C_i\),
@@ -519,7 +520,7 @@ In this section, we derive a semidefinite relaxation for the densest \(k\)-disjo
 and present an analysis illustrating a sufficient condition ensuring that this relaxation
 is exact. This problem will act as a model problem for clustering and we will see that
 we should expect
-to accurately recover the underlying cluster structure is the given data
+to accurately recover the underlying cluster structure if the given data
 satisfies this sufficient condition.
 
 \subsection{The Densest k-disjoint Clique Problem}
@@ -1017,7 +1018,7 @@ Theorem~\ref{T: w KKT conditions} is a restriction of the Karush-Kuhn-Tucker opt
 to the semidefinite program \eqref{eq: kdc sdp} \citep[see for example][Section 5.5.3]{boyd2009convex}.
 The goal of this section is to establish that we can construct dual variables $\tau \in \R$, $\bs\lambda \in \R^n_+$, $\bs\Xi \in \R^{n\times n}_{+}$ and $\S \in \Sigma^n_+$
 which satisfy the hypothesis
-of Theorem~\eqref{T: w KKT conditions} with high probability if the weight matrix \(\W\) is
+of Theorem~\ref{T: w KKT conditions} with high probability if the weight matrix \(\W\) is
 sampled from a distribution of clusterable block models.
 To motivate our proposed choice of dual variables, we note that
 the complementary slackness condition \(\tr(\X\S) = 0\) holds if and only if \(\X\S = \bs 0\) under the assumption that
@@ -1077,7 +1078,7 @@ to satisfy the complementary slackness condition
 Next, we use this choice of \(\bs \lambda\) to construct the remaining dual variables.
 
 % Choice of eta.
-Fix \(q, s \in \{1,2,\dots, k+1\) such that \(q\neq s\).
+Fix \(q, s \in \{1,2,\dots, k+1\}\) such that \(q\neq s\).
 We will choose \(\bs \Xi_{C_q, C_s} \) so that \(\S_{C_q, C_s}\e = \bs 0\) and \( \S_{C_s, C_q} \e = \bs 0 \).
 In particular, we choose
 \begin{equation} \label{eq: Xi choice 1}
@@ -1111,13 +1112,14 @@ where
 - \W_{C_q, C_s} - \E\sbra{\bs \lambda_{C_q} \e^T + \e \bs \lambda_{C_s}^T
 - \W_{C_q, C_s}} } \e.
 \end{equation}
-Indeed, we choose $\y = \y^{q,s}$ and $\z = \z^{q,s}$
+Indeed, we must choose $\y = \y^{q,s}$ and $\z = \z^{q,s}$
 to be solutions of the system
 \newcommand{\I}{\bs I}
 \begin{equation} \label{eq: yz system}
 	\mat{{cc} r_s \I + \e\e^T & 0 \\ 0 & r_q \I + \e\e^T }
-	\vect{ \y \\ \z } = \vect{\b^{q,s} \\ \b_{s,q} }.
+	\vect{ \y \\ \z } = \vect{\b^{q,s} \\ \b_{s,q} }
 \end{equation}
+to ensure that the complementary slackness conditions are satisfied.
 Note that taking the inner product of each side
 of \eqref{eq: yz system} with the vector \( (\e; -\e) \)
 yields
@@ -1129,7 +1131,7 @@ by the symmetry of \eq{\W}. This establishes that the solution
 \((\y; \z)\) of \eqref{eq: yz system}
 is also a solution of the (singular) system of equations
 \[
-	\mat{{cc} \r_s \I & \e\e^T  \\ \e\e^T & r_s \I }
+	\mat{{cc} r_s \I & \e\e^T  \\ \e\e^T & r_q \I }
 	\vect{ \y \\ \z } = \vect{\b^{q,s} \\ \b_{s,q} }
 \]
 imposed by the complementary slackness conditions
@@ -1140,7 +1142,7 @@ Formula
 %~\cite[Equation (2.1.4)]{golub2013matrix}
 yields the formula for $\y$ and $\z$ given by
 \eqref{eq: y z}.
-We set the remaining block $\Xi_{C_{k+1}, C_{k+1} } = \0$.
+We set the remaining block $\bs\Xi_{C_{k+1}, C_{k+1} } = \0$.
 See \citet[Section~4.2]{ames2014guaranteed} for more details.
 
 Finally, we choose
@@ -1257,8 +1259,8 @@ We have the following bound on the entries of \(\bs \Xi\) as an immediate conseq
 
 \begin{proposition}
 	\label{thm: Xi bound}
-	Suppose $\bra{\mu_{ij}}$ satisfy \eqref{eq:brendan_27_mod}.
-	Then there exists constant $c>0$ such that each entry of $\bs{\Xi}$ is nonnegative w.h.p~if \(\epsilon\) 	satisfies
+	Suppose that $\bra{\mu_{ij}}$ satisfy \eqref{eq:brendan_27_mod}.
+	Then there exists constant $c>0$ such that each entry of $\bs{\Xi}$ is nonnegative w.h.p.~if \(\epsilon\) 	satisfies
 	\begin{equation} \label{eq: xi eps}
 	0 < \epsilon \leq
 		1 - \frac{c}{\gamma}\max \bra{ \sqrt{ \frac{\tilde \sigma^2 \log n}{\hat r}} ,
@@ -1619,7 +1621,7 @@ In particular, we fix \( n =1000\) and set $q = 1/\sqrt{n}$. We then sample \(10
 from the planted cluster model corresponding to the Bernoulli
 distributions \(\Omega_{ij} = Bern(p)\) if $i =j$ and \(\Omega_{ij} = Bern(q)\) if $i\neq j$ for each
 \( \hat r \in \{20,60,\dots, 440, 500\}\) and $p = tq$ for $10$ equally spaced scaling factors $t$ between $2$ and $\floor{n}$.
-As before, we set $k = \floor{N/\hat r}$ and distribute the remaining nodes equally amongst the clusters so that the smallest has size $\hat{r}$ and there are no outliers ($\r_{k+1} = 0$).
+As before, we set $k = \floor{N/\hat r}$ and distribute the remaining nodes equally amongst the clusters so that the smallest has size $\hat{r}$ and there are no outliers ($r_{k+1} = 0$).
 For each graph \(G\), we call the ADMM algorithm to solve \eqref{eq: kdc sdp} (with the same parameters as before)
 and declare the block structure of \(G\) recovered if \(\|\X^* - \X_0\|^2_F / \|\X_0\|^2_F < 10^{-3} \).
 Theorem~\ref{thm: rec} suggests that we should expect recovery of the cluster structure in the case that
@@ -1678,7 +1680,7 @@ By the definition \eqref{eq: y z} of $\bs{y} := \bs{y}^{q,s}$ and the triangle i
 	\|\bs{y}\|_{\infty} \leq \frac{1}{r_s}\left( \|\bs{b}_{q,s}\|_{\infty} + \frac{|\bs{b}_{q,s}^T \bs{e}|}{r_q +r_s}\right).
 \end{equation}
 For simplicity, let \(\b_1:= \b_{q,s}\) and \(\b_2 := \b_{s,q}\).
-It follows from \eqref{eq: b} that the $i$th element of $\bs{b}_1$, denoted $b_i^1$, is given by
+It follows from \eqref{eq: b} and our choice of $\bs{\lambda}$  that the $i$th element of $\bs{b}_1$, denoted $b_i^1$, is given by
 $$
 	b_i^1 = r_s \left( \lambda_i -\frac{1}{2r_q}(\mu_{qq} r_q - \tau) \right) + \left(\bs{\lambda}_{C_s}^T\bs{e} - \frac{1}{2}(\mu_{ss} r_s - \tau) \right) - \left( \sum_{j \in C_s} w_{ij} - \mu_{qs} r_s \right).
 $$
