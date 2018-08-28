@@ -1582,8 +1582,8 @@ distributions \(\Omega_{ij} = Bern(p_{ij})\)  with probabilities of success $p_{
 for $q = 0.25$ and each $p=\{0.25, 0.275, 0.3, \dots, 0.975, 1\}$ and
 \(\hat r \in \{20, 40, \dots, 500\}\).
 % # of clusters.
-We choose the number of clusters $k=\lfloor N/\hat r \rfloor$
-and distribute the remaining $N - k\hat r$ nodes
+We choose the number of clusters $k=\lfloor n/\hat r \rfloor$
+and distribute the remaining $n - k\hat r$ nodes
 evenly among $k-1$ clusters to ensure that at least one cluster
 has minimum size.
 % Choice of gamma.
@@ -1620,8 +1620,8 @@ We perform identical experiments for graphs sampled from the homogeneous planted
 In particular, we fix \( n =1000\) and set $q = 1/\sqrt{n}$. We then sample \(10\) graphs
 from the planted cluster model corresponding to the Bernoulli
 distributions \(\Omega_{ij} = Bern(p)\) if $i =j$ and \(\Omega_{ij} = Bern(q)\) if $i\neq j$ for each
-\( \hat r \in \{20,60,\dots, 440, 500\}\) and $p = tq$ for $10$ equally spaced scaling factors $t$ between $2$ and $\floor{n}$.
-As before, we set $k = \floor{N/\hat r}$ and distribute the remaining nodes equally amongst the clusters so that the smallest has size $\hat{r}$ and there are no outliers ($r_{k+1} = 0$).
+\( \hat r \in \{20,60,\dots, 440, 500\}\) and $p = tq$ for $10$ equally spaced scaling factors $t$ between $2$ and $\floor{\sqrt{n}}$.
+As before, we set $k = \floor{n/\hat r}$ and distribute the remaining nodes equally amongst the clusters so that the smallest has size $\hat{r}$ and there are no outliers ($r_{k+1} = 0$).
 For each graph \(G\), we call the ADMM algorithm to solve \eqref{eq: kdc sdp} (with the same parameters as before)
 and declare the block structure of \(G\) recovered if \(\|\X^* - \X_0\|^2_F / \|\X_0\|^2_F < 10^{-3} \).
 Theorem~\ref{thm: rec} suggests that we should expect recovery of the cluster structure in the case that
