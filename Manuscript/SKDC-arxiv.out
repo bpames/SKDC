@@ -1,0 +1,20 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Semidefinite Relaxations of the Densest k-Disjoint Clique Problem}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{The Densest k-disjoint Clique Problem}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Block Models and Recovery Guarantees}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{The Dense Case}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{The Sparse Case}{subsection.2.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.3}{The Planted Clique and Sparsest Subgraph}{subsection.2.2}% 7
+\BOOKMARK [1][-]{section.3}{Derivation of the Recovery Guarantee}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{Nonnegativity of bold0mu mumu \040and bold0mu mumu }{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.2}{A Bound on bold0mu mumu }{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.3}{The Conclusion of the Proof}{section.3}% 11
+\BOOKMARK [1][-]{section.4}{Numerical Methods and Simulations}{}% 12
+\BOOKMARK [2][-]{subsection.4.1}{Alternating Direction Method of Multipliers for the Densest k-Disjoint Clique Problem}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.2}{Empirical Verification of Exact Recovery}{section.4}% 14
+\BOOKMARK [1][-]{section.5}{Conclusions}{}% 15
+\BOOKMARK [1][-]{appendix.A}{Proof of Lemma 3.1}{}% 16
+\BOOKMARK [1][-]{appendix.B}{Proof of Proposition 3.2}{}% 17
+\BOOKMARK [1][-]{appendix.C}{Proof of Proposition 3.3}{}% 18
+\BOOKMARK [1][-]{appendix.D}{Proof of Lemma 3.2}{}% 19
+\BOOKMARK [1][-]{appendix.E}{Proof of Lemma 3.3}{}% 20
