@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex SKDC-arxiv"] 1538512806 "SKDC-arxiv.aux" "SKDC-arxiv.bbl" "SKDC-arxiv" 1538513266
+["bibtex SKDC-arxiv"] 1538514057 "SKDC-arxiv.aux" "SKDC-arxiv.bbl" "SKDC-arxiv" 1538514063
   "/usr/local/texlive/2015/texmf-dist/bibtex/bst/natbib/abbrvnat.bst" 1233624470 26532 66bed5cc59495faaa3f9ae9af9fa5e42 ""
-  "SKDC-arxiv.aux" 1538513265 15711 9e517d2b54b4058b7b54a9288809d232 ""
+  "SKDC-arxiv.aux" 1538514062 15711 359f3f5f5c362ffd5c583de4924cd0a2 ""
   "SKDC-arxiv.bcf" 0 -1 0 ""
   "SWKDC.bib" 1535405254 17446 cb1efebbb751ae891b96c442cc89c4a9 ""
   (generated)
-  "SKDC-arxiv.bbl"
   "SKDC-arxiv.blg"
-["pdflatex"] 1538513264 "SKDC-arxiv.tex" "SKDC-arxiv.pdf" "SKDC-arxiv" 1538513266
-  "./SKDC-arxiv.out" 1538513265 1514 a45c7d251298cea0a37764cf35d17ccb ""
+  "SKDC-arxiv.bbl"
+["pdflatex"] 1538514058 "SKDC-arxiv.tex" "SKDC-arxiv.pdf" "SKDC-arxiv" 1538514063
+  "./SKDC-arxiv.out" 1538514062 1514 a45c7d251298cea0a37764cf35d17ccb ""
   "./het_plot.png" 1535405254 41139 0ba41bb152f67dd5128dad34b6b09591 ""
   "./sparse_plot.png" 1535405254 37564 f97e021e7f2ee2ccaa958f7f7145a3f2 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
@@ -126,14 +126,14 @@
   "/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1432479641 1764542 91654ba72bdb667e84ea24f076ae16d8 ""
   "/usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt" 1432479681 3849859 39a7d258195bde2394e244961601fbc5 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "SKDC-arxiv.aux" 1538513265 15711 9e517d2b54b4058b7b54a9288809d232 ""
-  "SKDC-arxiv.bbl" 1538512807 9339 c8f856735a7ff3e5d24621b761f4b2b1 "bibtex SKDC-arxiv"
-  "SKDC-arxiv.out" 1538513265 1514 a45c7d251298cea0a37764cf35d17ccb ""
-  "SKDC-arxiv.tex" 1538513260 105664 3bcc409d3f6d6a4eaf6db24983c01173 ""
+  "SKDC-arxiv.aux" 1538514062 15711 359f3f5f5c362ffd5c583de4924cd0a2 ""
+  "SKDC-arxiv.bbl" 1538514058 9339 c8f856735a7ff3e5d24621b761f4b2b1 "bibtex SKDC-arxiv"
+  "SKDC-arxiv.out" 1538514062 1514 a45c7d251298cea0a37764cf35d17ccb ""
+  "SKDC-arxiv.tex" 1538514055 105665 8d9a572405547da7649807808adde43c ""
   "het_plot.png" 1535405254 41139 0ba41bb152f67dd5128dad34b6b09591 ""
   "sparse_plot.png" 1535405254 37564 f97e021e7f2ee2ccaa958f7f7145a3f2 ""
   (generated)
   "SKDC-arxiv.pdf"
-  "SKDC-arxiv.out"
   "SKDC-arxiv.aux"
+  "SKDC-arxiv.out"
   "SKDC-arxiv.log"
