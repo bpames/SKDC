@@ -757,24 +757,43 @@ known to be clusterable by \eqref{eq: kdc sdp}. We have the following theorem.
 	Let $\tilde \sigma := \max_{q,s} \sigma_{qs}$ and
 	$\hat \sigma := \max_{q} \sigma_{qq}$.
 	Let \(\X^*\) be the feasible solution to \eqref{eq: kdc sdp} corresponding to \(C_1,\dots,C_k\) defined by
-	\eqref{eq: cluster X}. Then there exists scalars \(c_1, c_2, c_3, c_4 > 0\) such that if
-	the gap assumption
-	\begin{equation}
-	\label{eq:brendan_27_mod}
-		\gamma := \min_{\substack{q,s=1,2,\dots, k \\ q\neq s}} \bra{\mu_{qq} - \mu_{qs}}
-		> c_4 \max \bra{ \sqrt{  \frac{\tilde \sigma^2 \log n }{\hat r} },
-		\frac{\log n }{\hat r} },
-	\end{equation}
-		is satisfied
-		% where $\tilde \sigma := \max_{q,s}\{ \sigma_{qs}\}$,
-		and $\hat r$ satisfies
-	\begin{equation}\label{eq:smallest_largest}
-	\resizebox{0.92\textwidth}{!}{
-		\(
-		\gamma \hat r \ge %\frac{1}{\gamma} \rbra
-		{  c_1 \max\left\lbrace \tilde\sigma\sqrt{n},  \sqrt{\log n} \right\rbrace
-			+ c_2 \rbra{ \max \bra{\hat\sigma^2, \frac{\log n}{\hat r} } k r_{k+1} }^{1/2} + c_3 \mu_{k+1, k+1} r_{k+1} }		\)}
-	\end{equation}
+	\eqref{eq: cluster X}.
+  % gamma def.
+  Let
+  $$
+    \gamma := \min_{\substack{q,s=1,2,\dots, k \\ q\neq s}} \bra{\mu_{qq} - \mu_{qs}}.
+  $$
+  Then there exists scalar $c > 0$ such that if
+   % Then there exists scalars \(c_1, c_2, c_3, c_4 > 0\) such that if
+   \begin{equation}\label{eq:smallest_largest}
+ 	% \resizebox{0.92\textwidth}{!}{ $
+ 		\gamma \hat r \ge %\frac{1}{\gamma} \rbra
+ 		c \max \bra{ \sqrt{\tilde\sigma^2 n},\;
+      \sqrt{\tilde\sigma^2 \hat r \log n},\;
+      \sqrt{\hat\sigma^2 k r_{k+1}}, \;
+      \sqrt{k r_{k+1} \log n / \hat r}, \;      \mu_{k+1, k+1} r_{k+1}, \; \log n
+      %
+      % \sqrt{\max\bra{\hat \sigma^2, \frac{\log n}{\hat r} } k r_{k+1}}
+      }
+    % $ }
+ 	\end{equation}
+	% the gap assumption
+	% \begin{equation}
+	% \label{eq:brendan_27_mod}
+	% 	\gamma := \min_{\substack{q,s=1,2,\dots, k \\ q\neq s}} \bra{\mu_{qq} - \mu_{qs}}
+	% 	> c_4 \max \bra{ \sqrt{  \frac{\tilde \sigma^2 \log n }{\hat r} },
+	% 	\frac{\log n }{\hat r} },
+	% \end{equation}
+	% 	is satisfied
+	% 	% where $\tilde \sigma := \max_{q,s}\{ \sigma_{qs}\}$,
+	% 	and $\hat r$ satisfies
+	% \begin{equation}\label{eq:smallest_largest}
+	% \resizebox{0.92\textwidth}{!}{
+	% 	\(
+	% 	\gamma \hat r \ge %\frac{1}{\gamma} \rbra
+	% 	{  c_1 \max\left\lbrace \tilde\sigma\sqrt{n},  \sqrt{\log n} \right\rbrace
+	% 		+ c_2 \rbra{ \max \bra{\hat\sigma^2, \frac{\log n}{\hat r} } k r_{k+1} }^{1/2} + c_3 \mu_{k+1, k+1} r_{k+1} }		\)}
+	% \end{equation}
 	then \(\bs{X}^*\) is the unique optimal solution for \eqref{eq: kdc sdp}, and \(K^*\) is the unique maximum density \kdc
 	subgraph of \(K_n\) with high probability.
 %	 at least
