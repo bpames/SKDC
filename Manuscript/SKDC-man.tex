@@ -877,13 +877,14 @@ Finally, again for simplicity, assume that we have \(k\) equally sized clusters 
 and no outliers (\(r_{k+1} = 0\)).
 In this case, \eqref{eq:smallest_largest}
 holds if
-$
-\gamma \hat r \ge c_1 \sqrt{\log n} + c_2 \sqrt{\log n}
-= \Omega(\sqrt{\log n} ),
-$
-since the terms involving \(r_{k+1}\) and \(1-p\) are equal to zero.
-However, the gap assumption \eqref{eq:brendan_27_mod} is only
-satisfiable if $\hat r = \Omega(\log n)$.
+$$
+\gamma \hat r \ge c \log n = c \max \bra{\sqrt{\log n},\; \sqrt{\frac{ \hat r \log^2n}{n}},\;\log n}
+\ge c \max \bra{\sqrt{\tilde\sigma^2 n}, \; \sqrt{\tilde\sigma^2 r \log n},\; \log n}
+$$
+since $\tilde \sigma^2  = \max\{p(1-p), q(1-q)\} = q(1-q) \le \log n / n$
+and the terms involving \(r_{k+1}\) and \(1-p\) are equal to zero.
+% However, the gap assumption \eqref{eq:brendan_27_mod} is only
+% satisfiable if $\hat r = \Omega(\log n)$.
 This implies that we have exact recovery of the planted clusters
 w.h.p.~provided $\hat r =\Omega(\log n)$. This exceeds the
 state of the art recovery bound
