@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex SKDC-man"] 1533764485 "SKDC-man.aux" "SKDC-man.bbl" "SKDC-man" 1533764599
-  "SKDC-man.aux" 1533764598 17026 9e33b9e19cfccaecc85e014fec20b562 ""
+["bibtex SKDC-man"] 1534457678 "SKDC-man.aux" "SKDC-man.bbl" "SKDC-man" 1534457684
+  "SKDC-man.aux" 1534457683 17026 9e33b9e19cfccaecc85e014fec20b562 ""
   "SWKDC.bib" 1530381969 17446 cb1efebbb751ae891b96c442cc89c4a9 ""
   "c:/texlive/2018/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1526670213 26816 ffe5423d2019860bad9f54bc402fac15 ""
   (generated)
-  "SKDC-man.blg"
   "SKDC-man.bbl"
-["pdflatex"] 1533764595 "SKDC-man.tex" "SKDC-man.pdf" "SKDC-man" 1533764599
-  "SKDC-man.aux" 1533764598 17026 9e33b9e19cfccaecc85e014fec20b562 ""
-  "SKDC-man.bbl" 1533764485 9632 62fef7e122f2d54b70f5cdfa5f1e0fa4 "bibtex SKDC-man"
-  "SKDC-man.out" 1533764598 1601 a9ab2a8e3e35fb97dc1c3d7edc8edc6b ""
-  "SKDC-man.tex" 1533764588 105927 54d9b974d762cc216777bd1748e9cd6e ""
+  "SKDC-man.blg"
+["pdflatex"] 1534457679 "SKDC-man.tex" "SKDC-man.pdf" "SKDC-man" 1534457684
+  "SKDC-man.aux" 1534457683 17026 9e33b9e19cfccaecc85e014fec20b562 ""
+  "SKDC-man.bbl" 1534457679 9632 62fef7e122f2d54b70f5cdfa5f1e0fa4 "bibtex SKDC-man"
+  "SKDC-man.out" 1534457683 1601 a9ab2a8e3e35fb97dc1c3d7edc8edc6b ""
+  "SKDC-man.tex" 1534457446 107979 54d9b974d762cc216777bd1748e9cd6e ""
   "c:/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1526669050 3332 103109f5612ad95229751940c61aada0 ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1526667820 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1526667820 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -125,7 +125,7 @@
   "jmlr2e.sty" 1457817200 13509 e382d45f8c4e905cde62de0de4873318 ""
   "sparse_plot.png" 1527799556 37564 7f0211879d4feaf08565f6312ecbe110 ""
   (generated)
-  "SKDC-man.log"
-  "SKDC-man.out"
   "SKDC-man.aux"
   "SKDC-man.pdf"
+  "SKDC-man.log"
+  "SKDC-man.out"
