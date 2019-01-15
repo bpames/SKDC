@@ -418,7 +418,7 @@ In Theorem~\ref{thm: simple}, \(\tr(\X) \) denotes the trace of the matrix \(\X\
 \(\e\) denotes the all-ones vector of appropriate dimension,
 the notation \(\X \ge \0\) indicates that the entries of \(\X\) are nonnegative,
 and \(\Sigma_+^n\) denotes the cone of \(n\times n\) symmetric positive semidefinite matrices.
-The term \emph{outlier nodes} refers to nodes not having a natural assignment to any cluster in the stochastic block model. Each potential edge from each of these nodes to any other node is added to the graph with probability $q$, so that each outlier has roughly the same number of neighbours in each cluster block. It is important to note that this edge assignment is performed randomly and not deterministically by an adversary attempting to obscure the cluster structure present in the graph.
+The term \emph{outlier nodes} refers to nodes not having a natural assignment to any cluster in the stochastic block model. Each potential edge from each of these nodes to any other node is added independent to the graph with probability $q$, so that each outlier has roughly the same number of neighbours in each cluster block. It is important to note that this edge assignment is performed randomly and not deterministically by an adversary attempting to obscure the cluster structure present in the graph.
 
 % Examples.
 Note that if \(G\) is sampled from the \emph{dense} block model, i.e., \(p,q\) are independent of \(n\), then Theorem~\ref{thm: simple} suggests that we have exact recovery if \( \hat r \ge c \sqrt{n}\) with high probability, where \(c\) is a constant
@@ -805,6 +805,7 @@ known to be clusterable by \eqref{eq: kdc sdp}. We have the following theorem.
 %
 %% Interpretations.
 
+The \emph{weak assortativity} condition~\eqref{eq:smallest_largest} implies that we have perfect recovery provided that the gap between the cluster block expectation $\mu_{qq}$ and the largest between-cluster block expectation $\mu_{qs}$ is sufficiently large for all clusters $C_q$, $q=1,\dots, k$, relative to the minimum cluster size, number of outlier nodes, number of clusters,  and edge weight variances.
 In the %homogeneous
 Bernoulli case, i.e., within-cluster and between-cluster edges are added independently with probabilities $p$ and $q$, respectively, Theorem~\ref{thm: rec} and, in particular,
 \eqref{eq:smallest_largest} establish that we can recover the planted
@@ -838,6 +839,9 @@ using only the desired number of clusters as a parameter.
 Further, our guarantee extends to the general weighted case where
 the vast majority of existing recovery guarantees for stochastic
 block models are restricted to the Bernoulli case.
+
+It is important to note that tighter recovery guarantees than those provided by Theorem~\ref{thm: rec} are known for specific problem settings. This is a natural consequence of the more general framework of our analysis.
+For example, \cite{yan2017provable}, studies a convex relaxation for cluster recovery in the Bernoulli (unweighted) case. The main theorem of this article establishes conditions for perfect recovery that allows larger clusters to have higher variance, although specialized for the unweighted case. Moreover, \cite{yan2017provable} consider the use of a tuning parameter to allow recovery without knowledge of the number of clusters $k$. On the other hand, the results of \citep{amini2014semidefinite,jalali2015relative} also provide tigher recovery guarantees but require knowledge of cluster sizes.  The key contribution of this work is the presentation of a recovery guarantee that extends to the weighted case without strict assumptions regarding input parameters, as well as the first-order method for solution of~\eqref{eq: cluster SDP} discussed in detail Section~\ref{sec: num}.
 
 To further illustrate the consequences of this theorem, we consider
 several examples. In each, we assume that the graph is
@@ -898,7 +902,7 @@ expectation in practice;
 in contrast, our approach only requires knowledge
 of the number of clusters $k$ present in the data.
 Further,  the requirement $\hat r = \Omega(\log n)$
-is only enforced by the gap inequality \eqref{eq:brendan_27_mod},
+is enforced by the gap inequality \eqref{eq:smallest_largest},
 which itself is a consequence of the use of the Bernstein inequality
 to establish certain dual variables are nonnegative
 in the proof of Theorem~\ref{thm: rec} (see Section~\ref{sec: nonneg}
@@ -1280,7 +1284,7 @@ We have the following bound on the entries of \(\bs \Xi\) as an immediate conseq
 
 \begin{proposition}
 	\label{thm: Xi bound}
-	Suppose that $\bra{\mu_{ij}}$ satisfy \eqref{eq:brendan_27_mod}.
+	Suppose that $\bra{\mu_{ij}}$ satisfy \eqref{eq:smallest_largest}.
 	Then there exists constant $c>0$ such that each entry of $\bs{\Xi}$ is nonnegative w.h.p.~if \(\epsilon\) 	satisfies
 	\begin{equation} \label{eq: xi eps}
 	0 < \epsilon \leq
@@ -1332,7 +1336,7 @@ We have an analogous result ensuring that the entries of \(\bs\lambda\) are nonn
 with high probability; we present the proof of this result in Appendix~\ref{app: lam}.
 
 \begin{proposition} \label{prop: lam}
-	Suppose $\bra{\mu_{ij}}$ satisfy \eqref{eq:brendan_27_mod}. Then there
+	Suppose $\bra{\mu_{ij}}$ satisfy \eqref{eq:smallest_largest}. Then there
 	exists constant $c' > 0$ such that each entry of $\bs{\lambda}$ is nonnegative w.h.p.~if $\epsilon$ satisfies
 	\begin{equation} \label{eq: lam eps}
 	0 < \epsilon \leq  \frac{1}{2\gamma}
@@ -1469,9 +1473,9 @@ which holds if and only if
 \)}
 \end{equation}
 %Note that \eqref{eq:general:low_bound_r2} is satisfied if \eqref{eq:general_low_bound_r} holds.
-Finally, suppose that the gap condition \eqref{eq:brendan_27_mod} is satisfied with parameter $c_4 > \max\{c, c'\}$ chosen so that
+Finally, suppose that we choose the parameter $c_4 > \max\{c, c', 12\}$ so that gap condition~\eqref{eq: unique bound}} is satisfied  and
 \[
-	\gamma > \max\{c, c'\} \max \bra{ \sqrt{  \frac{\tilde \sigma^2 \log n }{\hat r} }, \frac{\log n }{\hat r} }.
+	\gamma > \max\{c, c', 12\} \max \bra{ \sqrt{  \frac{\tilde \sigma^2 \log n }{\hat r} }, \frac{\log n }{\hat r} }.
 \]
 Then there exist constants $c_1, c_2, c_3$, depending on $c_4$, such that
 \eqref{eq:general_low_bound_r} and \eqref{eq:general:low_bound_r2} are satisfied, i.e., there exists
