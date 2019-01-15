@@ -261,7 +261,7 @@ We establish that such subgraphs can be recovered from the solution of a particu
 semidefinite relaxation with high probability if the input graph is sampled from a distribution of clusterable graphs.
 Specifically, the semidefinite relaxation is exact if the graph
 consists of \(k\) large disjoint subgraphs, corresponding to clusters, with weight concentrated within these subgraphs,
-plus a moderate number of outliers.
+plus a moderate number of nodes not belonging to any cluster.
 Further, we establish that if noise is weakly obscuring these clusters, i.e, the between-cluster edges are assigned
 very small weights,
 then we can recover significantly smaller clusters.
@@ -380,7 +380,7 @@ tending polynomially to $1$ as $n \ra \infty$.
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \begin{theorem} \label{thm: simple}
 	Suppose that the \(n\)-node graph \(G = (V,E)\) is sampled from the generalized stochastic block model,
-	with \(k\) disjoint blocks and no outliers, in-cluster edge probability \(p\), and between-cluster edge probability \(q\).
+	with \(k\) disjoint blocks and no outlier nodes, in-cluster edge probability \(p\), and between-cluster edge probability \(q\).
 	Let \(\bs A \in \R^{n\times n}\) denote the adjacency matrix of \(G\)
 	and let \(\hat r\) and \(\tilde r\) denote the cardinality of the smallest and largest clusters, respectively,
 	in the block model for \(G\).
@@ -418,6 +418,7 @@ In Theorem~\ref{thm: simple}, \(\tr(\X) \) denotes the trace of the matrix \(\X\
 \(\e\) denotes the all-ones vector of appropriate dimension,
 the notation \(\X \ge \0\) indicates that the entries of \(\X\) are nonnegative,
 and \(\Sigma_+^n\) denotes the cone of \(n\times n\) symmetric positive semidefinite matrices.
+The term \emph{outlier nodes} refers to nodes not having a natural assignment to any cluster in the stochastic block model. Each potential edge from each of these nodes to any other node is added to the graph with probability $q$, so that each outlier has roughly the same number of neighbours in each cluster block. It is important to note that this edge assignment is performed randomly and not deterministically by an adversary attempting to obscure the cluster structure present in the graph.
 
 % Examples.
 Note that if \(G\) is sampled from the \emph{dense} block model, i.e., \(p,q\) are independent of \(n\), then Theorem~\ref{thm: simple} suggests that we have exact recovery if \( \hat r \ge c \sqrt{n}\) with high probability, where \(c\) is a constant
