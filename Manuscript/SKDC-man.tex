@@ -1144,7 +1144,7 @@ Note that taking the inner product of each side
 of \eqref{eq: yz system} with the vector \( (\e; -\e) \)
 yields
 \[
-	(r_q + r_s)( \e^T y -  \e^T z) = \e^T \b^{q,s} - \e^T \b^{s,q}
+	(r_q + r_s)( \e^T \y -  \e^T \z) = \e^T \b^{q,s} - \e^T \b^{s,q}
 	= 0
 \]
 by the symmetry of \eq{\W}. This establishes that the solution
@@ -1266,8 +1266,8 @@ is an immediate consequence of Theorem~\ref{thm: Hoeffding}.
 			\frac{\log n}{\hat r} }
 	\end{equation}
 	w.h.p.,
-	where $\tilde \sigma := \max \{ \sigma_{ij} : i,j = 1,2,\dots, k\}$,
-	for all \(q,s \in \{1,\dots,k\}\) such that 	$q \neq s$
+	where $\tilde \sigma := \max \{ \sigma_{ij} : i,j = 1,2,\dots, k+1 \}$,
+	for all \(q,s \in \{1,\dots, k+1\}\) such that 	$q \neq s$
 \end{lemma}
 
 For \(q,s \in \{1,\dots, k+1\}\) such that \(q \neq s\), we define \(\y^{q,s}\) and \(\z^{q,s}\) as in \eqref{eq: y z}. To bound
