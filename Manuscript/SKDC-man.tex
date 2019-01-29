@@ -17,7 +17,7 @@
 
 % Heading arguments are {volume}{year}{pages}{submitted}{published}{author-full-names}
 
-\jmlrheading{}{2018}{}{8/18}{}{Aleksis Pirinen~and Brendan P.W.~Ames}
+\jmlrheading{}{2018}{}{8/18}{}{Aleksis Pirinen~and Brendan Ames}
 
 % Short headings should be running head and authors last names
 
@@ -239,7 +239,7 @@
 	Lund University\\
 	Lund, Sweden
 	\AND
-	\name Brendan P.W.~Ames \email bpames@ua.edu \\
+	\name Brendan Ames \email bpames@ua.edu \\
 	\addr Department of Mathematics\\
 	The University of Alabama\\
 	Tuscaloosa, Alabama, AL 35487-0350, USA
@@ -261,7 +261,7 @@ We establish that such subgraphs can be recovered from the solution of a particu
 semidefinite relaxation with high probability if the input graph is sampled from a distribution of clusterable graphs.
 Specifically, the semidefinite relaxation is exact if the graph
 consists of \(k\) large disjoint subgraphs, corresponding to clusters, with weight concentrated within these subgraphs,
-plus a moderate number of outliers.
+plus a moderate number of nodes not belonging to any cluster.
 Further, we establish that if noise is weakly obscuring these clusters, i.e, the between-cluster edges are assigned
 very small weights,
 then we can recover significantly smaller clusters.
@@ -332,7 +332,7 @@ depending on \(p - q \).
 Although valuable in establishing sufficient conditions for data to be clusterable, these results are not immediately
 applicable to data sets seen in many applications, particularly those arising from the analysis of social networks.
 For example, statistical analysis of social networks suggests that communities, playing the role of clusters,
-tend to be limited in size to several hundred users, while the networks themselves can contain thousands, if not millions,
+tend to be limited in size to several hundred users, while the networks themselves can contain thousands, if not millions or even billions,
 of users \citep{leskovec2008statistical, leskovec2009community}.
 % Sparse recovery results.
 However, several recent analyses \citep{chen2014clustering,chen2014statistical, guedon2015community,jalali2015relative, rohe2012highest} suggest that these clusterability results are overly
@@ -356,7 +356,7 @@ case, it has been shown that clusters significantly smaller than
 \(\sqrt{n}\) can be recovered efficiently;
 specifically, several methods have been shown to recover clusters with size polylogarithmic in \(n\)
 under certain assumptions on the probability functions \(p\) and \(q\)  \citep[see][]{chen2014clustering,chen2014statistical, guedon2015community,rohe2012highest}.
-We should note that these results provide evidence of a computational limit for cluster recovery; that is, these results establish that clusters can be recovered in a computationally efficient if the underlying data satisfies certain sufficient conditions. We should note further that the lower bounds on cluster size given by these sufficient conditions typically do not match information-theoretic limits; it is well-known that it is possible to identify clusters of size on the order of $\log n$ in certain settings, however, no polynomial-time algorithms are known to do so (see~\cite{chen2014statistical, hajek2015achieving} for further details).
+We should note that these results provide evidence of a computational limit for cluster recovery; that is, these results establish that clusters can be recovered in a computationally efficient way if the underlying data satisfies certain sufficient conditions. We should note further that the lower bounds on cluster size given by these sufficient conditions typically do not match information-theoretic limits; it is well-known that it is possible to identify clusters of size on the order of $\log n$ in certain settings, however, no polynomial-time algorithms are known to do so (see~\cite{chen2014statistical, hajek2015achieving} for further details).
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %  Our contribution.
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -371,8 +371,8 @@ as small as \( \Omega(\log n)\),
 i.e.,  there exists constant $c$ such that the size of the smallest cluster recoverable cluster is bounded below by \(c \log n \) for sufficiently large \(n\),
 with high probability
 if the data is sampled from the sparse block model described above
-for particular choices of $p$ and $q$;
-here and in the rest of the note, an event occurs \emph{with high probability (w.h.p.)} if the event occurs with probability
+for particular choices of $p$ and $q$.
+Here, we say that an event occurs \emph{with high probability (w.h.p.)} if the event occurs with probability
 tending polynomially to $1$ as $n \ra \infty$.
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -380,7 +380,7 @@ tending polynomially to $1$ as $n \ra \infty$.
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \begin{theorem} \label{thm: simple}
 	Suppose that the \(n\)-node graph \(G = (V,E)\) is sampled from the generalized stochastic block model,
-	with \(k\) disjoint blocks and no outliers, in-cluster edge probability \(p\), and between-cluster edge probability \(q\).
+	with \(k\) disjoint blocks, in-cluster edge probability \(p\), and between-cluster edge probability \(q\).
 	Let \(\bs A \in \R^{n\times n}\) denote the adjacency matrix of \(G\)
 	and let \(\hat r\) and \(\tilde r\) denote the cardinality of the smallest and largest clusters, respectively,
 	in the block model for \(G\).
@@ -391,7 +391,6 @@ tending polynomially to $1$ as $n \ra \infty$.
 	\end{equation*}
 	are scalar multiples of the characteristic vectors of the clusters in our underlying block model
 	with high probability
-	provided that
 	if
 	\[
 		p - q \ge c_3 \max \bra{ \sqrt{\frac{\tilde \sigma^2 \log n}{\hat r}}, \frac{\log n}{\hat r} },
@@ -418,6 +417,7 @@ In Theorem~\ref{thm: simple}, \(\tr(\X) \) denotes the trace of the matrix \(\X\
 \(\e\) denotes the all-ones vector of appropriate dimension,
 the notation \(\X \ge \0\) indicates that the entries of \(\X\) are nonnegative,
 and \(\Sigma_+^n\) denotes the cone of \(n\times n\) symmetric positive semidefinite matrices.
+% The term \emph{outlier nodes} refers to nodes not having a natural assignment to any cluster in the stochastic block model; in Theorem~\ref{thm: simple} we assume that each node is assigned to a cluster by the block model.
 
 % Examples.
 Note that if \(G\) is sampled from the \emph{dense} block model, i.e., \(p,q\) are independent of \(n\), then Theorem~\ref{thm: simple} suggests that we have exact recovery if \( \hat r \ge c \sqrt{n}\) with high probability, where \(c\) is a constant
@@ -470,7 +470,7 @@ This motivates the following random graph model,
 which we will call the \emph{planted cluster model}.
 Let \(G = (V,\W)\) be the weighted complete graph whose node set
 represents the items in some data set containing \(k\) clusters and (potentially)
-some outlier nodes.
+some nodes that will not be assigned to a cluster.
 For each pair of nodes \(u,v \) in the same cluster $C_\ell$,
 $\ell \in \{1,2,\dots, k\},$
 we randomly sample
@@ -546,10 +546,10 @@ edges, then we may cluster this data set by finding the set of \(k\) disjoint
 subgraphs, corresponding to these clusters, with maximum density;
 we call this problem the \emph{densest \(k\)-partition problem}.
 Unfortunately, the {densest \(k\)-partition problem is NP-hard \citep[see][]{peng2007approximating}. Moreover, this partition model excludes the
-	case where some items, called outliers, in the data set do not naturally associate
+	case where some items in the data set do not naturally associate
 	with any of the clusters in the data.
 	To simultaneously motivate a convex relaxation of the densest \(k\)-partition
-	problem and address the inclusion of outliers, we consider the \emph{densest
+	problem and address the inclusion of nodes that do not naturally belong to clusters, we consider the \emph{densest
 		\(k\)-disjoint clique problem}.
 
 	% KDC.
@@ -571,7 +571,7 @@ Unfortunately, the {densest \(k\)-partition problem is NP-hard \citep[see][]{pen
 	the densest \kdc problem becomes the densest \(k\)-partition problem.
 	However, in general, the densest \kdc problem allows an assignment of nodes
 	to clusters, represented by the disjoint cliques, which excludes
-	some nodes. For example, if outliers are present in the data, they would not be assigned to a
+	some nodes. For example, if such nodes are present in the data, they would not be assigned to a
 	cluster by the optimal \kdc subgraph.
 
 	%% KDC problem.
@@ -723,6 +723,9 @@ success \(p\) and \(q\), respectively.
 	and \( H^*\) is the unique maximum density \kdc subgraph of \(K_n\)
 	with probability tending exponentially to \(1\) as \(\hat r \ra \infty\).
 \end{theorem}
+
+In contrast to Theorem~\ref{thm: simple}, the result of Theorem~\ref{thm: old rec} implies that we can have perfect recovery if the graph contains a small number of nodes that shouldn't be assigned to any of the planted clusters.
+Each potential edge from each of these nodes to any other node is added independent to the graph with probability $q$, so that each node in $C_{k+1}$ has roughly the same number of neighbours in each cluster block. This implies that such a node is not assigned to any of the planted clusters because it is weakly associated with all of the planted clusters. It is important to note that this edge assignment is performed randomly and not deterministically by an adversary attempting to obscure the cluster structure present in the graph.
 %
 %% Our contribution.
 We present a new analysis that improves upon the recovery guarantee of Theorem~\ref{thm: old rec} in two ways.
@@ -755,26 +758,45 @@ known to be clusterable by \eqref{eq: kdc sdp}. We have the following theorem.
 	be a random symmetric matrix sampled from the heterogeneous planted cluster model according to distributions \(\{\Omega_{ij} \}\) with expected values \(\mu_{ij} = \mu_{ij}(n)\) and variances
 	\(\sigma_{ij}^2 = \sigma_{ij}^2(n)\).
 	Let $\tilde \sigma := \max_{q,s} \sigma_{qs}$ and
-	$\hat \sigma := \max_{q} \sigma_{qq}$
+	$\hat \sigma := \max_{q} \sigma_{qq}$.
 	Let \(\X^*\) be the feasible solution to \eqref{eq: kdc sdp} corresponding to \(C_1,\dots,C_k\) defined by
-	\eqref{eq: cluster X}. Then there exists scalars \(c_1, c_2, c_3, c_4 > 0\) such that if
-	the gap assumption
-	\begin{equation}
-	\label{eq:brendan_27_mod}
-		\gamma := \min_{\substack{q,s=1,2,\dots, k \\ q\neq s}} \bra{\mu_{qq} - \mu_{qs}}
-		> c_4 \max \bra{ \sqrt{  \frac{\tilde \sigma^2 \log n }{\hat r} },
-		\frac{\log n }{\hat r} },
-	\end{equation}
-		is satisfied,
-		where $\tilde \sigma := \max_{q,s}\{ \sigma_{qs}\}$,
-		and $\hat r$ satisfies
-	\begin{equation}\label{eq:smallest_largest}
-	\resizebox{0.92\textwidth}{!}{
-		\(
-		\gamma \hat r \ge %\frac{1}{\gamma} \rbra
-		{  c_1 \max\left\lbrace \tilde\sigma\sqrt{n},  \sqrt{\log n} \right\rbrace
-			+ c_2 \rbra{ \max \bra{\hat\sigma^2, \frac{\log n}{\hat r} } k r_{k+1} }^{1/2} + c_3 \mu_{k+1, k+1} r_{k+1} }		\)}
-	\end{equation}
+	\eqref{eq: cluster X}.
+  % gamma def.
+  Let
+  $$
+    \gamma := \min_{\substack{q,s=1,2,\dots, k \\ q\neq s}} \bra{\mu_{qq} - \mu_{qs}}.
+  $$
+  Then there exists scalar $c > 0$ such that if
+   % Then there exists scalars \(c_1, c_2, c_3, c_4 > 0\) such that if
+   \begin{equation}\label{eq:smallest_largest}
+ 	% \resizebox{0.92\textwidth}{!}{ $
+ 		\gamma \hat r \ge %\frac{1}{\gamma} \rbra
+ 		c \max \bra{ \sqrt{\tilde\sigma^2 n},\;
+      \sqrt{\tilde\sigma^2 \hat r \log n},\;
+      \sqrt{\hat\sigma^2 k r_{k+1}}, \;
+      \sqrt{k r_{k+1} \log n / \hat r}, \;      \mu_{k+1, k+1} r_{k+1}, \; \log n
+      %
+      % \sqrt{\max\bra{\hat \sigma^2, \frac{\log n}{\hat r} } k r_{k+1}}
+      }
+    % $ }
+ 	\end{equation}
+	% the gap assumption
+	% \begin{equation}
+	% \label{eq:brendan_27_mod}
+	% 	\gamma := \min_{\substack{q,s=1,2,\dots, k \\ q\neq s}} \bra{\mu_{qq} - \mu_{qs}}
+	% 	> c_4 \max \bra{ \sqrt{  \frac{\tilde \sigma^2 \log n }{\hat r} },
+	% 	\frac{\log n }{\hat r} },
+	% \end{equation}
+	% 	is satisfied
+	% 	% where $\tilde \sigma := \max_{q,s}\{ \sigma_{qs}\}$,
+	% 	and $\hat r$ satisfies
+	% \begin{equation}\label{eq:smallest_largest}
+	% \resizebox{0.92\textwidth}{!}{
+	% 	\(
+	% 	\gamma \hat r \ge %\frac{1}{\gamma} \rbra
+	% 	{  c_1 \max\left\lbrace \tilde\sigma\sqrt{n},  \sqrt{\log n} \right\rbrace
+	% 		+ c_2 \rbra{ \max \bra{\hat\sigma^2, \frac{\log n}{\hat r} } k r_{k+1} }^{1/2} + c_3 \mu_{k+1, k+1} r_{k+1} }		\)}
+	% \end{equation}
 	then \(\bs{X}^*\) is the unique optimal solution for \eqref{eq: kdc sdp}, and \(K^*\) is the unique maximum density \kdc
 	subgraph of \(K_n\) with high probability.
 %	 at least
@@ -785,17 +807,18 @@ known to be clusterable by \eqref{eq: kdc sdp}. We have the following theorem.
 %
 %% Interpretations.
 
+The \emph{weak assortativity} condition~\eqref{eq:smallest_largest} implies that we have perfect recovery provided that the gap between the cluster block expectation $\mu_{qq}$ and the largest between-cluster block expectation $\mu_{qs}$ is sufficiently large for all clusters $C_q$, $q=1,\dots, k$, relative to the minimum cluster size, number of unassigned nodes $r_{k+1}$, number of clusters,  and edge weight variances.
 In the %homogeneous
 Bernoulli case, i.e., within-cluster and between-cluster edges are added independently with probabilities $p$ and $q$, respectively, Theorem~\ref{thm: rec} and, in particular,
 \eqref{eq:smallest_largest} establish that we can recover the planted
-clusters provided
+clusters provided that
 \[
-	\frac{(p-q)^2}{q(1-q)} = \Omega\rbra{ \frac{ n }{\hat r^2}}.
+	\frac{(p-q)^2}{\tilde\sigma^2} = \frac{(p-q)^2}{\max\{p(1-p), q(1-q)\}} = \Omega\rbra{ \frac{ n }{\hat r^2}}.
 \]
 This result agrees with the Easy Regime for cluster recovery
 proposed by \cite{chen2014statistical}, where a polynomial-time
 algorithm exists for exact recovery of the planted clusters, in this case, the solution of the semidefinite relaxation \eqref{eq: kdc sdp}.
-One distinct advantages of this result over similar recovery guarantees
+One distinct advantage of this result over similar recovery guarantees
 is that our model and phase transition are largely parameter free.
 For example, \citet{amini2014semidefinite} present an analysis of three
 semidefinite relaxations that obtain nearly identical conditions
@@ -814,17 +837,20 @@ semidefinite relaxations that require the sizes of the clusters to
 be used as input parameters (or all clusters to have identical size), neither
 of which are realistic assumptions in practice.
 In contrast, our approach achieves this recovery guarantee
-using only the desired number of clusters as a parameter.
+using \emph{only the desired number of clusters as a parameter}.
 Further, our guarantee extends to the general weighted case where
 the vast majority of existing recovery guarantees for stochastic
 block models are restricted to the Bernoulli case.
+
+It is important to note that tighter recovery guarantees than those provided by Theorem~\ref{thm: rec} are known for specific problem settings. This is a natural consequence of the more general framework of our analysis.
+For example, \cite{yan2017provable}, studies a convex relaxation for cluster recovery in the Bernoulli (unweighted) case. The main theorem of this article establishes conditions for perfect recovery that allows larger clusters to have higher variance, although specialized for the unweighted case. Moreover, \cite{yan2017provable} consider the use of a tuning parameter to allow recovery without knowledge of the number of clusters $k$. On the other hand, the results of \citep{amini2014semidefinite,jalali2015relative} also provide tigher recovery guarantees but require knowledge of cluster sizes.  The key contribution of this work is the presentation of a recovery guarantee that extends to the weighted case without strict assumptions regarding input parameters, as well as the first-order method for solution of~\eqref{eq: cluster SDP} discussed in detail Section~\ref{sec: num}.
 
 To further illustrate the consequences of this theorem, we consider
 several examples. In each, we assume that the graph is
 generated in the homogeneous setting where
 within-cluster weights are i.i.d.~according to $\Omega_1$ with mean $\alpha$ and variance $
 \sigma_1^2$, and
-between-cluster and outlier weights are i.i.d.~according to
+between-cluster weights are i.i.d.~according to
 $\Omega_2$ with mean $\beta < \alpha$ and variance $\sigma_2^2$.
 
 
@@ -855,16 +881,17 @@ Assume further that
 q (1-q)  \le {\log n }/{n}.
 \)
 Finally, again for simplicity, assume that we have \(k\) equally sized clusters of size \(\hat r = n/k\)
-and no outliers (\(r_{k+1} = 0\)).
+and  (\(r_{k+1} = 0\)).
 In this case, \eqref{eq:smallest_largest}
 holds if
-$
-\gamma \hat r \ge c_1 \sqrt{\log n} + c_2 \sqrt{\log n}
-= \Omega(\sqrt{\log n} ),
-$
-since the terms involving \(r_{k+1}\) and \(1-p\) are equal to zero.
-However, the gap assumption \eqref{eq:brendan_27_mod} is only
-satisfiable if $\hat r = \Omega(\log n)$.
+$$
+\gamma \hat r \ge c \log n = c \max \bra{\sqrt{\log n},\; \sqrt{\frac{ \hat r \log^2n}{n}},\;\log n}
+\ge c \max \bra{\sqrt{\tilde\sigma^2 n}, \; \sqrt{\tilde\sigma^2 r \log n},\; \log n}
+$$
+since $\tilde \sigma^2  = \max\{p(1-p), q(1-q)\} = q(1-q) \le \log n / n$
+and the terms involving \(r_{k+1}\) and \(1-p\) are equal to zero.
+% However, the gap assumption \eqref{eq:brendan_27_mod} is only
+% satisfiable if $\hat r = \Omega(\log n)$.
 This implies that we have exact recovery of the planted clusters
 w.h.p.~provided $\hat r =\Omega(\log n)$. This exceeds the
 state of the art recovery bound
@@ -877,7 +904,7 @@ expectation in practice;
 in contrast, our approach only requires knowledge
 of the number of clusters $k$ present in the data.
 Further,  the requirement $\hat r = \Omega(\log n)$
-is only enforced by the gap inequality \eqref{eq:brendan_27_mod},
+is enforced by the gap inequality \eqref{eq:smallest_largest},
 which itself is a consequence of the use of the Bernstein inequality
 to establish certain dual variables are nonnegative
 in the proof of Theorem~\ref{thm: rec} (see Section~\ref{sec: nonneg}
@@ -958,7 +985,7 @@ of a particular nuclear norm relaxation of the maximum clique problem.
 
 Unfortunately, it appears that this lower bound restricting the size
 of a recoverable planted clique
-to a constant multiple of the number of outliers/nonclique vertices
+to a constant multiple of the number of nonclique vertices
 is tight.
 For example, let $p$ and $q$ be the probabilities of adding an edge
 given by $\Omega_1$ and $\Omega_2$.
@@ -980,7 +1007,7 @@ This implies that the proposed solution is suboptimal if
 $p \hat r < \hat c q n$, which holds unless $\hat r \ge \hat c (q/p) n$.
 We will see that the realized values of these sums
 are concentrated near their expectations and, thus, we cannot
-reasonably expect to recover planted clusters with outliers significantly
+reasonably expect to recover planted clusters with unassigned nodes significantly
 outnumbering the smallest cluster. This implies that we cannot
 recover planted cliques of size $\omega(N)$ by maximizing
 density of a complete subgraph because the planted clique
@@ -1033,14 +1060,14 @@ of the notation of Theorem~\ref{thm: rec}.
 %Brendan: rephrased to note that this is not new notation}.
 Let $K^*$ be a $k$-disjoint-clique subgraph of $K_n$ with vertex set composed of the disjoint cliques $C_1, \dots, C_k$ of sizes $r_1, \dots, r_k$  and let
 $\X^*$ be the corresponding feasible solution of \eqref{eq: kdc sdp} defined by \eqref{eq: cluster X}.
-Let $C_{k+1} := V \setminus  (\cup^k_{i=1} C_i)$ and $r_{k+1} := n - \sum_{i=1}^k r_i$ be the size of the set
-of outliers \(C_{k+1}\).
+Let $C_{k+1} := V \setminus  (\cup^k_{i=1} C_i)$ and $r_{k+1} := n - \sum_{i=1}^k r_i$ be the size of
+of  \(C_{k+1}\).
 Moreover, let $\hat r := \min_{i=1, \dots, k} r_i$ and
 \( \tilde r := \max_{i=1,\dots, k} r_i\)  be the size of the smallest and largest clusters,
 respectively.
 Let $\W \in \Sigma^n$ be a random symmetric matrix
 sampled from the planted cluster model with planted clusters \(C_1, \dots, C_k\) and
-outliers \(C_{k+1}\)
+remaining nodes \(C_{k+1}\)
 according to the distributions \(\{\Omega_{ij}\}\) with means \( \bra{\mu_{ij}} \)
 and variances $\{\sigma^2_{ij}\}$.
 
@@ -1124,7 +1151,7 @@ Note that taking the inner product of each side
 of \eqref{eq: yz system} with the vector \( (\e; -\e) \)
 yields
 \[
-	(r_q + r_s)( \e^T y -  \e^T z) = \e^T \b^{q,s} - \e^T \b^{s,q}
+	(r_q + r_s)( \e^T \y -  \e^T \z) = \e^T \b^{q,s} - \e^T \b^{s,q}
 	= 0
 \]
 by the symmetry of \eq{\W}. This establishes that the solution
@@ -1226,7 +1253,7 @@ which provides a  bound on the tail of a sum of bounded independent random varia
 	Let $S = x_1 + \cdots + x_m$. Then
 	\begin{equation}
 	\label{eq:hoeffding}
-	Pr( |S - \mu m| > 6 \max \{\sqrt{\sigma^2 m \log T}, \log T )
+	Pr\rbra{ |S - \mu m| > 6 \max \bra{\sqrt{\sigma^2 m \log T}, \log T  }}
 	 \le 2 T^{-6},
 	\end{equation}
 	for all $T > 1$.
@@ -1246,8 +1273,8 @@ is an immediate consequence of Theorem~\ref{thm: Hoeffding}.
 			\frac{\log n}{\hat r} }
 	\end{equation}
 	w.h.p.,
-	where $\tilde \sigma := \max \{ \sigma_{ij} : i,j = 1,2,\dots, k\}$,
-	for all \(q,s \in \{1,\dots,k\}\) such that 	$q \neq s$
+	where $\tilde \sigma := \max \{ \sigma_{ij} : i,j = 1,2,\dots, k+1 \}$,
+	for all \(q,s \in \{1,\dots, k+1\}\) such that 	$q \neq s$
 \end{lemma}
 
 For \(q,s \in \{1,\dots, k+1\}\) such that \(q \neq s\), we define \(\y^{q,s}\) and \(\z^{q,s}\) as in \eqref{eq: y z}. To bound
@@ -1259,7 +1286,7 @@ We have the following bound on the entries of \(\bs \Xi\) as an immediate conseq
 
 \begin{proposition}
 	\label{thm: Xi bound}
-	Suppose that $\bra{\mu_{ij}}$ satisfy \eqref{eq:brendan_27_mod}.
+	Suppose that $\bra{\mu_{ij}}$ satisfy \eqref{eq:smallest_largest}.
 	Then there exists constant $c>0$ such that each entry of $\bs{\Xi}$ is nonnegative w.h.p.~if \(\epsilon\) 	satisfies
 	\begin{equation} \label{eq: xi eps}
 	0 < \epsilon \leq
@@ -1311,7 +1338,7 @@ We have an analogous result ensuring that the entries of \(\bs\lambda\) are nonn
 with high probability; we present the proof of this result in Appendix~\ref{app: lam}.
 
 \begin{proposition} \label{prop: lam}
-	Suppose $\bra{\mu_{ij}}$ satisfy \eqref{eq:brendan_27_mod}. Then there
+	Suppose $\bra{\mu_{ij}}$ satisfy \eqref{eq:smallest_largest}. Then there
 	exists constant $c' > 0$ such that each entry of $\bs{\lambda}$ is nonnegative w.h.p.~if $\epsilon$ satisfies
 	\begin{equation} \label{eq: lam eps}
 	0 < \epsilon \leq  \frac{1}{2\gamma}
@@ -1448,9 +1475,9 @@ which holds if and only if
 \)}
 \end{equation}
 %Note that \eqref{eq:general:low_bound_r2} is satisfied if \eqref{eq:general_low_bound_r} holds.
-Finally, suppose that the gap condition \eqref{eq:brendan_27_mod} is satisfied with parameter $c_4 > \max\{c, c'\}$ chosen so that
+Finally, suppose that we choose the parameter $c_4 > \max\{c, c', 12\}$ so that gap condition~\eqref{eq: unique bound}} is satisfied  and
 \[
-	\gamma > \max\{c, c'\} \max \bra{ \sqrt{  \frac{\tilde \sigma^2 \log n }{\hat r} }, \frac{\log n }{\hat r} }.
+	\gamma > \max\{c, c', 12\} \max \bra{ \sqrt{  \frac{\tilde \sigma^2 \log n }{\hat r} }, \frac{\log n }{\hat r} }.
 \]
 Then there exist constants $c_1, c_2, c_3$, depending on $c_4$, such that
 \eqref{eq:general_low_bound_r} and \eqref{eq:general:low_bound_r2} are satisfied, i.e., there exists
@@ -1524,9 +1551,9 @@ Please see the work of \citet[Section 6]{ames2014guaranteed} for further impleme
 	% \algnewcommand{\parState}[1]{\State%
   % \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut #1\strut}}
 
-	\State{\textbf{Data:} Initial iterates $\X^0 = \Y^0 = \Z^0 = \0$, augmented Lagrangian parameter $\rho > 0$, and stopping tolerance $\epsilon > 0$.}
+	\State{\textbf{Input:} Initial iterates $\X^0 = \Y^0 = \Z^0 = \0$, augmented Lagrangian parameter $\rho > 0$, and stopping tolerance $\epsilon > 0$.}
 
-	\State{\textbf{Result:} Approximate solution $(\X^*, \Y^*, \Z^*)$ of \eqref{eq: cluster SDP}.}
+	\State{\textbf{Output:} Approximate solution $(\X^*, \Y^*, \Z^*)$ of \eqref{eq: cluster SDP}.}
 
 	\For{$t = 0, 1,2 \dots $ until converged}
 	\State
@@ -1546,19 +1573,19 @@ Please see the work of \citet[Section 6]{ames2014guaranteed} for further impleme
 	\State
 		Compute primal feasibilty gap
 		\[
-			pfeas = \min\bra{\min_{ij} Y^t_{ij}, \min \rbra{\e - \Y^{t}\e} }
+			pfeas = \min\bra{\min_{ij} Y^t_{ij}, \min \rbra{\e - \Y^{t}\e} }.
 		\]
-	\parState{
-		Compute estimates of primal and dual objective values
+	\parState{Compute estimates of primal and dual objective values
+    		(note that $v_d^{(t+1)}$ is not necessarily a lower bound on the optimal dual value, but is asymptotically converging to the optimal dual value):
 		\[
 			v_p^{(t+1)} = \tr(\W\Y^{t}) \hspace{0.25in}
 			v_d^{(t+1)} = k \lambda_{min}(\W + \Z^{t+1}) - \tr(\X^{t+1}\Z^{t+1}).
 		\]
-		(Note that $v_d^{(t+1)}$ is not necessarily a lower bound on the optimal dual value, but is asymptotically converging to the optimal dual value).}
+.}
 	\State
 		Calculate relative duality gap
 		\[
-			relgap = \frac{|v_p^{(t+1)} = v_d^{(t+1)} |}{\max(|v_p^{(t+1)}|, 1}.
+			relgap = \frac{|v_p^{(t+1)} = v_d^{(t+1)} |}{\max\bra{|v_p^{(t+1)}|, 1} }.
 		\]
 	\State
 		Declare sequence of iterates to have converged if $relgap < \epsilon$ and $pfeas >- \epsilon$.
@@ -1602,7 +1629,7 @@ Note that Theorem~\ref{thm: rec} implies that we should expect exact recovery (w
 $
 	\gamma \hat r = \Omega\rbra{\sqrt{\tilde \sigma^2n}}.
 $
-Figure~\ref{fig: rec}(a) illustrates the empirical success rate for each choice of \(\hat r\) and \(p\), as well as the curve \( p =(k+1)/(0.65k + 1)(q + \half\rbra{\sqrt{n}}),\) where we use the upper bound $\tilde \sigma^2 \le 1/4$ to estimate the constant term in~\eqref{eq:smallest_largest}.
+Figure~\ref{fig: rec}(a) illustrates the empirical success rate for each choice of \(\hat r\) and \(p\), as well as the curve \( p =(k+1)/(0.65k + 1)(q + \half {\sqrt{n}}),\) where we use the upper bound $\tilde \sigma^2 \le 1/4$ to estimate the constant term in~\eqref{eq:smallest_largest}.
 
 \begin{figure}[t]
 	\centering
@@ -1621,7 +1648,7 @@ In particular, we fix \( n =1000\) and set $q = 1/\sqrt{n}$. We then sample \(10
 from the planted cluster model corresponding to the Bernoulli
 distributions \(\Omega_{ij} = Bern(p)\) if $i =j$ and \(\Omega_{ij} = Bern(q)\) if $i\neq j$ for each
 \( \hat r \in \{20,60,\dots, 440, 500\}\) and $p = tq$ for $10$ equally spaced scaling factors $t$ between $2$ and $\floor{\sqrt{n}}$.
-As before, we set $k = \floor{n/\hat r}$ and distribute the remaining nodes equally amongst the clusters so that the smallest has size $\hat{r}$ and there are no outliers ($r_{k+1} = 0$).
+As before, we set $k = \floor{n/\hat r}$ and distribute the remaining nodes equally amongst the clusters so that the smallest has size $\hat{r}$ and $r_{k+1} = 0$.
 For each graph \(G\), we call the ADMM algorithm to solve \eqref{eq: kdc sdp} (with the same parameters as before)
 and declare the block structure of \(G\) recovered if \(\|\X^* - \X_0\|^2_F / \|\X_0\|^2_F < 10^{-3} \).
 Theorem~\ref{thm: rec} suggests that we should expect recovery of the cluster structure in the case that
@@ -1645,8 +1672,7 @@ Finally, our semidefinite relaxation requires only an estimate of the
 number of clusters present in the data as input.
 
 Our results suggest several areas of further research.
-The numerical simulations suggest that our theoretical guarantees may be overly conservative, especially in the approximately
-sparse noise case;
+The numerical simulations suggest that our theoretical guarantees may be overly conservative, especially in the dense noise case;
 further investigation is needed to determine if tighter estimates on the minimum size of clusters efficiently recoverable
 exist.
 Moreover, our model assumes clusters are disjoint. This is clearly not met in many practical applications; for example,
@@ -1840,7 +1866,7 @@ Combining the above inequalities shows that
 			\frac{\log n }{r_q} } } }
 \]
 w.h.p.
-Since $\gamma > 0$ by \eqref{eq:brendan_27_mod}, this implies that
+Since $\gamma > 0$ by~\eqref{eq:smallest_largest}, this implies that
 there exists constant $c>0$ such that if
 \begin{equation} \label{eq: lam eps tmp}
 	\epsilon \leq \frac{1}{\gamma}
@@ -1924,7 +1950,7 @@ of a random symmetric matrix with i.i.d.~mean zero entries given by \citet[Corol
 	Let $t = (C-3) \max\{ \sqrt{\sigma^2 n}, \sqrt{\log T} \}$ where $C$ is chosen large enough that $\ct 	(C-3)^2 > 7$.
 	In this case, \eqref{eq:BVHtemp} specializes to
 	\[
-		\pr \bra{\|\bs{A}\| \ge C \max\{ \sqrt{\sigma^2 n}, \sqrt{\log n} }
+		\pr \bra{\|\bs{A}\| \ge C \max\{ \sqrt{\sigma^2 n}, \sqrt{\log n}\} }
 		\le n e^{-7 \max\{\sigma^2 n, \log n\}} \le n e^{-7 \log n} = n T^{-7}.
 	\]
 	This completes the proof.
@@ -2009,7 +2035,7 @@ Applying \eqref{eq:sparse_lemma} with $T = n$ establishes that
 w.h.p.
 On the other hand, Bernstein's inequality establishes that
 \[
-	|  \e^T \W_{C_q, C_q} \e - \mu_{qq} r_q^2 | \le 6 \max \{ \sqrt{\sigma_{qq}^2 r_q \log n}, \log n \}
+	|  \e^T \W_{C_q, C_q} \e - \mu_{qq} r_q^2 | \le 6 \max \bra{ \sqrt{\sigma_{qq}^2 r_q \log n}, \log n }
 \]
 w.h.p.
 Combining these two inequalities using the triangle inequality establishes that

@@ -1,4 +1,4 @@
-\begin{thebibliography}{35}
+\begin{thebibliography}{36}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -215,6 +215,11 @@ Ramya~Korlakai Vinayak, Samet Oymak, and Babak Hassibi.
   optimization.
 \newblock In \emph{Acoustics, Speech and Signal Processing (ICASSP), 2014 IEEE
   International Conference on}, pages 8297--8301. IEEE, 2014.
+
+\bibitem[Yan et~al.(2017)Yan, Sarkar, and Cheng]{yan2017provable}
+Bowei Yan, Purnamrita Sarkar, and Xiuyuan Cheng.
+\newblock Provable estimation of the number of blocks in block models.
+\newblock \emph{arXiv preprint arXiv:1705.08580}, 2017.
 
 \bibitem[Zhang and Lu(2011)]{zhang2011penalty}
 Yong Zhang and Zhaosong Lu.
