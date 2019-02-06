@@ -8,7 +8,7 @@
 % natbib citation styles, see the natbib documentation, a copy of which
 % is archived at http://www.jmlr.org/format/natbib.pdf
 
-\usepackage{jmlr2e}
+
 
 % Definitions of handy macros can go here
 
@@ -17,13 +17,7 @@
 
 % Heading arguments are {volume}{year}{pages}{submitted}{published}{author-full-names}
 
-\usepackage{lastpage}
-\jmlrheading{20}{2019}{1-\pageref{LastPage}}{3/16; Revised
-1/19}{1/19}{16-128}{Aleksis Pirinen~and Brendan Ames}
 
-% Short headings should be running head and authors last names
-\ShortHeadings{Exact Clustering of Weighted Graphs via Semidefinite Programming}{Pirinen and Ames}
-\firstpageno{1}
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 % Special text commands.
@@ -96,7 +90,14 @@
 %\newtheorem{lemma}{Lemma}[section]
 
 %\newcommand{\proof}{\noindent \textbf{Proof:\ }}
+\usepackage{jmlr2e}
+\usepackage{lastpage}
+\jmlrheading{20}{2019}{1-\pageref{LastPage}}{3/16; Revised
+1/19}{1/19}{16-128}{Aleksis Pirinen~and Brendan Ames}
 
+% Short headings should be running head and authors last names
+\ShortHeadings{Exact Clustering of Weighted Graphs via Semidefinite Programming}{Pirinen and Ames}
+\firstpageno{1}
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 % Shorthand
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -220,6 +221,7 @@
 %\numberwithin{equation}{section}
 %\numberwithin{figure}{section}
 %\numberwithin{table}{section}
+
 
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1488,7 +1490,7 @@ $\epsilon$ satisfying   \eqref{eq: xi eps}, \eqref{eq: lam eps} and
 	\gamma \hat r  \ge  c_1  &\max\left\lbrace \tilde \sigma\sqrt{n},  \sqrt{\log n} \right\rbrace
 			+ c_2 \rbra{ \max \bra{\sigma_1^2, \frac{\log n}{\hat r} } k r_{k+1} }^{1/2} + c_3 \mu_{k+1, k+1} r_{k+1} .
 \end{align*}
-This concludes the proof of Theorem~\ref{thm: rec}.  %\qed
+This concludes the proof of Theorem~\ref{thm: rec}. % \qed
 
 \section{Numerical Methods and Simulations}
 \label{sec: num}
@@ -1634,8 +1636,8 @@ Figure~\ref{fig: rec}(a) illustrates the empirical success rate for each choice 
 
 \begin{figure}[t]
 	\centering
-	\subfloat[{Dense noise.}]{\includegraphics[width=0.5\textwidth]{het_plot.png} }
-	\subfloat[{Sparse noise.}]{\includegraphics[width=0.5\textwidth]{sparse_plot.png}}
+	\subfloat[{Dense Noise}]{\includegraphics[width=0.48\textwidth]{het_plot.png} }
+	\subfloat[{Sparse Noise}]{\includegraphics[width=0.48\textwidth]{sparse_plot.png}}
 		\caption{Empirical recovery rate for $n$-node graph with $k$ planted cliques of size at least $\hat r$ and \(\W\) generated
 		according to the planted heterogeneous cluster model with distributions $\Omega_{ij} = Bern(p_{ij})$. Brighter colors indicate higher
 		rates of recovery, with black corresponding to 0 recoveries and white corresponding to 10 recoveries (out of 10 trials).
