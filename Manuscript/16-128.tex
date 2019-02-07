@@ -33,7 +33,7 @@
 \usepackage{amsmath,amstext} % Lots of math symbols and environments
 \usepackage{subfig}
 \usepackage{booktabs}
-\usepackage{epstopdf}
+%\usepackage{epstopdf}
 \usepackage{microtype}
 %\usepackage[sort]{natbib}
 
@@ -317,13 +317,13 @@ and the densest $k$-disjoint-clique problem \citep{ames2014convex, ames2014guara
 In spite of the inherent intractability of clustering, % in the worst-case,
 many recent analyses have established that if
 data is sampled from some distribution of clusterable data, then one can efficiently recover the underlying
-cluster structure using a variety of clustering algorithms;
-in particular, see  \citet{ abbe2016exact,  ailon2013breaking, ames2014convex, ames2014guaranteed, amini2014semidefinite, cai2015robust, chen2014clustering, chen2014improved, chen2014statistical, guedon2015community, hajek2015achieving,
-lei2015consistency,  mathieu2010correlation,nellore2013recovery, oymak2011finding,rohe2011spectral, qin2013regularized, vinayak2014sharp}.
+cluster structure using a variety of clustering algorithms.
+In particular, the recent results of \citet{ abbe2016exact,  ailon2013breaking, ames2014convex, ames2014guaranteed, amini2014semidefinite, cai2015robust, chen2014clustering, chen2014improved, chen2014statistical, guedon2015community, hajek2015achieving,
+lei2015consistency,  mathieu2010correlation,nellore2013recovery, oymak2011finding,rohe2011spectral, qin2013regularized, vinayak2014sharp} all establish sufficient conditions  under which we can expect to identify the latent cluster structure efficiently.
 Most of these results assume that the similarity structure of the data can be
 modeled as a graph sampled from some
 generalization of the
-\emph{stochastic block model} \citep{holland1983stochastic}. In this model, the nodes of the graph, called the \emph{similarity graph} of the data, are associated with the items in the data set. An edge is drawn between two items with fixed probability $p$ if the corresponding items belong to the same cluster, and with fixed probability $q < p$ if the corresponding items belong to different clusters. %}
+\emph{stochastic block model} proposed by \citet{holland1983stochastic}. In this model, the nodes of the graph, called the \emph{similarity graph} of the data, are associated with the items in the data set. An edge is drawn between two items with fixed probability $p$ if the corresponding items belong to the same cluster, and with fixed probability $q < p$ if the corresponding items belong to different clusters. %}
 Under this block model, the analyses cited above establish
  that the block structure of the data can be recovered in polynomial-time
  with high probability
@@ -338,7 +338,7 @@ For example, statistical analysis of social networks suggests that communities, 
 tend to be limited in size to several hundred users, while the networks themselves can contain thousands, if not millions or even billions,
 of users \citep{leskovec2008statistical, leskovec2009community}.
 % Sparse recovery results.
-However, several recent analyses \citep{chen2014clustering,chen2014statistical, guedon2015community,jalali2015relative, rohe2012highest} suggest that these clusterability results are overly
+However, the recent analyses of \cite{chen2014clustering,chen2014statistical, guedon2015community,jalali2015relative, rohe2012highest}, among others, suggest that these clusterability results are overly
 conservative with respect to the size of clusters we can expect to recover in polynomial-time.
 Specifically, these analyses allow the edge probabilities $p$ and
 $q$ to vary with $n$, and investigate how the size of the smallest cluster
@@ -359,7 +359,7 @@ case, it has been shown that clusters significantly smaller than
 \(\sqrt{n}\) can be recovered efficiently;
 specifically, several methods have been shown to recover clusters with size polylogarithmic in \(n\)
 under certain assumptions on the probability functions \(p\) and \(q\)  \citep[see][]{chen2014clustering,chen2014statistical, guedon2015community,rohe2012highest}.
-We should note that these results provide evidence of a computational limit for cluster recovery; that is, these results establish that clusters can be recovered in a computationally efficient way if the underlying data satisfies certain sufficient conditions. We should note further that the lower bounds on cluster size given by these sufficient conditions typically do not match information-theoretic limits; it is well-known that it is possible to identify clusters of size on the order of $\log n$ in certain settings, however, no polynomial-time algorithms are known to do so (see~\cite{chen2014statistical, hajek2015achieving} for further details).
+We should note that these results provide evidence of a computational limit for cluster recovery; that is, these results establish that clusters can be recovered in a computationally efficient way if the underlying data satisfies certain sufficient conditions. We should note further that the lower bounds on cluster size given by these sufficient conditions typically do not match information-theoretic limits; it is well-known that it is possible to identify clusters of size on the order of $\log n$ in certain settings, however, no polynomial-time algorithms are known to do so (\citealt{chen2014statistical, hajek2015achieving} provide further details).
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %  Our contribution.
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -500,7 +500,7 @@ depending on \(\alpha\) and \(\beta\), then we can recover the clusters
 from the optimal solution of the semidefinite program
 \begin{equation} \label{eq: cluster SDP}
 \max_{\X \in \Sigma_+^n} \Big\{ \tr(\W \X): \X \e \le \e,
-\tr(\X) = k, \X \ge \0 \Big\}
+\tr(\X) = k, \X \ge \0 \Big\},
 \end{equation}
 with high probability, where \(k \) is the number of clusters in the graph.
 We will show that these results can be strengthened to establish that much
@@ -548,7 +548,7 @@ is concentrated more heavily on within-cluster edges than between-cluster
 edges, then we may cluster this data set by finding the set of \(k\) disjoint
 subgraphs, corresponding to these clusters, with maximum density;
 we call this problem the \emph{densest \(k\)-partition problem}.
-Unfortunately, the {densest \(k\)-partition problem is NP-hard \citep[see][]{peng2007approximating}. Moreover, this partition model excludes the
+\citet{peng2007approximating} established that the {densest \(k\)-partition problem is NP-hard. Moreover, this partition model excludes the
 	case where some items in the data set do not naturally associate
 	with any of the clusters in the data.
 	To simultaneously motivate a convex relaxation of the densest \(k\)-partition
@@ -665,7 +665,7 @@ as follows. % here, \(\Sigma^n\) denotes the set of all \(n\times n\) symmetric 
 	For each \(i=1, \dots, k\) and each \(u,v \in C_i\),
 	we sample \(w_{uv} = w_{vu}\) from a distribution \(\Omega_1\) such that
 	\[
-	\E[w_{uv}] = \E [w_{vu}] = \alpha, \hspace{0.25in} 0 \le w_{uv} \le 1
+	\E[w_{uv}] = \E [w_{vu}] = \alpha, \hspace{0.25in} 0 \le w_{uv} \le 1,
 	\]
 	for fixed \(\alpha \in (0,1]\).
 	\item
@@ -780,7 +780,7 @@ known to be clusterable by \eqref{eq: kdc sdp}. We have the following theorem.
       \sqrt{k r_{k+1} \log n / \hat r}, \;      \mu_{k+1, k+1} r_{k+1}, \; \log n
       %
       % \sqrt{\max\bra{\hat \sigma^2, \frac{\log n}{\hat r} } k r_{k+1}}
-      }
+      },
     % $ }
  	\end{equation}
 	% the gap assumption
@@ -846,7 +846,7 @@ the vast majority of existing recovery guarantees for stochastic
 block models are restricted to the Bernoulli case.
 
 It is important to note that tighter recovery guarantees than those provided by Theorem~\ref{thm: rec} are known for specific problem settings. This is a natural consequence of the more general framework of our analysis.
-For example, \cite{yan2017provable}, studies a convex relaxation for cluster recovery in the Bernoulli (unweighted) case. The main theorem of this article establishes conditions for perfect recovery that allows larger clusters to have higher variance, although specialized for the unweighted case. Moreover, \cite{yan2017provable} consider the use of a tuning parameter to allow recovery without knowledge of the number of clusters $k$. On the other hand, the results of \citep{amini2014semidefinite,jalali2015relative} also provide tigher recovery guarantees but require knowledge of cluster sizes.  The key contribution of this work is the presentation of a recovery guarantee that extends to the weighted case without strict assumptions regarding input parameters, as well as the first-order method for solution of~\eqref{eq: cluster SDP} discussed in detail in Section~\ref{sec: num}.
+For example, \cite{yan2017provable}, studies a convex relaxation for cluster recovery in the Bernoulli (unweighted) case. The main theorem of this article establishes conditions for perfect recovery that allows larger clusters to have higher variance, although specialized for the unweighted case. Moreover, \cite{yan2017provable} consider the use of a tuning parameter to allow recovery without knowledge of the number of clusters $k$. On the other hand, the results of \cite{amini2014semidefinite,jalali2015relative} also provide tigher recovery guarantees but require knowledge of cluster sizes.  The key contribution of this work is the presentation of a recovery guarantee that extends to the weighted case without strict assumptions regarding input parameters, as well as the first-order method for solution of~\eqref{eq: cluster SDP} discussed in detail in Section~\ref{sec: num}.
 
 To further illustrate the consequences of this theorem, we consider
 several examples. In each, we assume that the graph is
@@ -889,7 +889,7 @@ In this case, \eqref{eq:smallest_largest}
 holds if
 $$
 \gamma \hat r \ge c \log n = c \max \bra{\sqrt{\log n},\; \sqrt{\frac{ \hat r \log^2n}{n}},\;\log n}
-\ge c \max \bra{\sqrt{\tilde\sigma^2 n}, \; \sqrt{\tilde\sigma^2 r \log n},\; \log n}
+\ge c \max \bra{\sqrt{\tilde\sigma^2 n}, \; \sqrt{\tilde\sigma^2 r \log n},\; \log n},
 $$
 since $\tilde \sigma^2  = \max\{p(1-p), q(1-q)\} = q(1-q) \le \log n / n$
 and the terms involving \(r_{k+1}\) and \(1-p\) are equal to zero.
@@ -911,7 +911,7 @@ is enforced by the gap inequality \eqref{eq:smallest_largest},
 which itself is a consequence of the use of the Bernstein inequality
 to establish certain dual variables are nonnegative
 in the proof of Theorem~\ref{thm: rec} (see Section~\ref{sec: nonneg}
-for more details); it may be possible to improve this bound
+for more details). It may be possible to improve this bound
 to $\hat r = \Omega(\sqrt{\log n})$ with improved concentration
 inequalities
 %or a relaxation of the desired success probability
@@ -980,7 +980,7 @@ In this case, \eqref{eq:smallest_largest}
 suggests that we can recover a planted clique (in the dense
 case) of size $r_1 = \Omega \rbra{ \max \bra{\sqrt{n}, n - r_1 } }$.
 This recovery guarantee is far more conservative than those
-provided in \cite{ames2011nuclear} and \cite{ames2015guaranteed},
+provided by \cite{ames2011nuclear} and \cite{ames2015guaranteed},
 among others,
 which establish that a planted clique
 of size $\Omega(\sqrt n)$ can be recovered from the optimal solution
@@ -1003,7 +1003,7 @@ On the other hand, the solution $\frac{1}{n} \e\e^T$ is also
 feasible for \eqref{eq: kdc sdp} with expected objective value
 $$
 	\E \sbra{ \frac{1}{n} \tr(\W \e\e^T) }
-	 \ge \hat c q n
+	 \ge \hat c q n,
 $$
 for some constant $\hat c$.
 This implies that the proposed solution is suboptimal if
@@ -1045,7 +1045,7 @@ the following sufficient condition for optimality of a feasible solution of \eqr
 \end{theorem}
 
 Theorem~\ref{T: w KKT conditions} is a restriction of the Karush-Kuhn-Tucker optimality conditions
-to the semidefinite program \eqref{eq: kdc sdp} \citep[see for example][Section 5.5.3]{boyd2009convex}.
+to the semidefinite program \eqref{eq: kdc sdp} \citep[see, for example,][Section 5.5.3]{boyd2009convex}.
 The goal of this section is to establish that we can construct dual variables $\tau \in \R$, $\bs\lambda \in \R^n_+$, $\bs\Xi \in \R^{n\times n}_{+}$ and $\S \in \Sigma^n_+$
 which satisfy the hypothesis
 of Theorem~\ref{T: w KKT conditions} with high probability if the weight matrix \(\W\) is
@@ -1081,7 +1081,7 @@ rows and columns indexed by \(C_q\), \(q \in\{1,2,\dots, k\}\), we see that \(\X
 \[
 \bs 0 = \S_{C_q, C_q} \e = %\footnote{What happens with $\bs\Xi$ in this expression? It does not seem to appear here. Instead it is chosen in (3.7) in a certain way.
 %Brendan: it is chosen to be 0 by the complementary slackness condition}
-\tau \e  + r_q \bs\lambda_{C_q} + (\bs\lambda_{C_q}^T \e) \e - \W_{C_q, C_q} \e
+\tau \e  + r_q \bs\lambda_{C_q} + (\bs\lambda_{C_q}^T \e) \e - \W_{C_q, C_q} \e,
 \]
 by the block structure of \(\X^*\);
 note that \(\bs\Xi_{C_q, C_q} = \bs 0\) is chosen to satisfy the complementary slackness condition \eqref{E: w CS nonneg}.
@@ -1147,7 +1147,7 @@ to be solutions of the system
 \newcommand{\I}{\bs I}
 \begin{equation} \label{eq: yz system}
 	\mat{{cc} r_s \I + \e\e^T & 0 \\ 0 & r_q \I + \e\e^T }
-	\vect{ \y \\ \z } = \vect{\b^{q,s} \\ \b_{s,q} }
+	\vect{ \y \\ \z } = \vect{\b^{q,s} \\ \b_{s,q} },
 \end{equation}
 to ensure that the complementary slackness conditions are satisfied.
 Note that taking the inner product of each side
@@ -1155,14 +1155,14 @@ of \eqref{eq: yz system} with the vector \( (\e; -\e) \)
 yields
 \[
 	(r_q + r_s)( \e^T \y -  \e^T \z) = \e^T \b^{q,s} - \e^T \b^{s,q}
-	= 0
+	= 0,
 \]
 by the symmetry of \eq{\W}. This establishes that the solution
 \((\y; \z)\) of \eqref{eq: yz system}
-is also a solution of the (singular) system of equations
+is also a solution of the (singular) system of equations,
 \[
 	\mat{{cc} r_s \I & \e\e^T  \\ \e\e^T & r_q \I }
-	\vect{ \y \\ \z } = \vect{\b^{q,s} \\ \b_{s,q} }
+	\vect{ \y \\ \z } = \vect{\b^{q,s} \\ \b_{s,q} },
 \]
 imposed by the complementary slackness conditions
 ${\S_{C_q, C_s} \e = \0}$ and ${\S_{C_s, C_q} = \0 }$.
@@ -1173,7 +1173,7 @@ Formula
 yields the formula for $\y$ and $\z$ given by
 \eqref{eq: y z}.
 We set the remaining block $\bs\Xi_{C_{k+1}, C_{k+1} } = \0$.
-See \citet[Section~4.2]{ames2014guaranteed} for more details.
+\citet[Section~4.2]{ames2014guaranteed} provides further details.
 
 Finally, we choose
 \begin{equation} \label{eq: mu}
@@ -1189,8 +1189,8 @@ The entries of \(\S\) are chosen according to the stationarity condition~\eqref{
 an auxiliary variable \(\St \in \Sigma^n\) as the following \((k+1)\times (k+1)\) block matrix:
 \begin{equation} \label{e: tilde S def}
 \St_{C_q, C_s} = \branchdef{
-	\mu_{q,s}\e\e^T - \W_{C_q, C_s},  & \mbox{if } q, s \in \{1,\dots, k\} \\
-	\mu_{q,k+1} \e\e^T - \W_{C_q, C_{k+1}} + (\bs\lambda_{C_q} - \E[\bs\lambda_{C_q}] )\e^T ,  & \mbox{if } s = {k+1}  \\
+	\mu_{q,s}\e\e^T - \W_{C_q, C_s},  & \mbox{if } q, s \in \{1,\dots, k\}, \\
+	\mu_{q,k+1} \e\e^T - \W_{C_q, C_{k+1}} + (\bs\lambda_{C_q} - \E[\bs\lambda_{C_q}] )\e^T ,  & \mbox{if } s = {k+1},  \\
 	\mu_{k+1,s} \e\e^T - \W_{C_{k+1}, C_s} + \e (\bs \lambda_{C_s} - \E[\bs\lambda_{C_s}] )^T,   & \mbox{if } q = {k+1} .
 }
 \end{equation}
@@ -1221,7 +1221,7 @@ of Theorem~\ref{T:  w KKT conditions}.
 	\end{equation}
 	Moreover, if \eqref{eq: St bound} is satisfied and
 	\begin{equation} \label{a: block weights}
-	r_s \e^T \W_{C_q, C_q} \e > r_q \e^T \W_{C_q, C_s} \e
+	r_s \e^T \W_{C_q, C_q} \e > r_q \e^T \W_{C_q, C_s} \e,
 	\end{equation}
 	for all $q, s \in \{1,\dots,k\}$ such that $q\neq s$,
 	then $\X^*$ is the unique optimal solution of \eqref{eq: kdc sdp} and
@@ -1273,7 +1273,7 @@ is an immediate consequence of Theorem~\ref{thm: Hoeffding}.
 	\begin{equation} \label{eq: yz bound}
 		\|\bs{y}^{q,s}\|_{\infty} +  \|\bs{z}^{q,s}\|_{\infty} \leq
 		c \max \bra{ \sqrt{ \frac{\tilde \sigma^2 \log n}{\hat r}} ,
-			\frac{\log n}{\hat r} }
+			\frac{\log n}{\hat r} },
 	\end{equation}
 	w.h.p.,
 	where $\tilde \sigma := \max \{ \sigma_{ij} : i,j = 1,2,\dots, k+1 \}$,
@@ -1294,7 +1294,7 @@ We have the following bound on the entries of \(\bs \Xi\) as an immediate conseq
 	\begin{equation} \label{eq: xi eps}
 	0 < \epsilon \leq
 		1 - \frac{c}{\gamma}\max \bra{ \sqrt{ \frac{\tilde \sigma^2 \log n}{\hat r}} ,
-			\frac{\log n}{\hat r}  }
+			\frac{\log n}{\hat r}  }.
 	\end{equation}
 \end{proposition}
 
@@ -1306,7 +1306,7 @@ We have the following bound on the entries of \(\bs \Xi\) as an immediate conseq
 	&= \E\sbra{\bs{\lambda}_{C_q}\bs{e}^T+\bs{e}\bs{\lambda}_{C_s}^T - \bs{W}_{C_q,C_s}}+ \bs{y}^{q,s}\bs{e}^T+\bs{e}
 	\left(\bs{z}^{q,s}\right)^T \\
 	&= \left(\frac{1}{2} \left(\mu_{qq} - \frac{\tau}{r_q} \right) + \frac{1}{2} \left(\mu_{ss} - \frac{\tau}{r_s} \right) - \mu_{qs} \right)
-	\bs{e}\bs{e}^T + \bs{y}^{q,s}\bs{e}^T+\bs{e}\left(\bs{z}^{q,s}\right)^T
+	\bs{e}\bs{e}^T + \bs{y}^{q,s}\bs{e}^T+\bs{e}\left(\bs{z}^{q,s}\right)^T.
 	\end{align*}
 	Using
 	\eqref{eq: mu} and
@@ -1346,7 +1346,7 @@ with high probability; we present the proof of this result in Appendix~\ref{app:
 	\begin{equation} \label{eq: lam eps}
 	0 < \epsilon \leq  \frac{1}{2\gamma}
 	\rbra{ \mu_{qq}  - c' \max \bra{ \sqrt{  \frac{\sigma_{qq}^2 \log 		n }{r_q} },
-			\frac{\log n }{r_q} } }
+			\frac{\log n }{r_q} } },
 	\end{equation}
 	for all $ q \in \{1,\dots, k\}$.
 \end{proposition}
@@ -1392,10 +1392,10 @@ In particular, we decompose \(\St\) as \(\St = \St_1 + \St_2 + \St_3,\) where
 \St_1 & = \E[ \W ] - \W,  \label{eq: St1 def}\\
 [\St_2]_{C_q, C_s} & =
 \begin{cases}  \left(\bs{\lambda}_{C_q}-\E\sbra{\bs{\lambda}_{C_q}}\right)\bs{e}^T,
-& \mbox{if } s = k+1 \\
-\bs{e}\left(\bs{\lambda}_{C_s}-\E\sbra{\bs{\lambda}_{C_s}}\right)^T, & \mbox{if } q = k+1  \\
+& \mbox{if } s = k+1, \\
+\bs{e}\left(\bs{\lambda}_{C_s}-\E\sbra{\bs{\lambda}_{C_s}}\right)^T, & \mbox{if } q = k+1,  \\
 \bs{0}, & \mbox{otherwise, }\end{cases} \label{eq: St2 def} \\
-[\St_3]_{C_q, C_s} &= 	\begin{cases} -\mu_{k+1, k+1} \bs{e}\bs{e}^T, & \mbox{if } q=s=k+1 \\
+[\St_3]_{C_q, C_s} &= 	\begin{cases} -\mu_{k+1, k+1} \bs{e}\bs{e}^T, & \mbox{if } q=s=k+1, \\
 \bs{0}, & \mbox{otherwise.} \end{cases}
 \end{align}
 
@@ -1407,7 +1407,7 @@ The following lemmas provide the necessary bounds on $\|\St_1\|$ and $\|\St_2\|$
 	for some \(\W\in \Sigma^n\) sampled from the heterogeneous planted cluster model.
 	Then there exists constant $C > 0$ such that
 	\begin{equation} \label{eq: S1 bound}
-	\|\St_1\| \le C   \max  \bra {\tilde \sigma\sqrt{n},  \sqrt{\log n}}
+	\|\St_1\| \le C   \max  \bra {\tilde \sigma\sqrt{n},  \sqrt{\log n}},
 	\end{equation}
 	with high probability.
 \end{lemma}
@@ -1417,7 +1417,7 @@ The following lemmas provide the necessary bounds on $\|\St_1\|$ and $\|\St_2\|$
 	for some \(\W\in \Sigma^n\) sampled from the heterogeneous planted cluster model.
 	Then there exists constant $C'> 0$ such that
 	\begin{equation} \label{eq: S2 bound}
-		\|\St_2 \| \le C' \rbra{ \max \bra{\hat\sigma^2, \frac{\log n}{\hat r} } k r_{k+1} }^{1/2}
+		\|\St_2 \| \le C' \rbra{ \max \bra{\hat\sigma^2, \frac{\log n}{\hat r} } k r_{k+1} }^{1/2},
 	\end{equation}
 	with high probability, where $\hat \sigma := \max_{q=1,\dots, k} \sigma_{qq}$.
 \end{lemma}
@@ -1449,7 +1449,7 @@ We see that   \eqref{eq: xi eps} and \eqref{eq:eps_req1} can be simultaneously f
 			\frac{\log n}{\hat r}}
 			\geq
 			\frac{1}{\gamma \hat{r}}\left( C \max\left\lbrace \tilde \sigma \sqrt{n},  \sqrt{\log n} \right\rbrace
-		+ C' \rbra{ \max \bra{\hat\sigma^2, \frac{\log n}{\hat r} } k r_{k+1} }^{1/2} + \mu_{k+1, k+1} r_{k+1}\right) \)}
+		+ C' \rbra{ \max \bra{\hat\sigma^2, \frac{\log n}{\hat r} } k r_{k+1} }^{1/2} + \mu_{k+1, k+1} r_{k+1}\right) \)},
 \]
 which holds if and only if
 \begin{equation} \label{eq:general_low_bound_r}
@@ -1466,7 +1466,7 @@ Next, we see that \eqref{eq:eps_req1} and \eqref{eq: lam eps} are simultaneously
 			\geq
 			\frac{1}{\gamma \hat{r}} \rbra{  C \max\left\lbrace \tilde \sigma \sqrt{n},  \sqrt{\log n} \right\rbrace
 		+ C' \rbra{ \max \bra{\hat\sigma^2, \frac{\log n}{\hat r} } k r_{k+1} }^{1/2} + \mu_{k+1, k+1} r_{k+1} }
-\)}
+\)},
 \]
 which holds if and only if
 \begin{equation} \label{eq:general:low_bound_r2}
@@ -1475,7 +1475,7 @@ which holds if and only if
 			\geq
 			 2\rbra{  C \max\left\lbrace \tilde \sigma \sqrt{n},  \sqrt{\log n} \right\rbrace
 	 + C' \rbra{ \max \bra{\hat\sigma^2, \frac{\log n}{\hat r} } k r_{k+1} }^{1/2} + \mu_{k+1, k+1} r_{k+1} }
-\)}
+\)}.
 \end{equation}
 %Note that \eqref{eq:general:low_bound_r2} is satisfied if \eqref{eq:general_low_bound_r} holds.
 Finally, suppose that we choose the parameter $c_4 > \max\{c, c', 12\}$ so that gap condition~\eqref{eq: unique bound}} is satisfied  and
@@ -1501,7 +1501,7 @@ optimal solution of \eqref{eq: kdc sdp} with the planted partition.
 
 % Brief description of ADMM methods.
 \subsection{Alternating Direction Method of Multipliers for the Densest $k$-Disjoint Clique Problem}
-We solve \eqref{eq: kdc sdp} iteratively using the ADMM algorithm proposed by \cite{ames2014guaranteed}.
+We solve \eqref{eq: kdc sdp} iteratively using the algorithm proposed by \cite{ames2014guaranteed}.
 Specifically, we split the decision variable \eq{\X} to obtain the equivalent formulation
 \begin{equation} \label{eq: kdc admm}
 \max \bra{ \tr(\W\Y) : \X - \Y = \0, \X\e \le \e, \X \ge \0, \; \tr \Y = k, \Y \in \Sigma^V_+ }.
@@ -1521,7 +1521,7 @@ We update $\Y$ as the minimizer of the subproblem
 where $(\X^t, \Y^t, \Z^t)$ is the current iterate after $t$ iterations.
 That is, $\Y^{t+1}$ is the projection of the matrix $\bs{U}^t := \X^t - (\W + \Z^t)/\rho$ onto the intersection of the positive semidefinite cone and the set of matrices with trace equal to zero.
 Such a projection can be computed explicitly by projecting the vector of eigenvalues $\bs{\lambda}^t$ of $\bs{U}^t$ onto the nonnegative simplex $\{\y \in \R^n: \e^T \y = k, \; \y \ge \bs 0\}$.
-Please see~\citet[Proposition~2.6] {zhang2011penalty} and \citet{van2008probing} for further details.
+\citet[Proposition~2.6] {zhang2011penalty} and \citet{van2008probing} can be consulted for further details.
 
 % X-update.
 We update $\X^{t+1}$ as the optimal solution of
@@ -1583,8 +1583,7 @@ Please see the work of \citet[Section 6]{ames2014guaranteed} for further impleme
 		\[
 			v_p^{(t+1)} = \tr(\W\Y^{t}) \hspace{0.25in}
 			v_d^{(t+1)} = k \lambda_{min}(\W + \Z^{t+1}) - \tr(\X^{t+1}\Z^{t+1}).
-		\]
-.}
+		\]    }
 	\State
 		Calculate relative duality gap
 		\[
@@ -1605,8 +1604,8 @@ For the dense graph experiments, we fix \(n = 1000\), and sample \(10\) graphs
 from the heterogeneous planted cluster model corresponding to the Bernoulli
 distributions \(\Omega_{ij} = Bern(p_{ij})\)  with probabilities of success $p_{ij}$ given by
 \[
-	p_{ij} := \begin{cases} \rbra{ 1 - \rbra{\frac{0.35}{k+1}}i } p &\text{if } i = j \\
-								\rbra{ 1 - \rbra{\frac{0.35}{k+1}} \min\{i,j\} } q &\text{if } i \neq j,
+	p_{ij} := \begin{cases} \rbra{ 1 - \rbra{\frac{0.35}{k+1}}i } p, &\text{if } i = j, \\
+								\rbra{ 1 - \rbra{\frac{0.35}{k+1}} \min\{i,j\} } q, &\text{if } i \neq j,
 							\end{cases}
 \]
 for $q = 0.25$ and each $p=\{0.25, 0.275, 0.3, \dots, 0.975, 1\}$ and
@@ -1656,7 +1655,7 @@ For each graph \(G\), we call the ADMM algorithm to solve \eqref{eq: kdc sdp} (w
 and declare the block structure of \(G\) recovered if \(\|\X^* - \X_0\|^2_F / \|\X_0\|^2_F < 10^{-3} \).
 Theorem~\ref{thm: rec} suggests that we should expect recovery of the cluster structure in the case that
 \[
-	p >  \Omega\rbra{\frac{1}{\sqrt{n}} + \frac{n^{1/4}}{\hat r}}
+	p >  \Omega\rbra{\frac{1}{\sqrt{n}} + \frac{n^{1/4}}{\hat r}},
 \]
 for this particular choice of $p$ and $q$.
 Note that this implies that we have perfect recovery (w.h.p.) for $\hat r = \Omega(n^{1/4})$, rather than $\Omega(\sqrt{n})$ (as observed in the dense case).
@@ -1687,7 +1686,7 @@ even moderately large graphs.
 For example, the proposed algorithm, based on the ADMM, has per-iteration cost of $O(n^3)$ flops per iteration, primarily to compute the spectral decomposition needed to update $\Y$. Classical methods based on interior-point methods will scale even more poorly. Efficient, scalable methods for solving this semidefinite relaxation, and semidefinite programs in general, are needed.
 
 \acks{We are grateful to John Bruer and Joel Tropp for their insights and helpful suggestions.
-Aleksis Pirinen was supported by a California Institute of Technology Summer Undergraduate Research Fellowship (SURF) using funds provided by Office of Naval Research (ONR) award N000014-11-1002. Brendan Ames was supported by University of Alabama Research Grant RG14678.}
+Aleksis Pirinen was supported by a California Institute of Technology Summer Undergraduate Research Fellowship (SURF) using funds provided by Office of Naval Research (ONR) award N000014-11-1002. Brendan Ames was supported by University of Alabama Research Grants RG14678 and RG14838.}
 %
 %%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %% END MATERIAL
