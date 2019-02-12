@@ -181,7 +181,6 @@ INPUT ./sparse_plot.png
 INPUT ./sparse_plot.png
 INPUT 16-128.bbl
 INPUT 16-128.bbl
-INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT 16-128.aux
 INPUT ./16-128.out
 INPUT ./16-128.out
@@ -203,5 +202,4 @@ INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
-INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb

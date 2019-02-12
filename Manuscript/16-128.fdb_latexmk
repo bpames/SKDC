@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex 16-128"] 1549919468 "16-128.aux" "16-128.bbl" "16-128" 1549919478
-  "16-128.aux" 1549919475 17783 bc2177aee936e9b201a15718770b6bad ""
-  "SWKDC.bib" 1549919435 17848 d9903d35ee1972739daca19a238898b5 ""
+["bibtex 16-128"] 1550004496 "16-128.aux" "16-128.bbl" "16-128" 1550004718
+  "16-128.aux" 1550004716 17804 388382b5ce62ca1b6af79d656becf017 ""
+  "SWKDC.bib" 1550004492 13654 1c4a0235d536788b1e620034b0506264 ""
   "c:/texlive/2018/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1526666613 26816 ffe5423d2019860bad9f54bc402fac15 ""
   (generated)
-  "16-128.bbl"
   "16-128.blg"
-["pdflatex"] 1549919470 "16-128.tex" "16-128.pdf" "16-128" 1549919478
-  "16-128.aux" 1549919475 17783 bc2177aee936e9b201a15718770b6bad ""
-  "16-128.bbl" 1549919469 9857 c59f20843fe4de414a8879d3c88420a0 "bibtex 16-128"
-  "16-128.out" 1549919475 1502 afd501d3dc13ae937bb6ae604899926c ""
-  "16-128.tex" 1549918060 111804 60e8a6afa41ca1459222682cdcb8b497 ""
+  "16-128.bbl"
+["pdflatex"] 1550004712 "16-128.tex" "16-128.pdf" "16-128" 1550004718
+  "16-128.aux" 1550004716 17804 388382b5ce62ca1b6af79d656becf017 ""
+  "16-128.bbl" 1550004496 9492 cd8dee48f39afd0903268885e47deadc "bibtex 16-128"
+  "16-128.out" 1550004716 1502 afd501d3dc13ae937bb6ae604899926c ""
+  "16-128.tex" 1550004707 111845 2b80e6a86c196747035fef714029b318 ""
   "c:/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1526665450 3332 103109f5612ad95229751940c61aada0 ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1526664220 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1526664220 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -44,7 +44,6 @@
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1546460442 1116 933a60c408fc0a863a92debe84b2d294 ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1546460442 1120 8b7d695260f3cff42e636090a8002094 ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1546460442 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
-  "c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1546460442 768 1321e9409b4137d6fb428ac9dc956269 ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm" 1546460442 768 d7b9a2629a0c353102ad947dc9221d49 ""
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1526664220 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1526664220 32080 340ef9bf63678554ee606688e7b5339d ""
@@ -63,7 +62,6 @@
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1526664221 32587 65067f817f408bc71a7312f3d9828a9b ""
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1526664221 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1526664221 37944 359e864bd06cde3b1cf57bb20757fb06 ""
-  "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1526664221 31099 342ef5a582aacbd3346f3cf4579679fa ""
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb" 1526664221 24287 6b803fa9eb1ddff9112e00519b09dd9e ""
   "c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb" 1526664221 35479 2cca68718f15872e7cce1a8f6033b99b ""
   "c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1546461156 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -127,7 +125,7 @@
   "jmlr2e.sty" 1549492706 14082 a1e3bcbdd00aafb7fae9367e056973d1 ""
   "sparse_plot.png" 1548738258 32308 24b380407dab3ba76068105277eacf7b ""
   (generated)
-  "16-128.out"
   "16-128.log"
-  "16-128.pdf"
   "16-128.aux"
+  "16-128.out"
+  "16-128.pdf"
