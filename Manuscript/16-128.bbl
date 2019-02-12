@@ -11,10 +11,11 @@ Emmanuel Abbe, Afonso~S Bandeira, and Georgina Hall.
 \newblock \emph{Information Theory, IEEE Transactions on}, 62\penalty0
   (1):\penalty0 471--487, 2016.
 
-\bibitem[Ailon et~al.(2013)Ailon, Chen, and Huan]{ailon2013breaking}
-Nir Ailon, Yudong Chen, and Xu~Huan.
+\bibitem[Ailon et~al.(2013)Ailon, Chen, and Xu]{ailon2013breaking}
+Nir Ailon, Yudong Chen, and Huan Xu.
 \newblock Breaking the small cluster barrier of graph clustering.
-\newblock \emph{arXiv preprint arXiv:1302.4549}, 2013.
+\newblock In \emph{International Conference on Machine Learning}, pages
+  995--1003, 2013.
 
 \bibitem[Ames(2014)]{ames2014guaranteed}
 Brendan~PW Ames.
@@ -61,13 +62,13 @@ Ernesto~G Birgin, Jos{\'e}~Mario Mart{\'\i}nez, and Marcos Raydan.
 \newblock \emph{SIAM Journal on Optimization}, 10\penalty0 (4):\penalty0
   1196--1211, 2000.
 
-\bibitem[Boyd and Vandenberghe(2009)]{boyd2009convex}
+\bibitem[Boyd and Vandenberghe(2004)]{boyd2009convex}
 Stephen Boyd and Lieven Vandenberghe.
-\newblock \emph{Convex optimization}.
-\newblock Cambridge university press, 2009.
+\newblock \emph{Convex Optimization}.
+\newblock Cambridge University Press, 2004.
 
-\bibitem[Cai et~al.(2015)Cai, Li, et~al.]{cai2015robust}
-T~Tony Cai, Xiaodong Li, et~al.
+\bibitem[Cai and Li(2015)]{cai2015robust}
+T~Tony Cai and Xiaodong Li.
 \newblock Robust and computationally feasible community detection in the
   presence of arbitrary outlier nodes.
 \newblock \emph{The Annals of Statistics}, 43\penalty0 (3):\penalty0
@@ -75,9 +76,10 @@ T~Tony Cai, Xiaodong Li, et~al.
 
 \bibitem[Chen and Xu(2014)]{chen2014statistical}
 Yudong Chen and Jiaming Xu.
-\newblock Statistical-computational phase transitions in planted models: The
+\newblock Statistical-computational phase transitions in planted models: the
   high-dimensional setting.
-\newblock In \emph{ICML}, pages 244--252, 2014.
+\newblock In \emph{International Conference on Machine Learning}, pages
+  244--252, 2014.
 
 \bibitem[Chen et~al.(2014{\natexlab{a}})Chen, Jalali, Sanghavi, and
   Xu]{chen2014clustering}
@@ -94,33 +96,34 @@ Yudong Chen, Sujay Sanghavi, and Huan Xu.
   (10):\penalty0 6440--6455, 2014{\natexlab{b}}.
 
 \bibitem[Dhillon et~al.(2004)Dhillon, Guan, and Kulis]{dhillon2004kernel}
-Inderjit~S Dhillon, Yuqiang Guan, and Brian Kulis.
+I.~Dhillon, Y.~Guan, and B.~Kulis.
 \newblock Kernel k-means: spectral clustering and normalized cuts.
-\newblock In \emph{Proceedings of the tenth ACM SIGKDD international conference
-  on Knowledge discovery and data mining}, pages 551--556. ACM, 2004.
+\newblock In \emph{ACM SIGKDD International Conference on Knowledge Discovery
+  and Data Mining}, pages 551--556. ACM, 2004.
 
 \bibitem[Golub and Van~Loan(2013)]{golub2013matrix}
-GH~Golub and C~Van~Loan.
-\newblock Matrix computations, 4th.
-\newblock \emph{Johns Hopkins}, 2013.
+G.~Golub and C.~Van~Loan.
+\newblock \emph{Matrix Computations}.
+\newblock Johns Hopkins University Press, 4th edition, 2013.
 
 \bibitem[Gu{\'e}don and Vershynin(2015)]{guedon2015community}
-Olivier Gu{\'e}don and Roman Vershynin.
-\newblock Community detection in sparse networks via grothendieck's inequality.
+O.~Gu{\'e}don and R.~Vershynin.
+\newblock Community detection in sparse networks via {G}rothendieck's
+  inequality.
 \newblock \emph{Probability Theory and Related Fields}, pages 1--25, 2015.
 
 \bibitem[Hajek et~al.(2015)Hajek, Wu, and Xu]{hajek2015achieving}
-Bruce Hajek, Yihong Wu, and Jiaming Xu.
+B.~Hajek, Y.~Wu, and J.~Xu.
 \newblock Achieving exact cluster recovery threshold via semidefinite
   programming.
-\newblock In \emph{Information Theory (ISIT), 2015 IEEE International Symposium
-  on}, pages 1442--1446. IEEE, 2015.
+\newblock In \emph{IEEE International Symposium on Information Theory}, pages
+  1442--1446. IEEE, 2015.
 
 \bibitem[Holland et~al.(1983)Holland, Laskey, and
   Leinhardt]{holland1983stochastic}
-Paul~W Holland, Kathryn~Blackmond Laskey, and Samuel Leinhardt.
-\newblock Stochastic blockmodels: First steps.
-\newblock \emph{Social networks}, 5\penalty0 (2):\penalty0 109--137, 1983.
+P.~Holland, K.~Laskey, and S.~Leinhardt.
+\newblock Stochastic blockmodels: first steps.
+\newblock \emph{Social Networks}, 5\penalty0 (2):\penalty0 109--137, 1983.
 
 \bibitem[Jalali et~al.(2015)Jalali, Han, Dumitriu, and
   Fazel]{jalali2015relative}
@@ -222,7 +225,7 @@ Bowei Yan, Purnamrita Sarkar, and Xiuyuan Cheng.
 \newblock \emph{arXiv preprint arXiv:1705.08580}, 2017.
 
 \bibitem[Zhang and Lu(2011)]{zhang2011penalty}
-Yong Zhang and Zhaosong Lu.
+Y.~Zhang and Z.~Lu.
 \newblock Penalty decomposition methods for rank minimization.
 \newblock In \emph{Advances in Neural Information Processing Systems}, pages
   46--54, 2011.

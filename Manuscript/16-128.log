@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.1.2)  7 FEB 2019 17:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.1.2)  11 FEB 2019 15:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1222,19 +1222,19 @@ Package rerunfilecheck Info: File `16-128.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2080.
  ) 
 Here is how much of TeX's memory you used:
- 10459 strings out of 492616
- 157676 string characters out of 6132784
- 298513 words of memory out of 5000000
+ 10463 strings out of 492616
+ 157712 string characters out of 6132784
+ 298496 words of memory out of 5000000
  13927 multiletter control sequences out of 15000+600000
- 21219 words of font info for 137 fonts, out of 8000000 for 9000
+ 21435 words of font info for 139 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,20n,49p,927b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,20n,49p,927b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2018/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on 16-128.pdf (34 pages, 471012 bytes).
+Output written on 16-128.pdf (34 pages, 471313 bytes).
 PDF statistics:
- 814 PDF objects out of 1000 (max. 8388607)
- 746 compressed objects within 8 object streams
+ 815 PDF objects out of 1000 (max. 8388607)
+ 747 compressed objects within 8 object streams
  158 named destinations out of 1000 (max. 500000)
  23211 words of extra memory for PDF output out of 24883 (max. 10000000)
 
