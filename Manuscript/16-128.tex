@@ -500,7 +500,7 @@ depending on \(\alpha\) and \(\beta\), then we can recover the clusters
 from the optimal solution of the semidefinite program
 \begin{equation} \label{eq: cluster SDP}
 \max_{\X \in \Sigma_+^n} \Big\{ \tr(\W \X): \X \e \le \e,
-\tr(\X) = k, \X \ge \0 \Big\},
+\tr(\X) = k, \X \ge \0 \Big\}
 \end{equation}
 with high probability, where \(k \) is the number of clusters in the graph.
 We will show that these results can be strengthened to establish that much
@@ -676,8 +676,8 @@ as follows. % here, \(\Sigma^n\) denotes the set of all \(n\times n\) symmetric 
 	\E[w_{uv}]  = \E[w_{vu}] = \beta, \hspace{0.25in} 0 \le w_{uv} \le 1,
 	\]
 	for fixed \(\beta \in [0, \alpha) \)
-	if ${1 \le i, j \le k}$ or $i=j = k+1$
-	and, \(\E[w_{uv}] = \beta/2\) otherwise.
+	if ${1 \le i, j \le k}$ or $i=j = k+1$,
+	and \(\E[w_{uv}] = \beta/2\) otherwise.
 \end{itemize}
 
 We should note that the assumption that the entries of \(\W\) are bounded between \(0\) and
@@ -704,7 +704,7 @@ success \(p\) and \(q\), respectively.
 \begin{theorem}
 	\label{thm: old rec}
 	Suppose that the vertex sets \(C_1, \dots, C_k\) define a \kdc subgraph \(H^*\) of the
-	\(n\)-node weighted complete graph \(K_n(V, \W)\) and let \(C_{k+1} := V \setminus \rbra{ \cup^t_{i=1} C_i } \).
+	\(n\)-node weighted complete graph \(K_n(V, \W)\) and let \(C_{k+1} := V \setminus \rbra{ \cup^k_{i=1} C_i } \).
 	Let \(r_i := |C_i|\) for all \(i=1,\dots, k+1\)
 	and let \( \hat r = \min_{i=1,\dots,k} r_i.\)
 	Let \( \W \in \Sigma^n\) be a random symmetric matrix sampled from the planted cluster model
@@ -719,16 +719,16 @@ success \(p\) and \(q\), respectively.
 	Let \(\X^*\) be the feasible solution of \eqref{eq: kdc sdp} corresponding to \(C_1,\dots, C_k\)
 	defined by \eqref{eq: cluster X}.
 	Then there exist scalars \(c_1, c_2, c_3 > 0\) such that if
-	\begin{equation} \label{eq: old rec}
+	\begin{equation*} \label{eq: old rec}
 	c_1 \sqrt{n} + c_2 \sqrt{k r_{k+1}} + c_3 r_{k+1} \le \gamma \hat r,
-	\end{equation}
+\end{equation*}
 	then \( \X^* \) is the unique optimal solution of \eqref{eq: kdc sdp},
 	and \( H^*\) is the unique maximum density \kdc subgraph of \(K_n\)
 	with probability tending exponentially to \(1\) as \(\hat r \ra \infty\).
 \end{theorem}
 
 In contrast to Theorem~\ref{thm: simple}, the result of Theorem~\ref{thm: old rec} implies that we can have perfect recovery if the graph contains a small number of nodes that shouldn't be assigned to any of the planted clusters.
-Each potential edge from each of these nodes to any other node is added independent to the graph with probability $q$, so that each node in $C_{k+1}$ has roughly the same number of neighbours in each cluster block. This implies that such a node is not assigned to any of the planted clusters because it is weakly associated with all of the planted clusters. It is important to note that this edge assignment is performed randomly and not deterministically by an adversary attempting to obscure the cluster structure present in the graph.
+Each potential edge from each of these nodes to any other node is added independently to the graph with probability $q$, so that each node in $C_{k+1}$ has roughly the same number of neighbours in each cluster block. This implies that such a node is not assigned to any of the planted clusters because it is weakly associated with all of the planted clusters. It is important to note that this edge assignment is performed randomly and not deterministically by an adversary attempting to obscure the cluster structure present in the graph.
 %
 %% Our contribution.
 We present a new analysis that improves upon the recovery guarantee of Theorem~\ref{thm: old rec} in two ways.
@@ -826,7 +826,7 @@ is that our model and phase transition are largely parameter free.
 For example, \citet{amini2014semidefinite} present an analysis of three
 semidefinite relaxations that obtain nearly identical conditions
 on $\{\Omega_{ij}\}$ guaranteeing recovery but restrict their
-analysis to case where the clusters are identical in size
+analysis to the case where the clusters are identical in size
 or otherwise known and when $\{\Omega_{ij}\}$ are Bernoulli distributions; we should note that
 \citet{amini2014semidefinite} consider heterogeneous Bernoulli
 distributions where the within-cluster and between-cluster probabilities
@@ -835,7 +835,7 @@ Similarly, \citet{chen2014statistical} and \citet{jalali2015relative} give ident
 conditions for recovery
 (up to constants and logarithmic terms)
 in the Bernoulli case
-to those in Theorem \eqref{thm: rec} for
+to those in Theorem \ref{thm: rec} for
 semidefinite relaxations that require the sizes of the clusters to
 be used as input parameters (or all clusters to have identical size), neither
 of which are realistic assumptions in practice.
@@ -846,9 +846,9 @@ the vast majority of existing recovery guarantees for stochastic
 block models are restricted to the Bernoulli case.
 
 It is important to note that tighter recovery guarantees than those provided by Theorem~\ref{thm: rec} are known for specific problem settings. This is a natural consequence of the more general framework of our analysis.
-For example, \cite{yan2017provable}, studies a convex relaxation for cluster recovery in the Bernoulli (unweighted) case. The main theorem of this article establishes conditions for perfect recovery that allows larger clusters to have higher variance, although specialized for the unweighted case. Moreover, \cite{yan2017provable} consider the use of a tuning parameter to allow recovery without knowledge of the number of clusters $k$. On the other hand, the results of \cite{amini2014semidefinite,jalali2015relative} also provide tigher recovery guarantees but require knowledge of cluster sizes.  The key contribution of this work is the presentation of a recovery guarantee that extends to the weighted case without strict assumptions regarding input parameters, as well as the first-order method for solution of~\eqref{eq: cluster SDP} discussed in detail in Section~\ref{sec: num}.
+For example, \cite{yan2017provable} studies a convex relaxation for cluster recovery in the Bernoulli (unweighted) case. The main theorem of this article establishes conditions for perfect recovery that allow larger clusters to have higher variance, although specialized for the unweighted case. Moreover, \cite{yan2017provable} consider the use of a tuning parameter to allow recovery without knowledge of the number of clusters $k$. On the other hand, the results of \cite{amini2014semidefinite,jalali2015relative} also provide tighter recovery guarantees but require knowledge of cluster sizes.  The key contribution of this work is the presentation of a recovery guarantee that extends to the weighted case without strict assumptions regarding input parameters, as well as the first-order method for solution of~\eqref{eq: cluster SDP} discussed in detail in Section~\ref{sec: num}.
 
-To further illustrate the consequences of this theorem, we consider
+To further illustrate the consequences of Theorem~\ref{thm: rec}, we consider
 several examples. In each, we assume that the graph is
 generated in the homogeneous setting where
 within-cluster weights are i.i.d.~according to $\Omega_1$ with mean $\alpha$ and variance $
@@ -877,8 +877,8 @@ On the other hand, if noise in the form of between-cluster
 edge-weight is small, then we
 should expect to be able recover
 much smaller clusters.
-For example, suppose that \(\Omega_2\) is the Bernoulli distribution with probability of adding an edge \(q\) and that \(\Omega_1\) is the Bernoulli distribution with probability of adding an edge \(p=1\); the assumption that \(p=1\) is for the sake of simplicity in this example and we can expect analogous recovery guarantees for
-any \(p\) tending slowly enough to \(0\).
+For example, suppose that \(\Omega_2\) is the Bernoulli distribution with probability of adding an edge \(q\) and that \(\Omega_1\) is the Bernoulli distribution with probability of adding an edge \(p=1\) (the assumption that \(p=1\) is for the sake of simplicity in this example and we can expect analogous recovery guarantees for
+any \(p\) tending slowly enough to \(0\)).
 Assume further that
 \(
 q (1-q)  \le {\log n }/{n}.
@@ -978,7 +978,7 @@ specializes to the planted clique model considered in
 \cite{ames2011nuclear} and \cite{ames2015guaranteed}.
 In this case, \eqref{eq:smallest_largest}
 suggests that we can recover a planted clique (in the dense
-case) of size $r_1 = \Omega \rbra{ \max \bra{\sqrt{n}, n - r_1 } }$.
+case) of size $r_1 = \Omega \rbra{ \max \bra{\sqrt{n}, r_2 } } = \Omega \rbra{ \max \bra{\sqrt{n}, n - r_1 } }$.
 This recovery guarantee is far more conservative than those
 provided by \cite{ames2011nuclear} and \cite{ames2015guaranteed},
 among others,
@@ -1009,10 +1009,10 @@ for some constant $\hat c$.
 This implies that the proposed solution is suboptimal if
 $p \hat r < \hat c q n$, which holds unless $\hat r \ge \hat c (q/p) n$.
 We will see that the realized values of these sums
-are concentrated near their expectations and, thus, we cannot
+are concentrated near their expectations and thus we cannot
 reasonably expect to recover planted clusters with unassigned nodes significantly
 outnumbering the smallest cluster. This implies that we cannot
-recover planted cliques of size $\omega(N)$ by maximizing
+recover planted cliques of size $\omega(n)$ by maximizing
 density of a complete subgraph because the planted clique
 is not the index set of the densest such graph; in this case, the
 entire graph is a denser
@@ -1063,7 +1063,7 @@ of the notation of Theorem~\ref{thm: rec}.
 %Brendan: rephrased to note that this is not new notation}.
 Let $K^*$ be a $k$-disjoint-clique subgraph of $K_n$ with vertex set composed of the disjoint cliques $C_1, \dots, C_k$ of sizes $r_1, \dots, r_k$  and let
 $\X^*$ be the corresponding feasible solution of \eqref{eq: kdc sdp} defined by \eqref{eq: cluster X}.
-Let $C_{k+1} := V \setminus  (\cup^k_{i=1} C_i)$ and $r_{k+1} := n - \sum_{i=1}^k r_i$ be the size of
+Let $C_{k+1} := V \setminus  (\cup^k_{i=1} C_i)$ and $r_{k+1} := n - \sum_{i=1}^k r_i$ be the size
 of  \(C_{k+1}\).
 Moreover, let $\hat r := \min_{i=1, \dots, k} r_i$ and
 \( \tilde r := \max_{i=1,\dots, k} r_i\)  be the size of the smallest and largest clusters,
@@ -1208,14 +1208,13 @@ of Theorem~\ref{T:  w KKT conditions}.
 	Let $r_1, \dots, r_{k+1}$, and  $\hat r$ be defined as in Theorem~\ref{thm: rec}.
 	Let $\X^*$ be the feasible solution for \eqref{eq: kdc sdp} corresponding to $C_1, \dots, C_k$ defined
 	by \eqref{eq: cluster X}. Let $\tau \in \R,$ $\bs\lambda \in \R^n,$  and $\bs\Xi \in \R^{n\times n}$
-	be chosen according to \eqref{eq: lam q},  \eqref{eq: Xi choice 1},
-	and \eqref{eq: mu},
+	be chosen according to  \eqref{eq: mu}, \eqref{eq: lam q},  and \eqref{eq: Xi choice 1}, respectively,
 	and let $\St$ be chosen according to \eqref{e: tilde S def}.
 	Suppose that the entries of  $\bs\lambda$ and  $\bs\Xi$ are nonnegative.
 	Then
 	$\X^*$ is optimal for \eqref{eq: kdc sdp}, and $K^*$  is the maximum density
 	$k$-disjoint-clique
-	subgraph of $K_n$ corresponding to $\W$ if
+	subgraph of $K_n$ corresponding to $\W$, if
 	\begin{equation} \label{eq: St bound}
 	\| \St\| \le  \epsilon \gamma \hat r.
 	\end{equation}
@@ -1245,7 +1244,7 @@ are nonnegative with high probability.
 % Hoeffding.
 To do so, we will make repeated use of the following specialization of the
 Bernstein inequality which provides a  bound on the tail of a sum of bounded independent random variables; see
-\citealt[Section~2.8]{lugosi2009}, for more details regarding  the Bernstein inequality.
+\citet[Section~2.8]{lugosi2009}, for more details regarding  the Bernstein inequality.
 %Hoeffding see \citep[see][Theorem 1]{Hoeffding},
 
 \begin{theorem}
@@ -1262,21 +1261,21 @@ Bernstein inequality which provides a  bound on the tail of a sum of bounded ind
 \end{theorem}
 
 The following bound
-on the parametrizing vectors \(\y^{q,s}\) and \(\z^{q,s}\) in the definition of the \((C_q, C_s)\) block of \(\bs\Xi\), c.f.,~\eqref{eq: Xi choice 1},
+on the parametrizing vectors \(\y^{q,s}\) and \(\z^{q,s}\) in the choice of the \((C_q, C_s)\) block of \(\bs\Xi\) defined by~\eqref{eq: Xi choice 1}
 is an immediate consequence of Theorem~\ref{thm: Hoeffding}.
 
 % yz bound.
 \begin{lemma}
 	\label{lem: yz bound}
 	There exists constant $c > 0$ such that
-	\begin{equation} \label{eq: yz bound}
+	\begin{equation*}% \label{eq: yz bound}
 		\|\bs{y}^{q,s}\|_{\infty} +  \|\bs{z}^{q,s}\|_{\infty} \leq
 		c \max \bra{ \sqrt{ \frac{\tilde \sigma^2 \log n}{\hat r}} ,
 			\frac{\log n}{\hat r} },
-	\end{equation}
+	\end{equation*}
 	w.h.p.,
 	where $\tilde \sigma := \max \{ \sigma_{ij} : i,j = 1,2,\dots, k+1 \}$,
-	for all \(q,s \in \{1,\dots, k+1\}\) such that 	$q \neq s$
+	for all \(q,s \in \{1,\dots, k+1\}\) such that 	$q \neq s$.
 \end{lemma}
 
 For \(q,s \in \{1,\dots, k+1\}\) such that \(q \neq s\), we define \(\y^{q,s}\) and \(\z^{q,s}\) as in \eqref{eq: y z}. To bound
@@ -1415,14 +1414,14 @@ The following lemmas provide the necessary bounds on $\|\St_1\|$ and $\|\St_2\|$
 	Suppose that \(\St_2\) is constructed according to \eqref{eq: St2 def}
 	for some \(\W\in \Sigma^n\) sampled from the heterogeneous planted cluster model.
 	Then there exists constant $C'> 0$ such that
-	\begin{equation} \label{eq: S2 bound}
+	\begin{equation*} %\label{eq: S2 bound}
 		\|\St_2 \| \le C' \rbra{ \max \bra{\hat\sigma^2, \frac{\log n}{\hat r} } k r_{k+1} }^{1/2},
-	\end{equation}
+	\end{equation*}
 	with high probability, where $\hat \sigma := \max_{q=1,\dots, k} \sigma_{qq}$.
 \end{lemma}
 
 We delay the proof of Lemmas~\ref{lem: S1} and~\ref{lem: S2} until Appendix~\ref{A_S1_bound}
-and Appendix~\ref{A_S2_bound} respectively.
+and Appendix~\ref{A_S2_bound}, respectively.
 Combining the three bounds on \(\|\St_1\|,\) \(\|\St_2\|\), and \(\|\St_3\|\) and
 applying the triangle inequality one last time shows that~\eqref{eq: S bound} holds
 with high probability.
@@ -1502,9 +1501,9 @@ optimal solution of \eqref{eq: kdc sdp} with the planted partition.
 \subsection{Alternating Direction Method of Multipliers for the Densest $k$-Disjoint Clique Problem}
 We solve \eqref{eq: kdc sdp} iteratively using the algorithm proposed by \cite{ames2014guaranteed}.
 Specifically, we split the decision variable \eq{\X} to obtain the equivalent formulation
-\begin{equation} \label{eq: kdc admm}
+\begin{equation*} %\label{eq: kdc admm}
 \max \bra{ \tr(\W\Y) : \X - \Y = \0, \X\e \le \e, \X \ge \0, \; \tr \Y = k, \Y \in \Sigma^V_+ }.
-\end{equation}
+\end{equation*}
 We then apply an approximate dual ascent scheme to maximize the augmented Lagrangian
 \[
 L_\rho(\X,\Y,\Z) = \tr(\W\Y) - \tr(\Z(\X-\Y) ) + \frac{\rho}{2} \| \X - \Y\|^2_F,
@@ -1514,9 +1513,9 @@ In particular, we minimize \(L_\rho\) with respect to \(\Y\) and \(\X\) successi
 \(\Z = \Z - \rho(\X-\Y)\) using approximate gradient ascent.
 
 We update $\Y$ as the minimizer of the subproblem
-\begin{equation}\label{eq: Y subprob}
+\begin{equation*} %\label{eq: Y subprob}
 	\Y^{t+1} = \argmin_{\Y \in \Sigma^n_+} \bra{  \left\| \Y - \rbra{ \X^t - \frac{\W + \Z^t}{\rho}}\right\|^2_F : \tr \Y = k},
-\end{equation}
+\end{equation*}
 where $(\X^t, \Y^t, \Z^t)$ is the current iterate after $t$ iterations.
 That is, $\Y^{t+1}$ is the projection of the matrix $\bs{U}^t := \X^t - (\W + \Z^t)/\rho$ onto the intersection of the positive semidefinite cone and the set of matrices with trace equal to zero.
 Such a projection can be computed explicitly by projecting the vector of eigenvalues $\bs{\lambda}^t$ of $\bs{U}^t$ onto the nonnegative simplex $\{\y \in \R^n: \e^T \y = k, \; \y \ge \bs 0\}$.
@@ -1528,16 +1527,16 @@ We update $\X^{t+1}$ as the optimal solution of
 	\X^{t+1} = \argmin_{\X \in \R^{n\times n}} \bra{ \left\|\X - \rbra{\Y^t + \Z^t/\rho} \right\|^2_F: \X \ge \0, \; \X \e \le \e }.
 \end{equation}
 Applying strong duality, we know that the optimal solution of~\eqref{eq:X-subprob} is given by
-\begin{equation}\label{eq:X-formula}
+\begin{equation*} %\label{eq:X-formula}
 	\X^{t+1} = \sbra{ \rbra{\Y^{t+1} + \Z^t/\rho} - \frac{\z^* \e + \e (\z^*)^T}{2}}_+,
-\end{equation}
+\end{equation*}
 where the operator $[\cdot]_+$ is the projection onto the symmetric nonnegative cone $\Sigma^V \cap \R^{V\times V}_+$ given by $[[\Z]_+]_{ij} = \max \{0, Z_{ij}\}$ for all $\Z \in \Sigma^V$, and $\z^*$ is the optimal solution of the dual problem of~\eqref{eq:X-subprob} given by
 \begin{equation}\label{eq:X-dual}
 	\min_{\z \ge \0} \frac{1}{2} \left\|\sbra{ \rbra{\Y^{t+1} + \Z^t/\rho} - \frac{\z \e + \e \z^T}{2}}_+ \right\|_F^2 + \z^T \e - \frac{1}{2} \|\Y^{t+1} + \Z^t/\rho \|^2_F.
 \end{equation}
 The objective function of the dual problem~\eqref{eq:X-dual} is differentiable and coercive in $\z$, so it can be solved efficiently by applying the spectral projected gradient method of~\cite{birgin2000nonmonotone}.
 We complete each iteration by performing an approximate dual ascent step to update the dual variable $\Z^{t+1}$.
-We stop the projected gradient method when the relative duality gap, given by $|v_p^{(t)} - v_d^{(t)}|/\max\{v_p^{(t)}, 1\}$ and primal constraint violation are both smaller than a desired error tolerance.
+We stop the projected gradient method when the relative duality gap, given by $|v_p^{(t)} - v_d^{(t)}|/\max\{v_p^{(t)}, 1\}$, and primal constraint violation are both smaller than a desired error tolerance.
 We summarize the algorithm as Algorithm~\ref{alg:ADMM}.
 Please see the work of \citet[Section 6]{ames2014guaranteed} for further implementation details.
 
@@ -1586,7 +1585,7 @@ Please see the work of \citet[Section 6]{ames2014guaranteed} for further impleme
 	\State
 		Calculate relative duality gap
 		\[
-			relgap = \frac{|v_p^{(t+1)} = v_d^{(t+1)} |}{\max\bra{|v_p^{(t+1)}|, 1} }.
+			relgap = \frac{|v_p^{(t+1)} - v_d^{(t+1)} |}{\max\bra{|v_p^{(t+1)}|, 1} }.
 		\]
 	\State
 		Declare sequence of iterates to have converged if $relgap < \epsilon$ and $pfeas >- \epsilon$.
@@ -1616,9 +1615,9 @@ evenly among $k-1$ clusters to ensure that at least one cluster
 has minimum size.
 % Choice of gamma.
 Under this choice of $p_{ij}$ the smallest gap between the in-cluster and between-cluster means occurs when $i=1$ and $j = k$; this implies that
-\begin{equation}\label{eq: het gam}
+\begin{equation*} %\label{eq: het gam}
 	\gamma = \rbra{ 1 - \frac{0.35 k }{k+1}}p - q.
-\end{equation}
+\end{equation*}
 % choice of aug lag param.
 For each graph \(G\), we call the ADMM algorithm sketched above to solve \eqref{eq: kdc sdp};
 in the algorithm, we use penalty parameter \(\rho = \min \bra{ \max \bra{ 5n/k, 80}, 500}/2 \),
@@ -1630,7 +1629,7 @@ Note that Theorem~\ref{thm: rec} implies that we should expect exact recovery (w
 $
 	\gamma \hat r = \Omega\rbra{\sqrt{\tilde \sigma^2n}}.
 $
-Figure~\ref{fig: rec}(a) illustrates the empirical success rate for each choice of \(\hat r\) and \(p\), as well as the curve \( p =(k+1)/(0.65k + 1)(q + \half {\sqrt{n}}),\) where we use the upper bound $\tilde \sigma^2 \le 1/4$ to estimate the constant term in~\eqref{eq:smallest_largest}.
+Figure~\ref{fig: rec}(a) illustrates the empirical success rate for each choice of \(\hat r\) and \(p\), as well as the curve \( p =\big((k+1)/(0.65k + 1)\big)(q + \half {\sqrt{n}}),\) where we use the upper bound $\tilde \sigma^2 \le 1/4$ to estimate the constant term in~\eqref{eq:smallest_largest}.
 
 \begin{figure}[t]
 	\centering
@@ -1639,7 +1638,7 @@ Figure~\ref{fig: rec}(a) illustrates the empirical success rate for each choice 
 		\caption{Empirical recovery rate for $n$-node graph with $k$ planted cliques of size at least $\hat r$ and \(\W\) generated
 		according to the planted heterogeneous cluster model with distributions $\Omega_{ij} = Bern(p_{ij})$. Brighter colors indicate higher
 		rates of recovery, with black corresponding to 0 recoveries and white corresponding to 10 recoveries (out of 10 trials).
-		The dashed curves indicate the phase transition to perfect recovery predicted by Theorem~\ref{sec: rec}.}
+		The dashed curves indicate the phase transition to perfect recovery predicted by Theorem~\ref{thm: rec}.}
 	\label{fig: rec}
 \end{figure}
 
@@ -1682,7 +1681,7 @@ users may belong to several overlapping communities.
 It would be worthwhile to see how our model and recovery guarantees can be modified to address overlapping clusters.
 Finally, our algorithm for graph clustering requires the solution of a semidefinite program, which may be impractical for
 even moderately large graphs.
-For example, the proposed algorithm, based on the ADMM, has per-iteration cost of $O(n^3)$ flops per iteration, primarily to compute the spectral decomposition needed to update $\Y$. Classical methods based on interior-point methods will scale even more poorly. Efficient, scalable methods for solving this semidefinite relaxation, and semidefinite programs in general, are needed.
+For example, the proposed algorithm, based on the ADMM, has per-iteration cost of $O(n^3)$ flops per iteration, primarily to compute the spectral decomposition needed to update $\Y$. Classical methods based on interior-point methods will scale even more poorly. Efficient, scalable methods for solving this semidefinite relaxation, and semidefinite programming in general, are needed.
 
 \acks{We are grateful to John Bruer and Joel Tropp for their insights and helpful suggestions.
 Aleksis Pirinen was supported by a California Institute of Technology Summer Undergraduate Research Fellowship (SURF) using funds provided by Office of Naval Research (ONR) award N000014-11-1002. Brendan Ames was supported by University of Alabama Research Grants RG14678 and RG14838.}
@@ -1697,15 +1696,15 @@ Aleksis Pirinen was supported by a California Institute of Technology Summer Und
 \section{Proof of Lemma~\ref{lem: yz bound}}
 \label{app: yz}
 % Goal.
-In this appendix, we give the full proof of Lemma~\ref{lem: yz bound}.
+We give the full proof of Lemma~\ref{lem: yz bound} in this appendix.
 \begin{proof}
 We fix $q,s \in \{1,\dots,k\}$ such that $q \neq s$ and assume without loss of generality that $r_q \leq r_s$.
 %The proof for the case when either $q$ or $s$ is equal to $k+1$ is analogous\footnote{For example, if $q = k+1$, then $\left|\lambda_i - \frac{1}{2r_q}(\alpha r_q - \tau)\right| = 0$ (compare to \eqref{eq:temp3}).}.
 By the definition \eqref{eq: y z} of $\bs{y} := \bs{y}^{q,s}$ and the triangle inequality, we have
-\begin{equation}
-\label{eq:y_inf}
+\begin{equation*}
+%\label{eq:y_inf}
 	\|\bs{y}\|_{\infty} \leq \frac{1}{r_s}\left( \|\bs{b}_{q,s}\|_{\infty} + \frac{|\bs{b}_{q,s}^T \bs{e}|}{r_q +r_s}\right).
-\end{equation}
+\end{equation*}
 For simplicity, let \(\b_1:= \b_{q,s}\) and \(\b_2 := \b_{s,q}\).
 It follows from \eqref{eq: b} and our choice of $\bs{\lambda}$  that the $i$th element of $\bs{b}_1$, denoted $b_i^1$, is given by
 $$
@@ -1722,38 +1721,38 @@ $$
 Applying \eqref{eq:hoeffding} with $T = n$ to the right-hand side in the equation above shows that
 \begin{equation} \label{cluster sum}
 	|\e^T \W_{C_s, C_s} \e - \mu_{ss} r_s^2 |
-	 \le 6 \max \{ \sqrt{\sigma_{ss}^2 r_s^2 \log n}, \log n \}
+	 \le 6 \max \{ \sqrt{\sigma_{ss}^2 r_s^2 \log n}, \log n \},
 \end{equation}
 with high probability,
 which in turn implies that
-\begin{equation} \label{lam sum}
+\begin{equation*} %\label{lam sum}
 	\left| \bs{\lambda}_{C_s}^T\bs{e} - \frac{1}{2}(\mu_{ss} r_s - \tau)
-	\right| \le 3 \max\bra{ \sqrt{\sigma_{ss}^2  \log n}, \frac{\log n}{r_s} }
-\end{equation}
+	\right| \le 3 \max\bra{ \sqrt{\sigma_{ss}^2  \log n}, \frac{\log n}{r_s} },
+\end{equation*}
 with high probability.
 Similarly, applying \eqref{eq:hoeffding} with $T=n$ to the sum $\sum_{j\in C_s} w_{ij}$ shows that
-\begin{equation} \label{out sum}
+\begin{equation*} %\label{out sum}
 	\abs{ \sum_{j\in C_s} w_{ij} - \mu_{qs} r_s }
-		\le 6 \max \bra{ \sqrt{\sigma^2_{qs} r_s \log n}, \log n }
-\end{equation}
-for all $i \in C_q$ with high probability.
+		\le 6 \max \bra{ \sqrt{\sigma^2_{qs} r_s \log n}, \log n },
+\end{equation*}
+for all $i \in C_q$, with high probability.
 Finally, we note that
-\begin{equation}
-\label{eq:temp3}
+\begin{equation*}
+%\label{eq:temp3}
 \left|\lambda_i - \frac{1}{2r_q}(\mu_{qq} r_q - \tau)\right| \leq \frac{1}{r_q}\left|\sum_{j \in C_q} w_{ij} - \mu_{qq} r_q \right| + \frac{1}{2r_q^2}\left|\bs{e}^T \bs{W}_{C_q,C_q} \bs{e} - \mu_{qq} r_q^2\right|.
-\end{equation}
+\end{equation*}
 We bound the first term in the sum using \eqref{eq:hoeffding} with $T=n$,
 which establishes that
 \begin{align*}
  \left|\sum_{j \in C_q} w_{ij}- \mu_{qq} r_q\right|
- 	\le 6 \max \bra{ \sqrt{\sigma^2_{qq} r_q \log n}, \log n }
+ 	\le 6 \max \bra{ \sqrt{\sigma^2_{qq} r_q \log n}, \log n },
 \end{align*}
 w.h.p.,~and note that the second term has upper bound
 \begin{align*}
  \left| \bs{e}^T \bs{W}_{C_q,C_q} \bs{e} - \mu_{qq} r_q^2 \right|
-\le 6 \max \bra{\sqrt{\sigma_{qq}^2 r_q^2 \log n}, \log n }
+\le 6 \max \bra{\sqrt{\sigma_{qq}^2 r_q^2 \log n}, \log n },
 \end{align*}
-w.h.p.~by a calculation identical to that used to obtain \eqref{cluster sum}.
+w.h.p.,~by a calculation identical to that used to obtain~\eqref{cluster sum}.
 Applying these bounds using the triangle inequality and the
 union bound over all $i \in C_q$, we conclude that
 \begin{align}
@@ -1762,7 +1761,7 @@ union bound over all $i \in C_q$, we conclude that
  & \leq  \;r_s \left(\frac{6}{r_q}\max \bra{ \sqrt{\sigma^2_{qq} r_q \log n}, \log n } + 3 \max\bra{ \sqrt{\sigma_{qq}^2  \log n}, \frac{\log n}{r_q}} \right) \notag \\
 & \hspace{0.55in} + 3  \max\bra{ \sqrt{\sigma_{ss}^2  \log n}, \frac{\log n}{r_s}}
 + 6 \max\bra{ \sqrt{\sigma_{qs}^2  r_s \log n}, \log n}  \notag\\
- & =  O \rbra{ r_s \max \bra{  \sqrt{ \frac{ \tilde{\sigma}^2 \log n}{\hat{r}} }, \frac{ \log n}{\hat{r}} } } \label{eq:b1_inf_orig}
+ & =  O \rbra{ r_s \max \bra{  \sqrt{ \frac{ \tilde{\sigma}^2 \log n}{\hat{r}} }, \frac{ \log n}{\hat{r}} } }, \label{eq:b1_inf_orig}
 \end{align}
 with high probability.
 
@@ -1780,7 +1779,7 @@ $\bs{W}_{C_q,C_s}$ and the above concentration inequalities
 for $\bs{\lambda}_{C_q}^T \e$ and $\bs{\lambda}_{C_s}^T \e$
 we have
 \begin{align}
-	& \left|\bs{b}_1^T \bs{e}\right|
+	 \left|\bs{b}_1^T \bs{e}\right| &
 		\leq r_s \left|\bs{\lambda}_{C_q}^T \bs{e} - \frac{1}
 		{2}\left(\mu_{qq} r_q - \tau \right)\right|
 		+ r_q\left|\bs{\lambda}_{C_s}^T \bs{e}
@@ -1790,11 +1789,12 @@ we have
 		& \leq 3 r_s \max\bra{ \sqrt{\sigma_{qq}^2 \log n},
 			\frac{\log n}{r_q} }
 			+ 3 r_q \max\bra{ \sqrt{\sigma_{ss}^2 \log n},
-			\frac{\log n}{r_s} }
+			\frac{\log n}{r_s} } \notag \\
+    & \hspace{0.95in}
 			+  6 \max \bra{ \sqrt{\sigma_{qs}^2 r_q r_s \log n}, \log n}
 		\notag \\
-		& = O \rbra{ (r_s + r_q) \max\bra{ \sqrt{\tilde \sigma^2 \log n},
-			\frac{\log n}{\hat r} }  }\label{eq:b1_e_orig}
+		& = O \rbra{ r_s\max\bra{ \sqrt{\tilde \sigma^2 \log n},
+			\frac{\log n}{\hat r} }  },\label{eq:b1_e_orig}
 \end{align}
 w.h.p.
 %We conclude that
@@ -1808,30 +1808,30 @@ $$
 	\leq \frac{1}{r_s}\left( \|\bs{b}_1\|_{\infty}
 		+ \frac{|\bs{b}_1^T \bs{e}|}{r_q +r_s}\right)
 	= O \rbra{ \max \bra{  \sqrt{ \frac{ \tilde{\sigma}^2 \log n}{\hat{r}} },
-		\frac{ \log n}{\hat{r}} } }
+		\frac{ \log n}{\hat{r}} } },
 $$
 w.h.p. Since this holds for any $q,s \in\{1,\dots,k\}$ such that $q \neq s$, we conclude that
-\begin{equation}
-\label{eq:y_bound_orig}
+\begin{equation*}
+%\label{eq:y_bound_orig}
 \|\bs{y}\|_{\infty} = O \rbra{ \max \bra{  \sqrt{ \frac{ \tilde{\sigma}^2 \log n}{\hat{r}} },
-		\frac{ \log n}{\hat{r}} } }
-\end{equation}
+		\frac{ \log n}{\hat{r}} } },
+\end{equation*}
 w.h.p.
 An identical argument shows that
-\begin{equation}
-\label{eq:z_bound_orig}
+\begin{equation*}
+%\label{eq:z_bound_orig}
 	\|\bs{z}^{q,s}\|_{\infty}
 	= O \rbra{ \max \bra{  \sqrt{ \frac{ \tilde{\sigma}^2 \log n}{\hat{r}} },
-		\frac{ \log n}{\hat{r}} } }
-\end{equation}
+		\frac{ \log n}{\hat{r}} } },
+\end{equation*}
 w.h.p.
 We conclude that
-\begin{equation}
-\label{eq:lemma42_known_c}
+\begin{equation*}
+%\label{eq:lemma42_known_c}
 	\|\bs{y}^{q,s}\|_{\infty} +  \|\bs{z}^{q,s}\|_{\infty}
 	= O \rbra{ \max \bra{  \sqrt{ \frac{ \tilde{\sigma}^2 \log n}{\hat{r}} },
-		\frac{ \log n}{\hat{r}} } }
-\end{equation}
+		\frac{ \log n}{\hat{r}} } },
+\end{equation*}
 w.h.p.
 \end{proof}
 
@@ -1845,34 +1845,34 @@ We next prove Proposition~\ref{prop: lam}.
 We follow the proof of Lemma 4.3 given by \cite{ames2014guaranteed}. Fix $q \in \{1,\dots,k\}$ and $i \in C_q$.
 It follows from \eqref{eq: lam q} that
 \[
-\lambda_i = \sum_{j \in C_q} w_{ij} - \frac{1}{2r_q}\bs{e}^T\bs{W}_{C_q,C_q}\bs{e}-\frac{\tau}{2}
+\lambda_i = \sum_{j \in C_q} w_{ij} - \frac{1}{2r_q}\bs{e}^T\bs{W}_{C_q,C_q}\bs{e}-\frac{\tau}{2},
 \]
 for each \(i \in C_q\).
 Applying \eqref{eq:hoeffding} with ${S} = \sum_{j \in C_q} w_{ij}$ and $T = n$ yields
 \[
 	\sum_{j \in C_q} w_{ij} \geq \mu_{qq} r_q
-		- 6 \max \bra{ \sqrt{ \sigma_{qq}^2 r_q \log n }, \log n}
+		- 6 \max \bra{ \sqrt{ \sigma_{qq}^2 r_q \log n }, \log n},
 \]
 w.h.p. Moreover,~by a similar argument, we have
 \[
 	\frac{1}{2r_q}\bs{e}^T\bs{W}_{C_q,C_q}\bs{e}
 	\leq \frac{1}{2}\left(\mu_{qq} r_q +
-	6 \max\bra{ \sqrt{\sigma_{qq}^2 \log n}, \frac{\log n}{r_q} }\right)
+	6 \max\bra{ \sqrt{\sigma_{qq}^2 \log n}, \frac{\log n}{r_q} }\right),
 \]
 w.h.p.
 Combining the above inequalities shows that
 \[
 	\lambda_i \geq	r_q \rbra{ \frac{\mu_{qq}}{2} - \epsilon \gamma
 		- O \rbra{ \max \bra{ \sqrt{  \frac{\sigma_{qq}^2 \log n }{r_q} },
-			\frac{\log n }{r_q} } } }
+			\frac{\log n }{r_q} } } },
 \]
 w.h.p.
 Since $\gamma > 0$ by~\eqref{eq:smallest_largest}, this implies that
 there exists constant $c>0$ such that if
 \begin{equation} \label{eq: lam eps tmp}
-	\epsilon \leq \frac{1}{\gamma}
+	\epsilon \leq \frac{1}{2\gamma}
 	\rbra{ \mu_{qq}  - c \max \bra{ \sqrt{  \frac{\sigma_{qq}^2 \log 		n }{r_q} },
-			\frac{\log n }{r_q} } }
+			\frac{\log n }{r_q} } },
 \end{equation}
 then
 $\lambda_i \geq 0$ w.h.p.
@@ -1910,7 +1910,7 @@ Our proof of Proposition~\ref{prop:unique} follows a similar structure to that o
 		& \ge (\mu_{qq} - \mu_{qs}) r_s r_q^2
 		- 6 r_s \max \bra{ \sqrt{ \sigma_{qq}^2 r_q^2 \log n}, \log n}
 		- 6 r_q \max \bra{ \sqrt{\sigma_{qs}^2 r_s r_q \log n}, \log n} \\
-		&\ge r_q^2 r_s \rbra{ \gamma - 12 \max \bra{ \sqrt{\frac{\tilde\sigma^2 \log n}{\hat r^2}}, \frac{\log n}{\hat r^2}} }
+		&\ge r_q^2 r_s \rbra{ \gamma - 12 \max \bra{ \sqrt{\frac{\tilde\sigma^2 \log n}{\hat r^2}}, \frac{\log n}{\hat r^2}} },
 	\end{align*}
 	w.h.p.
 	This implies that $r_s \e^T \W_{C_q, C_q} \e \ge r_q \e^T \W_{C_q, C_s} \e$ w.h.p.~if \eqref{eq: unique bound} is satisfied.
@@ -1923,7 +1923,7 @@ Our proof of Proposition~\ref{prop:unique} follows a similar structure to that o
 \section{Proof of  Lemma~\ref{lem: S1}} %\appendix{}
 \label{A_S1_bound}
 
-In this appendix we prove Lemma~\ref{lem: S1}.
+We next prove Lemma~\ref{lem: S1}.
 \begin{proof}
 %% Tropp.
 We will make repeated use of the following
@@ -1947,7 +1947,7 @@ of a random symmetric matrix with i.i.d.~mean zero entries given by \citet[Corol
 	\begin{equation} \label{eq:BVHtemp}
 		\pr \bra{ \|\bs{A}\| \ge 3 \sqrt{\sigma^2 n} + t } \le n e^{-\ct t^2}.
 	\end{equation}
-	Here, we have substituted the upper bound $\sigma^2 n \ge \tilde \sigma^2$, in place of $\tilde \sigma:= \max_i \sum_{j} \E[X_{ij}^2]$ in the original statement of Corollary~3.12.
+	Here we have substituted the upper bound $\sigma^2 n \ge \tilde \sigma^2$, in place of $\tilde \sigma:= \max_i \sum_{j} \E[X_{ij}^2]$ in the original statement of Corollary~3.12.
 	Let $t = (C-3) \max\{ \sqrt{\sigma^2 n}, \sqrt{\log T} \}$ where $C$ is chosen large enough that $\ct 	(C-3)^2 > 7$.
 	In this case, \eqref{eq:BVHtemp} specializes to
 	\[
@@ -1963,7 +1963,7 @@ the entries $[\St_1]_{ij}$ of $\St_1$ all satisfy $|[\St_1]_{ij}| \leq 1$ if we 
 for all \(i,j\); note that an identical argument establishes the result if we make the weaker assumption that
 the entries of \(\W\) are bounded with high probability.
 On the other hand, note that the
-entries of $\St_1$ are not identically distributed (but are independent) since each $w_{ij}$ is sampled according to $\Omega_{qs}$, where $i \in C_q$, $j\in C_s$. However, we know that $\sigma^2_{qs} \le \tilde\sigma^2$ by our definition of $\tilde\sigma^2$. Moreover, $\E[{(\St_1)}_{ij}] = \E[\mu_{qs} - w_{ij}] = 0$.
+entries of $\St_1$ are not identically distributed (but are independent) since each $w_{ij}$ is sampled according to $\Omega_{qs}$, where $i \in C_q$, $j\in C_s$. However, we know that $\sigma^2_{qs} \le \tilde\sigma^2$ by our definition of $\tilde\sigma^2$. Moreover, $\E[{[\St_1]}_{ij}] = \E[\mu_{qs} - w_{ij}] = 0$.
 Thus, we can apply Lemma~\ref{lem: tropp tech} to place a bound on $\|\St_1\|$.
 Doing so establishes that~\eqref{eq: S1 bound} holds w.h.p.
 % in this case we see that there exists constant $C \ge 0$ such that
@@ -2021,7 +2021,6 @@ We conclude with the following proof of Lemma~\ref{lem: S2}.
 \begin{proof}
 Note that $\|\St_2 \| \le  \|\bs \lambda - \E[\bs \lambda] \| \sqrt{r_{k+1}}.$
 Thus, it remains to bound $\|\bs \lambda - \E[\bs \lambda] \|$.
-
 \newcommand{\bl}{\bs{\lambda}}
 To do so, fix $q \in \{1,2,\dots, k\}$. Recall that
 \[
@@ -2030,31 +2029,31 @@ To do so, fix $q \in \{1,2,\dots, k\}$. Recall that
 \]
 Applying \eqref{eq:sparse_lemma} with $T = n$ establishes that
 \begin{align*}
-	\| \W_{C_q, C_q} \e - \alpha r_q \e \| &\le  \|\W_{C_q, C_q}  - \mu_{qq} \e\e^T \| \|\e\| \\
-	& \le C \sqrt{r_q} \max\{ \sigma_{qq} \sqrt{ r_q}, \sqrt{\log n} \}
+	\| \W_{C_q, C_q} \e - \mu_{qq} r_q \e \| &\le  \|\W_{C_q, C_q}  - \mu_{qq} \e\e^T \| \|\e\| \\
+	& \le C \sqrt{r_q} \max\{ \sigma_{qq} \sqrt{ r_q}, \sqrt{\log n} \},
 \end{align*}
 w.h.p.
 On the other hand, Bernstein's inequality establishes that
 \[
-	|  \e^T \W_{C_q, C_q} \e - \mu_{qq} r_q^2 | \le 6 \max \bra{ \sqrt{\sigma_{qq}^2 r_q \log n}, \log n }
+	|  \e^T \W_{C_q, C_q} \e - \mu_{qq} r_q^2 | \le 6 \max \bra{ \sqrt{\sigma_{qq}^2 r_q \log n}, \log n },
 \]
 w.h.p.
 Combining these two inequalities using the triangle inequality establishes that
 \begin{align*}
 	\| \bl_{C_q} - \E[\bl_{C_q}] \| \le &C \max \bra{ \sigma_{qq}, \sqrt{\frac{\log n}{r_q } } }
 		+ 6 \max \bra { \sqrt{ \frac{\sigma_{qq}^2 \log n}{r_q^2}}, \frac{\log n}{r_q^{3/2} } } \\
-		&= O \rbra{ \max \bra{ \sigma_{qq}, \sqrt{ \frac{ \log n}{\hat r} } } }
+		&= O \rbra{ \max \bra{ \sigma_{qq}, \sqrt{ \frac{ \log n}{\hat r} } } },
 \end{align*}
 w.h.p.
 Finally, applying the union bound over all choices of $q$ shows that
 \[
-	\| \bl - \E [ \bl ] \|^2 = \sum_{q=1}^t \| \bl_{C_q} - \E[\bl_{C_q}] \|^2
-		= O \rbra{  k \max \bra{ \sigma_{qq}^2, \frac{\log n}{\hat r} } }
+	\| \bl - \E [ \bl ] \|^2 = \sum_{q=1}^k \| \bl_{C_q} - \E[\bl_{C_q}] \|^2
+		= O \rbra{  k \max \bra{ \sigma_{qq}^2, \frac{\log n}{\hat r} } },
 \]
 w.h.p.
 This establishes that
 \[
-	\|\St_2\|^2 = O\rbra{k r_{k+1} \max \bra{ \sigma_{qq}^2, \frac{\log n}{\hat r} } }
+	\|\St_2\|^2 = O\rbra{k r_{k+1} \max \bra{ \sigma_{qq}^2, \frac{\log n}{\hat r} } },
 \]
 w.h.p., as required.
 \end{proof}
