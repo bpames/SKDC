@@ -6,49 +6,51 @@
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
 \bibitem[Abbe et~al.(2016)Abbe, Bandeira, and Hall]{abbe2016exact}
-Emmanuel Abbe, Afonso~S Bandeira, and Georgina Hall.
+E.~Abbe, A.~Bandeira, and G.~Hall.
 \newblock Exact recovery in the stochastic block model.
-\newblock \emph{Information Theory, IEEE Transactions on}, 62\penalty0
+\newblock \emph{IEEE Transactions on Information Theory}, 62\penalty0
   (1):\penalty0 471--487, 2016.
 
-\bibitem[Ailon et~al.(2013)Ailon, Chen, and Huan]{ailon2013breaking}
-Nir Ailon, Yudong Chen, and Xu~Huan.
+\bibitem[Ailon et~al.(2013)Ailon, Chen, and Xu]{ailon2013breaking}
+N.~Ailon, Y.~Chen, and H.~Xu.
 \newblock Breaking the small cluster barrier of graph clustering.
-\newblock \emph{arXiv preprint arXiv:1302.4549}, 2013.
+\newblock In \emph{International Conference on Machine Learning}, pages
+  995--1003, 2013.
 
 \bibitem[Ames(2014)]{ames2014guaranteed}
-Brendan~PW Ames.
+B.~Ames.
 \newblock Guaranteed clustering and biclustering via semidefinite programming.
 \newblock \emph{Mathematical Programming}, 147\penalty0 (1-2):\penalty0
   429--465, 2014.
 
 \bibitem[Ames(2015)]{ames2015guaranteed}
-Brendan~PW Ames.
+B.~Ames.
 \newblock Guaranteed recovery of planted cliques and dense subgraphs by convex
   relaxation.
 \newblock \emph{Journal of Optimization Theory and Applications}, 167\penalty0
   (2):\penalty0 653--675, 2015.
 
 \bibitem[Ames and Vavasis(2011)]{ames2011nuclear}
-Brendan~PW Ames and Stephen~A Vavasis.
+B.~Ames and S.~Vavasis.
 \newblock Nuclear norm minimization for the planted clique and biclique
   problems.
 \newblock \emph{Mathematical programming}, 129\penalty0 (1):\penalty0 69--89,
   2011.
 
 \bibitem[Ames and Vavasis(2014)]{ames2014convex}
-Brendan~PW Ames and Stephen~A Vavasis.
+B.~Ames and S.~Vavasis.
 \newblock Convex optimization for the planted k-disjoint-clique problem.
 \newblock \emph{Mathematical Programming}, 143\penalty0 (1-2):\penalty0
   299--337, 2014.
 
-\bibitem[Amini and Levina(2014)]{amini2014semidefinite}
-Arash~A Amini and Elizaveta Levina.
+\bibitem[Amini and Levina(2018)]{amini2014semidefinite}
+A.~Amini and E.~Levina.
 \newblock On semidefinite relaxations for the block model.
-\newblock \emph{arXiv preprint arXiv:1406.5647}, 2014.
+\newblock \emph{The Annals of Statistics}, 46\penalty0 (1):\penalty0 149--179,
+  2018.
 
 \bibitem[Bandeira and van Handel(2016)]{bandeira2016sharp}
-Afonso~S Bandeira and Ramon van Handel.
+A.~Bandeira and R.~van Handel.
 \newblock Sharp nonasymptotic bounds on the norm of random matrices with
   independent entries.
 \newblock \emph{The Annals of Probability}, 44\penalty0 (4):\penalty0
@@ -56,121 +58,123 @@ Afonso~S Bandeira and Ramon van Handel.
 
 \bibitem[Birgin et~al.(2000)Birgin, Mart{\'\i}nez, and
   Raydan]{birgin2000nonmonotone}
-Ernesto~G Birgin, Jos{\'e}~Mario Mart{\'\i}nez, and Marcos Raydan.
+E.~Birgin, M.J. Mart{\'\i}nez, and M.~Raydan.
 \newblock Nonmonotone spectral projected gradient methods on convex sets.
 \newblock \emph{SIAM Journal on Optimization}, 10\penalty0 (4):\penalty0
   1196--1211, 2000.
 
-\bibitem[Boyd and Vandenberghe(2009)]{boyd2009convex}
-Stephen Boyd and Lieven Vandenberghe.
-\newblock \emph{Convex optimization}.
-\newblock Cambridge university press, 2009.
+\bibitem[Boucheron et~al.(2013)Boucheron, Lugosi, and Massart]{lugosi2009}
+S.~Boucheron, G.~Lugosi, and P.~Massart.
+\newblock \emph{Concentration Inequalities: A Nonasymptotic Theory of
+  Independence}.
+\newblock Oxford University Press, 2013.
 
-\bibitem[Cai et~al.(2015)Cai, Li, et~al.]{cai2015robust}
-T~Tony Cai, Xiaodong Li, et~al.
+\bibitem[Boyd and Vandenberghe(2004)]{boyd2009convex}
+S.~Boyd and L.~Vandenberghe.
+\newblock \emph{Convex Optimization}.
+\newblock Cambridge University Press, 2004.
+
+\bibitem[Cai and Li(2015)]{cai2015robust}
+T.~Cai and X.~Li.
 \newblock Robust and computationally feasible community detection in the
   presence of arbitrary outlier nodes.
 \newblock \emph{The Annals of Statistics}, 43\penalty0 (3):\penalty0
   1027--1059, 2015.
 
 \bibitem[Chen and Xu(2014)]{chen2014statistical}
-Yudong Chen and Jiaming Xu.
-\newblock Statistical-computational phase transitions in planted models: The
+Y.~Chen and J.~Xu.
+\newblock Statistical-computational phase transitions in planted models: the
   high-dimensional setting.
-\newblock In \emph{ICML}, pages 244--252, 2014.
+\newblock In \emph{International Conference on Machine Learning}, pages
+  244--252, 2014.
 
 \bibitem[Chen et~al.(2014{\natexlab{a}})Chen, Jalali, Sanghavi, and
   Xu]{chen2014clustering}
-Yudong Chen, Ali Jalali, Sujay Sanghavi, and Huan Xu.
+Y.~Chen, A.~Jalali, S.~Sanghavi, and H.~Xu.
 \newblock Clustering partially observed graphs via convex optimization.
 \newblock \emph{The Journal of Machine Learning Research}, 15\penalty0
   (1):\penalty0 2213--2238, 2014{\natexlab{a}}.
 
 \bibitem[Chen et~al.(2014{\natexlab{b}})Chen, Sanghavi, and
   Xu]{chen2014improved}
-Yudong Chen, Sujay Sanghavi, and Huan Xu.
+Y.~Chen, S.~Sanghavi, and H.~Xu.
 \newblock Improved graph clustering.
-\newblock \emph{Information Theory, IEEE Transactions on}, 60\penalty0
+\newblock \emph{IEEE Transactions on Information Theory}, 60\penalty0
   (10):\penalty0 6440--6455, 2014{\natexlab{b}}.
 
 \bibitem[Dhillon et~al.(2004)Dhillon, Guan, and Kulis]{dhillon2004kernel}
-Inderjit~S Dhillon, Yuqiang Guan, and Brian Kulis.
+I.~Dhillon, Y.~Guan, and B.~Kulis.
 \newblock Kernel k-means: spectral clustering and normalized cuts.
-\newblock In \emph{Proceedings of the tenth ACM SIGKDD international conference
-  on Knowledge discovery and data mining}, pages 551--556. ACM, 2004.
+\newblock In \emph{ACM SIGKDD International Conference on Knowledge Discovery
+  and Data Mining}, pages 551--556. ACM, 2004.
 
 \bibitem[Golub and Van~Loan(2013)]{golub2013matrix}
-GH~Golub and C~Van~Loan.
-\newblock Matrix computations, 4th.
-\newblock \emph{Johns Hopkins}, 2013.
+G.~Golub and C.~Van~Loan.
+\newblock \emph{Matrix Computations}.
+\newblock Johns Hopkins University Press, 4th edition, 2013.
 
 \bibitem[Gu{\'e}don and Vershynin(2015)]{guedon2015community}
-Olivier Gu{\'e}don and Roman Vershynin.
-\newblock Community detection in sparse networks via grothendieck's inequality.
+O.~Gu{\'e}don and R.~Vershynin.
+\newblock Community detection in sparse networks via {G}rothendieck's
+  inequality.
 \newblock \emph{Probability Theory and Related Fields}, pages 1--25, 2015.
 
 \bibitem[Hajek et~al.(2015)Hajek, Wu, and Xu]{hajek2015achieving}
-Bruce Hajek, Yihong Wu, and Jiaming Xu.
+B.~Hajek, Y.~Wu, and J.~Xu.
 \newblock Achieving exact cluster recovery threshold via semidefinite
   programming.
-\newblock In \emph{Information Theory (ISIT), 2015 IEEE International Symposium
-  on}, pages 1442--1446. IEEE, 2015.
+\newblock In \emph{IEEE International Symposium on Information Theory}, pages
+  1442--1446. IEEE, 2015.
 
 \bibitem[Holland et~al.(1983)Holland, Laskey, and
   Leinhardt]{holland1983stochastic}
-Paul~W Holland, Kathryn~Blackmond Laskey, and Samuel Leinhardt.
-\newblock Stochastic blockmodels: First steps.
-\newblock \emph{Social networks}, 5\penalty0 (2):\penalty0 109--137, 1983.
+P.~Holland, K.~Laskey, and S.~Leinhardt.
+\newblock Stochastic blockmodels: first steps.
+\newblock \emph{Social Networks}, 5\penalty0 (2):\penalty0 109--137, 1983.
 
 \bibitem[Jalali et~al.(2015)Jalali, Han, Dumitriu, and
   Fazel]{jalali2015relative}
-Amin Jalali, Qiyang Han, Ioana Dumitriu, and Maryam Fazel.
+A.~Jalali, Q.~Han, I.~Dumitriu, and M.~Fazel.
 \newblock Relative density and exact recovery in heterogeneous stochastic block
   models.
 \newblock \emph{arXiv preprint arXiv:1512.04937}, 2015.
 
-\bibitem[Lei et~al.(2015)Lei, Rinaldo, et~al.]{lei2015consistency}
-Jing Lei, Alessandro Rinaldo, et~al.
+\bibitem[Lei and Rinaldo(2015)]{lei2015consistency}
+J.~Lei and A.~Rinaldo.
 \newblock Consistency of spectral clustering in stochastic block models.
 \newblock \emph{The Annals of Statistics}, 43\penalty0 (1):\penalty0 215--237,
   2015.
 
 \bibitem[Leskovec et~al.(2008)Leskovec, Lang, Dasgupta, and
   Mahoney]{leskovec2008statistical}
-Jure Leskovec, Kevin~J Lang, Anirban Dasgupta, and Michael~W Mahoney.
+J.~Leskovec, K.~Lang, A.~Dasgupta, and M.~Mahoney.
 \newblock Statistical properties of community structure in large social and
   information networks.
-\newblock In \emph{Proceedings of the 17th international conference on World
-  Wide Web}, pages 695--704. ACM, 2008.
+\newblock In \emph{International Conference on World Wide Web}, pages 695--704.
+  ACM, 2008.
 
 \bibitem[Leskovec et~al.(2009)Leskovec, Lang, Dasgupta, and
   Mahoney]{leskovec2009community}
-Jure Leskovec, Kevin~J Lang, Anirban Dasgupta, and Michael~W Mahoney.
-\newblock Community structure in large networks: Natural cluster sizes and the
+J.~Leskovec, K.~Lang, A.~Dasgupta, and M.~Mahoney.
+\newblock Community structure in large networks: natural cluster sizes and the
   absence of large well-defined clusters.
 \newblock \emph{Internet Mathematics}, 6\penalty0 (1):\penalty0 29--123, 2009.
 
-\bibitem[Lugosi(2009)]{lugosi2009}
-G.~Lugosi.
-\newblock Concentration-measure inequalities, 2009.
-\newblock Available from \url{http://www.econ.upf.edu/~lugosi/anu.pdf}.
-
 \bibitem[Mathieu and Schudy(2010)]{mathieu2010correlation}
-Claire Mathieu and Warren Schudy.
+C.~Mathieu and W.~Schudy.
 \newblock Correlation clustering with noisy input.
-\newblock In \emph{Proceedings of the twenty-first annual ACM-SIAM symposium on
-  Discrete Algorithms}, pages 712--728. Society for Industrial and Applied
-  Mathematics, 2010.
+\newblock In \emph{ACM-SIAM Symposium on Discrete Algorithms}, pages 712--728.
+  Society for Industrial and Applied Mathematics, 2010.
 
-\bibitem[Nellore and Ward(2013)]{nellore2013recovery}
-Abhinav Nellore and Rachel Ward.
+\bibitem[Nellore and Ward(2015)]{nellore2013recovery}
+A.~Nellore and R.~Ward.
 \newblock Recovery guarantees for exemplar-based clustering.
-\newblock \emph{arXiv preprint arXiv:1309.3256}, 2013.
+\newblock \emph{Information and Computation}, 245:\penalty0 165--180, 2015.
 
-\bibitem[Ng et~al.(2002)Ng, Jordan, Weiss, et~al.]{ng2002spectral}
-Andrew~Y Ng, Michael~I Jordan, Yair Weiss, et~al.
-\newblock On spectral clustering: Analysis and an algorithm.
-\newblock \emph{Advances in neural information processing systems}, 2:\penalty0
+\bibitem[Ng et~al.(2002)Ng, Jordan, and Weiss]{ng2002spectral}
+A.~Ng, M.~Jordan, and Y.~Weiss.
+\newblock On spectral clustering: analysis and an algorithm.
+\newblock \emph{Advances in Neural Information Processing Systems}, 2:\penalty0
   849--856, 2002.
 
 \bibitem[Oymak and Hassibi(2011)]{oymak2011finding}
@@ -179,13 +183,13 @@ S.~Oymak and B.~Hassibi.
 \newblock \emph{Arxiv preprint arXiv:1104.5186}, 2011.
 
 \bibitem[Peng and Wei(2007)]{peng2007approximating}
-Jiming Peng and Yu~Wei.
+J.~Peng and Y.~Wei.
 \newblock Approximating k-means-type clustering via semidefinite programming.
 \newblock \emph{SIAM Journal on Optimization}, 18\penalty0 (1):\penalty0
   186--205, 2007.
 
 \bibitem[Qin and Rohe(2013)]{qin2013regularized}
-Tai Qin and Karl Rohe.
+T.~Qin and K.~Rohe.
 \newblock Regularized spectral clustering under the degree-corrected stochastic
   blockmodel.
 \newblock In \emph{Advances in Neural Information Processing Systems}, pages
@@ -197,32 +201,30 @@ K.~Rohe, S.~Chatterjee, and B.~Yu.
 \newblock \emph{The Annals of Statistics}, 39\penalty0 (4):\penalty0
   1878--1915, 2011.
 
-\bibitem[Rohe et~al.(2012)Rohe, Qin, and Fan]{rohe2012highest}
-Karl Rohe, Tai Qin, and Haoyang Fan.
-\newblock The highest dimensional stochastic blockmodel with a regularized
-  estimator.
-\newblock \emph{arXiv preprint arXiv:1206.2380}, 2012.
+\bibitem[Rohe et~al.(2014)Rohe, Qin, and Fan]{rohe2012highest}
+K.~Rohe, T.~Qin, and H.~Fan.
+\newblock \emph{Statistica Sinica}, pages 1771--1786, 2014.
 
 \bibitem[Van Den~Berg and Friedlander(2008)]{van2008probing}
-Ewout Van Den~Berg and Michael~P Friedlander.
+E.~Van Den~Berg and M.~Friedlander.
 \newblock Probing the pareto frontier for basis pursuit solutions.
 \newblock \emph{SIAM Journal on Scientific Computing}, 31\penalty0
   (2):\penalty0 890--912, 2008.
 
 \bibitem[Vinayak et~al.(2014)Vinayak, Oymak, and Hassibi]{vinayak2014sharp}
-Ramya~Korlakai Vinayak, Samet Oymak, and Babak Hassibi.
+R.K. Vinayak, S.~Oymak, and B.~Hassibi.
 \newblock Sharp performance bounds for graph clustering via convex
   optimization.
-\newblock In \emph{Acoustics, Speech and Signal Processing (ICASSP), 2014 IEEE
-  International Conference on}, pages 8297--8301. IEEE, 2014.
+\newblock In \emph{IEEE International Conference on Acoustics, Speech and
+  Signal Processing (ICASSP)}, pages 8297--8301. IEEE, 2014.
 
 \bibitem[Yan et~al.(2017)Yan, Sarkar, and Cheng]{yan2017provable}
-Bowei Yan, Purnamrita Sarkar, and Xiuyuan Cheng.
+B.~Yan, P.~Sarkar, and X.~Cheng.
 \newblock Provable estimation of the number of blocks in block models.
 \newblock \emph{arXiv preprint arXiv:1705.08580}, 2017.
 
 \bibitem[Zhang and Lu(2011)]{zhang2011penalty}
-Yong Zhang and Zhaosong Lu.
+Y.~Zhang and Z.~Lu.
 \newblock Penalty decomposition methods for rank minimization.
 \newblock In \emph{Advances in Neural Information Processing Systems}, pages
   46--54, 2011.

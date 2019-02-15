@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2018/W32TeX)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: 16-128.aux
+The style file: plainnat.bst
+Database file #1: SWKDC.bib
+Warning--empty title in rohe2012highest
+You've used 36 entries,
+            2773 wiz_defined-function locations,
+            799 strings with 10137 characters,
+and the built_in function-call counts, 18223 in all, are:
+= -- 1707
+> -- 923
+< -- 30
++ -- 310
+- -- 273
+* -- 1442
+:= -- 2660
+add.period$ -- 112
+call.type$ -- 36
+change.case$ -- 196
+chr.to.int$ -- 35
+cite$ -- 73
+duplicate$ -- 862
+empty$ -- 1543
+format.name$ -- 343
+if$ -- 3924
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 39
+newline$ -- 187
+num.names$ -- 144
+pop$ -- 398
+preamble$ -- 1
+purify$ -- 163
+quote$ -- 0
+skip$ -- 686
+stack$ -- 0
+substring$ -- 940
+swap$ -- 148
+text.length$ -- 11
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 381
+warning$ -- 1
+while$ -- 179
+width$ -- 0
+write$ -- 473
+(There was 1 warning)
